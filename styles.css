@@ -1,0 +1,50 @@
+#header{
+    background-image: url("img/header.jpeg");
+    background-size: 8%;
+    border-bottom: black solid 2px;
+}
+img{
+    width: 70px;
+}
+h1{
+    margin-top: 0;
+    font-family: helvetica;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+#nav{
+    background-image: url("img/nav.jpeg");
+    background-size: 8%;
+    padding: 25px;
+    border-bottom: black solid 2px;
+}
+#section{
+    border-bottom: black solid 2px;
+    height: 200px;
+}
+footer{
+    text-align: center;
+    height: 50px;
+}
+#wrapper{
+    border: solid 2px black;
+    width: 800px;
+    margin: auto;
+    display: block;
+    background-color: rgba(255, 237, 213, 0.652);
+}
+.lien{
+    font-size: 14px;
+    font-family: helvetica;
+    font-weight: bold;
+    margin-left: 18px;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(165, 204, 255, 0);
+    padding: 19px;
+}
+.lien:hover{
+    background-color: rgba(163, 188, 221, 0.686);
+    transition: all 0.3s;
+}

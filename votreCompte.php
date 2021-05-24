@@ -17,12 +17,14 @@
     echo "<input type=\"submit\" name=\"Btn\" value=\"Soumettre\">";
     echo "</td>";
     echo "</tr>";
-    
+    $database = "Swimming_Pool";
+    $db_handle = mysqli_connect('localhost', 'root', 'root');
+    $db_found = mysqli_select_db($db_handle, $database);
     if($email=='' || $Password==''){
         $error = true;
     }
     if($error=false){
-    for($i = 0; $i < count($logs); $i++){
+        $sql1= "SELECT "   ;
         if($client[$email] == $email && $client[$Password] == $Password){
             $connection = true;
         }
@@ -31,7 +33,7 @@
         }
         else{}
     }
-}
+
     
 
 ?>

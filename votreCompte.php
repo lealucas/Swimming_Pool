@@ -1,4 +1,12 @@
 <?php
+    define('DB_SERVER', 'localhost');
+	define('DB_USER', 'root');
+    define('DB_PASS', '');
+    
+    $database = "Swimming_Pool";
+    $db_handle = mysqli_connect('localhost', 'root', 'root');
+    $db_found = mysqli_select_db($db_handle, $database);
+
     $email = isset($_POST["email"])?$_POST["email"]:"";
     $Password = isset($_POST["Password"])?$_POST["Password"]:"";
     $Btn = isset($_POST["Btn"])?$_POST["Btn"]:""; 
@@ -17,22 +25,19 @@
     echo "<input type=\"submit\" name=\"Btn\" value=\"Soumettre\">";
     echo "</td>";
     echo "</tr>";
-    $database = "Swimming_Pool";
-    $db_handle = mysqli_connect('localhost', 'root', 'root');
-    $db_found = mysqli_select_db($db_handle, $database);
+
     if($email=='' || $Password==''){
         $error = true;
     }
-    if($error=false){
-        $sql1= "SELECT "   ;
-        if($client[$email] == $email && $client[$Password] == $Password){
-            $connection = true;
+    else{
+        if($error=false){
+            $sql1= "SELECT email,password FROM client WHERE email=$email AND password=$Password ";
+            $result = mysqli_query($db_handle, $sql);
+            echo'Bonjour client';
         }
-        elseif ($vendeur[$email]==$email && $vendeur[$Password] == $Password) {
-            $connection = true;
-        }
-        else{}
+        else{echo'Mdp ou mail inconnu';}
     }
+    
 
     
 

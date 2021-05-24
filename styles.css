@@ -1,45 +1,57 @@
-#header{
-    padding-top: 2px;
-    margin-top: auto;
-    background-color: grey;
-    border-bottom: black solid 2px;
-}
-#bvn{
-    margin-left: 100px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 170px;
-    background-color: rgb(92, 169, 92);
-}
-h1{
-    float: left;
-    margin-top: 0;
-    font-family: helvetica;
-    color: black;
-    font-size: 30px;
-    text-align: center;
-}
-#nav{
-    background-image: url("img/nav.jpeg");
-    background-size: 8%;
-    padding: 25px;
-    border-bottom: black solid 2px;
-}
-#section{
-    border-bottom: black solid 2px;
-    height: 200px;
-}
-footer{
-    text-align: center;
-    height: 50px;
-}
 #wrapper{
     border: solid 2px black;
     width: 1800px;
     margin: auto;
     display: block;
 }
-.lien{
+
+
+
+#header{
+    height: 50px;
+    padding-top: 2px;
+    background-color: rgb(69, 69, 69);
+    border-bottom: black solid 2px;
+}
+.lienh{
+    margin: 10px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+#barreheader{
+    margin-top: 14px;
+    margin-left: 150px;
+    color: whitesmoke;
+}
+
+
+
+#nav{
+    background-color: rgba(119, 116, 116, 0.813);
+    border-bottom: black solid 2px;
+    height: 70px;
+}
+h1{
+    margin-left: 100px;
+    float: left;
+    font-family: helvetica;
+    color: black;
+    font-size: 30px;
+}
+#menuNav{
+    float: right;
+    margin-top: 30px;
+    margin-right: 700px;
+}
+#section{
+    border-bottom: black solid 2px;
+    height: 1000px;
+}
+footer{
+    text-align: center;
+    height: 50px;
+}
+.lienn{
     font-size: 14px;
     font-family: helvetica;
     font-weight: bold;
@@ -49,7 +61,8 @@ footer{
     background-color: rgba(165, 204, 255, 0);
     padding: 19px;
 }
-.lien:hover{
-    background-color: rgba(163, 188, 221, 0.686);
+.lienn:hover{
+    background-color: rgb(69, 69, 69);
+    color: whitesmoke;
     transition: all 0.3s;
 }

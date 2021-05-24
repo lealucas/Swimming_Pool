@@ -1,6 +1,6 @@
 #wrapper{
     border: solid 2px black;
-    width: 1800px;
+    width: 1400px;
     margin: auto;
     display: block;
 }
@@ -20,7 +20,7 @@
 }
 #barreheader{
     margin-top: 14px;
-    margin-left: 150px;
+    margin-left: 80px;
     color: whitesmoke;
 }
 
@@ -32,7 +32,7 @@
     height: 70px;
 }
 h1{
-    margin-left: 100px;
+    margin-left: 80px;
     float: left;
     font-family: helvetica;
     color: black;
@@ -41,7 +41,7 @@ h1{
 #menuNav{
     float: right;
     margin-top: 30px;
-    margin-right: 700px;
+    margin-right: 300px;
 }
 #section{
     border-bottom: black solid 2px;

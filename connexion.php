@@ -13,29 +13,29 @@
 
     if (isset($_POST['bouton'])) {
         if ($db_found) {
-            $sql = "SELECT * FROM Client";
             if ($email != "") {
-                $sql .= " WHERE email LIKE '%$email%'";
+            $sql = "SELECT * FROM Client WHERE email LIKE '%$email%'";
                 if ($Mdp != "") {
                 $sql .= " AND Mdp LIKE '%$Mdp%'";
                 }
                 else{
-                    echo"pas de mdp";
                     $bug = true;
                 }
             }
             else{
-                echo"pas de mail";
                 $bug = true;
             }
             $result = mysqli_query($db_handle, $sql);
-            if ($bug !=true) {
+
+            if (mysqli_num_rows($result) == 0 && $bug ==true) {
+            echo "Email ou mot de passe incorrect";
+            } else {
                 while ($data = mysqli_fetch_assoc($result)) {
                     echo "Bonjour " .$data['Prenom']. "<br>";
                 }
-            } 
-            
-        } else {
+            }
+        }
+        else {
             echo "Database not found";
         }
     }

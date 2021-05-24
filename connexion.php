@@ -1,45 +1,43 @@
 <?php
     echo "<meta charset=\"utf-8\">";
     echo "<link rel=\"stylesheet\" type=\"text/css\" >";
-   
+
+    $email = isset($_POST["email"])? $_POST["email"] : "";
+    $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
+    
     $database = "Swimming_Pool";
+
     $db_handle = mysqli_connect('localhost', 'root', 'root');
     $db_found = mysqli_select_db($db_handle, $database);
+    $bug = false;
 
-    $email = isset($_POST["email"])?$_POST["email"]:"";
-    $Password = isset($_POST["Password"])?$_POST["Password"]:"";
-
-
-    if (isset($_POST["bouton"])) {
+    if (isset($_POST['bouton'])) {
         if ($db_found) {
-        $sql = "SELECT * FROM Client";
-        if ($email != "") {
-
-        $sql .= " WHERE email LIKE '%$email%'";
-        if ($Password != "") {
-        $sql .= " AND password LIKE '%$Password%'";
-        }
-        }
-        $result = mysqli_query($db_handle, $sql);
-
-        if (mysqli_num_rows($result) == 0) {
-
-        echo "email ou mdp incorrect";
+            $sql = "SELECT * FROM Client";
+            if ($email != "") {
+                $sql .= " WHERE email LIKE '%$email%'";
+                if ($Mdp != "") {
+                $sql .= " AND Mdp LIKE '%$Mdp%'";
+                }
+                else{
+                    echo"pas de mdp";
+                    $bug = true;
+                }
+            }
+            else{
+                echo"pas de mail";
+                $bug = true;
+            }
+            $result = mysqli_query($db_handle, $sql);
+            if ($bug !=true) {
+                while ($data = mysqli_fetch_assoc($result)) {
+                    echo "Bonjour " .$data['Prenom']. "<br>";
+                }
+            } 
+            
         } else {
-
-        while ($data = mysqli_fetch_assoc($result)) {
-        
-        echo "ID: " . $data['ID'] . "<br>";
-        echo "Nom: " . $data['Nom'] . "<br>";
-        echo "Prenom: " . $data['Prenom'] . "<br>";
-        echo "<br>";
+            echo "Database not found";
         }
-        }
-        } else {
-        echo "Database not found";
-        }
-        }
-        //fermer la connexion
+    }
         mysqli_close($db_handle);
-    
 ?>

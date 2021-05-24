@@ -1,16 +1,22 @@
 #header{
-    background-image: url("img/header.jpeg");
-    background-size: 8%;
+    padding-top: 2px;
+    margin-top: auto;
+    background-color: grey;
     border-bottom: black solid 2px;
 }
-img{
-    width: 70px;
+#bvn{
+    margin-left: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 170px;
+    background-color: rgb(92, 169, 92);
 }
 h1{
+    float: left;
     margin-top: 0;
     font-family: helvetica;
     color: black;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
 }
 #nav{
@@ -29,10 +35,9 @@ footer{
 }
 #wrapper{
     border: solid 2px black;
-    width: 800px;
+    width: 1800px;
     margin: auto;
     display: block;
-    background-color: rgba(255, 237, 213, 0.652);
 }
 .lien{
     font-size: 14px;

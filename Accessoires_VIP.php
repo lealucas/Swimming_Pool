@@ -1,33 +1,23 @@
 <?php
 
-    $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
-    $Description = isset($_POST["Description"])? $_POST["Description"] : "";
-    $Photo = isset($_POST["Photo"])? $_POST["Photo"] : "";
-
     $database = "Swimming_Pool";
 
     $db_handle = mysqli_connect('localhost', 'root', 'root');
     $db_found = mysqli_select_db($db_handle, $database);
 
-    if (isset($_POST["button1"])) {
+
         if ($db_found) {
-            $sql = "SELECT * FROM book";
-                if ($titre != "") {
-                    $sql .= " WHERE Titre LIKE '%$titre%'";
-                    if ($auteur != "") {
-                        $sql .= " AND Auteur LIKE '%$auteur%'";
-                    }
-                }
+            $sql = "SELECT * FROM Article WHERE Categorie LIKE 'VIP'";
             $result = mysqli_query($db_handle, $sql);
 
             if (mysqli_num_rows($result) == 0) {
-                echo "Book not found. <br>";
+                echo "Pas d'article dans cette catégorie <br>";
             } else {
                 echo "<table border='1'>";
                 echo "<tr>";
-                echo "<th>" . "ID" . "</th>";
-                echo "<th>" . "Titre" . "</th>";
-                echo "<th>" . "Auteur" . "</th>";
+                echo "<th>" . "Nom" . "</th>";
+                echo "<th>" . "Description" . "</th>";
+                echo "<th>" . "Photo" . "</th>";
                 echo "<th>" . "Année" . "</th>";
                 echo "<th>" . "Editeur" . "</th>";
                 echo "<th>" . "Couverture" . "</th>";
@@ -35,14 +25,13 @@
                 
                 while ($data = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
-                    echo "<td>" . $data['ID'] . "</td>";
-                    echo "<td>" . $data['Titre'] . "</td>";
-                    echo "<td>" . $data['Auteur'] . "</td>";
+                    echo "<td>" . $data['Nom'] . "</td>";
+                    echo "<td>" . $data['Description'] . "</td>";
+                    echo "<td>" . $data['Phot'] . "</td>";
                     echo "<td>" . $data['Annee'] . "</td>";
                     echo "<td>" . $data['Editeur'] . "</td>";
-                    $image = $data['Couverture'];
-                    echo "<td>" . "<img src='$image' height='120' width='100'>" .
-                    "</td>";
+                    $image = $data['Photo'];
+                    echo "<td>" . "<img src='img/macbook.jpg' height='120' width='200' >" ."</td>";
                     echo "</tr>";
                 }
                 echo "</table>";
@@ -50,6 +39,5 @@
         } else {
             echo "Database not found. <br>";
         }
-    }
     mysqli_close($db_handle);
 ?>

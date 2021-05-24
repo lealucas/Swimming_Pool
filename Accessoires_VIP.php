@@ -2,12 +2,11 @@
 
     $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
     $Description = isset($_POST["Description"])? $_POST["Description"] : "";
-    $annee = isset($_POST["annee"])? $_POST["annee"] : "";
-    $editeur = isset($_POST["editeur"])? $_POST["editeur"] : "";
+    $Photo = isset($_POST["Photo"])? $_POST["Photo"] : "";
 
-    $database = "livre";
+    $database = "Swimming_Pool";
 
-    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_handle = mysqli_connect('localhost', 'root', 'root');
     $db_found = mysqli_select_db($db_handle, $database);
 
     if (isset($_POST["button1"])) {

@@ -1,5 +1,6 @@
 body{
-    background-image: url("img/background_body.jpeg");
+    background-image: url("img/background_bois.jpeg");
+    background-size: 100%;
     font-family: helvetica;
 }
 #wrapper{
@@ -36,7 +37,7 @@ body{
 
 
 #nav{
-    background-color: rgba(119, 116, 116, 0.813);
+    background-color: rgb(119, 116, 116);
     border-bottom: black solid 2px;
     height: 70px;
 }
@@ -44,7 +45,7 @@ h1{
     margin-left: 10px;
     margin-top: 23px;
     float: left;
-    color: black;
+    color: rgb(0, 117, 126);
     font-size: 25px;
 }
 #menuNav{
@@ -73,7 +74,7 @@ h1{
 
 
 #section{
-    background-color: rgba(221, 221, 221, 0.574);
+    background-color: rgba(221, 221, 221, 0.8);
     border-bottom: black solid 2px;
     height: 1000px;
 }

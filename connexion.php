@@ -26,8 +26,8 @@
                 $bug = true;
             }
             $result = mysqli_query($db_handle, $sql);
-
-            if (mysqli_num_rows($result) == 0 && $bug ==true) {
+            
+            if (mysqli_num_rows($result) == 0 || $bug ==true) {
             echo "Email ou mot de passe incorrect";
             } else {
                 while ($data = mysqli_fetch_assoc($result)) {

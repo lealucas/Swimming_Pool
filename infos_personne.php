@@ -17,6 +17,22 @@
     $picto = isset($_POST["picto"])? $_POST["picto"] : "";
     $mail = isset($_POST["mail"])? $_POST["mail"] : "";
     $pswd = isset($_POST["pwd"])? $_POST["pwd"] : "";
+
+    echo $type;
+    echo $nom;
+    echo $prenom;
+    echo $adresse;
+    echo $ville;
+    echo $CP;
+    echo $pays;
+    echo $tel;
+    echo $birth;
+    echo $card;
+    echo $numCarte;
+    echo $dateExp;
+    echo $picto;
+    echo $mail;
+    echo $pswd;
     
     
     $database = "Swimming_Pool";
@@ -24,51 +40,23 @@
     $db_handle = mysqli_connect('localhost', 'root', 'root');
     $db_found = mysqli_select_db($db_handle, $database);
     $bug = false;
-
-    if (isset($_POST['bouton'])) {
-        if ($db_found) {
-            if ($email != "") {
-            $sql = "INSERT INTO Client WHERE email LIKE '%$email%'";
-            $sql2 = "SELECT * FROM Vendeur WHERE email LIKE '%$email%'";
-                if ($Mdp != "") {
-                $sql .= " AND Mdp LIKE '%$Mdp%'";
-                $sql2 .= " AND Mdp LIKE '%$Mdp%'";
-                }
-                else{
-                    $bug = true;
-                }
-            }
-            else{
-                $bug = true;
-            }
-            $result = mysqli_query($db_handle, $sql);
-            $result2 = mysqli_query($db_handle, $sql2);
-            
-            if (mysqli_num_rows($result) == 0 || $bug == true ) {
-            echo "Email ou mot de passe incorrect";
-            } else {
-                while ($data = mysqli_fetch_assoc($result)) {
-                    echo "Bonjour " .$data['Prenom']. "<br>";
-                }
-            }
-        }
-        else {
-            echo "Database not found";
-        }
-    }
-
+    if (isset($_POST['bouffon'])){
     if ($db_found) {
-        if ($type == "c") {
-            $sql = "INSERT INTO Client('ID', 'Nom', 'Prenom', 'Adresse', 'Ville', 'Code Postal', 'Pays', 'Numero de telephone', 'Date de naissance', 'Type de carte', 'Numero de carte', 'Date d'expiration', 'Code de securite', 'email', 'Mdp') 
-            VALUES ('', $nom, $prenom, $adresse, $ville, $CP, $pays, $tel, $birth, $card, $numCarte, $dateExp, $picto, $email, $Mdp)";
+        if ($type == "C") {
+            echo "<br>Test du connard <br>";
+            $sql = "INSERT INTO Client (ID, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, Birthday, Carte, NumCarte, DateExp, Picto, email, Mdp) 
+            VALUES ('', '$nom', '$prenom', '$adresse', '$ville', '$CP', '$pays', '$tel', '$birth', '$card', '$numCarte', '$dateExp', '$picto', '$email', '$pswd')";
+            $result = mysqli_query($db_handle, $sql);
+            echo"encore la";
+            
         }
-        elseif ($type == "v") {
-            # code...
+
+        elseif ($type == "V") {
+            $sql = "INSERT INTO Client('ID', 'Nom', 'Prenom', 'Adresse', 'Ville', 'Code Postal', 'Pays', 'Numero de telephone', 'Date de naissance', 'Type de carte', 'Numero de carte', 'Date d'expiration', 'Code de securite', 'email', 'Mdp') 
+            VALUES ('', $nom, $prenom, $adresse, $ville, $CP, $pays, $tel, $birth, $card, $numCarte, $dateExp, $picto, $email, $m)";
+            $result = mysqli_query($db_handle, $sql);
         }
     }
-    
-
-
-
+}
     mysqli_close($db_handle);
 ?>

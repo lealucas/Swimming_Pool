@@ -95,7 +95,9 @@ h1{
     margin-left: 10px;
     margin-top: 2px;
 }
+/*Liste des catégories*/
 #categorie{
+    float: left;
     width: 250px;
     height: 275px;
     margin-left: 120px;
@@ -104,7 +106,7 @@ h1{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
 }
-
+/*Les titres de chaque sections*/
 .title{
     text-align: center;
     padding-bottom: 5px;
@@ -113,12 +115,13 @@ h1{
     background-color: rgba(0, 0, 0, 0.211);
     border-radius: 10px;
 }
-
+/* Résultat de recherche de filtre*/
 #result{
-    width: 250px;
-    height: 275px;
-    margin-left: 120px;
+    width: 800px;
+    height: 800px;
+    margin-left: 460px;
     margin-top: 50px;
+    margin-bottom: 100px;
     background-color: rgb(255, 255, 255);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;

@@ -16,7 +16,7 @@
                     <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
                     <a href="" class="lienh">S'inscrire</a> | 
                     <a href="" class="lienh">Mon compte</a> | 
-                    <a href="votreCompte.php" class="lienh">Se connecter</a>
+                    <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>
         </div>
 
@@ -29,7 +29,7 @@
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
                 <a href="index.html" class="lienn">Accueil</a>
-                <a href="#" class="lienn">Tout Parcourir</a>
+                <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
                 <a href="votreCompte.php" class="lienn">Votre Compte</a>
@@ -37,41 +37,73 @@
         </div>
 
 
+
+
         <div id="section">
-        <?php
-
-$database = "Swimming_Pool";
-
-$db_handle = mysqli_connect('localhost', 'root', 'root');
-$db_found = mysqli_select_db($db_handle, $database);
 
 
-    if ($db_found) {
-        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'VIP'";
-        $result = mysqli_query($db_handle, $sql);
+            <div id="position">
+                <p id="position_texte">Affichage de la position dans les pages</p>
+            </div>
 
-        if (mysqli_num_rows($result) == 0) {
-            echo "Pas d'article dans cette catégorie <br>";
-        } else {
-            echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
-            echo "</tr>";
+
+            <div id="categorie">
+                <div class="title">
+                    <p>Nos Catégories de produits</p>
+                </div>
+
+
+                <div id="content">
+                    <ul id="choixliste">
+                        <a href="" class="lienc">Meubles et Objets D'art</a><br><br><br>
+                        <a href="Accessoires_VIP.php" class="lienc">Accessoires VIP</a><br><br><br>
+                        <a href="" class="lienc">Matériels Scolaires</a>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="result">
+                <div class="title">
+                    <p>Résultat du filtre : </p> 
+                </div>
+                <div>
+                <?php
+
+                    $database = "Swimming_Pool";
+
+                    $db_handle = mysqli_connect('localhost', 'root', 'root');
+                    $db_found = mysqli_select_db($db_handle, $database);
+
+
+                    if ($db_found) {
+                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'VIP'";
+                        $result = mysqli_query($db_handle, $sql);
+
+                        if (mysqli_num_rows($result) == 0) {
+                            echo "Pas d'article dans cette catégorie <br>";
+                        } else {
+                            echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
+                            echo "</tr>";
             
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $data['Nom'] . "</td>";
-                echo "<td>" . $data['Description'] . "</td>";
-                $image = $data['Photo'];
-                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
-                echo "<td>". $data['Prix']. "</td>";
-                echo "</tr>";
-            }
-            echo "</table>";
-        }
-    } else {
-        echo "Database not found. <br>";
-    }
-mysqli_close($db_handle);
-?>
+                            while ($data = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                                echo "<td>" . $data['Description'] . "</td>";
+                                $image = $data['Photo'];
+                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
+                                echo "<td>". $data['Prix']. "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
+                    } else {
+                        echo "Database not found. <br>";
+                    }
+                mysqli_close($db_handle);
+                ?>
+                </div>
+            </div>
         </div>
 
 

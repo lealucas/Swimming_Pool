@@ -95,6 +95,30 @@ h1{
     margin-left: 10px;
     margin-top: 2px;
 }
+<<<<<<< HEAD
+=======
+#categorie{
+    width: 400px;
+    height: auto;
+    margin-left: 120px;
+    margin-top: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
+    border-radius: 10px;
+    padding-bottom: 7px;
+}
+#title{
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: black solid 1px;
+    background-color: rgba(0, 0, 0, 0.211);
+    border-radius: 10px;
+}
+#choixliste{
+    margin-top: 40px;
+}
+>>>>>>> 6b82b8a131e5db44a641667219d54b76f439c149
 
 
 

@@ -77,7 +77,7 @@ h1{
 #section{
     background-color: rgba(221, 221, 221, 0.8);
     border-bottom: black solid 2px;
-    height: auto;
+    height: 800px;
     padding-top: 2px;
 }
 #position{
@@ -95,7 +95,6 @@ h1{
     margin-left: 10px;
     margin-top: 2px;
 }
-<<<<<<< HEAD
 #categorie{
     width: 400px;
     height: auto;
@@ -117,9 +116,6 @@ h1{
 #choixliste{
     margin-top: 40px;
 }
-=======
-
->>>>>>> 5daadca2045588c91e813c97309cc233c1092a41
 
 
 

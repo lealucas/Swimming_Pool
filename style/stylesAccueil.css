@@ -3,6 +3,7 @@ body{
     background-size: 100%;
     font-family: helvetica;
 }
+
 #wrapper{
     border: solid 2px black;
     width: 1400px;

@@ -18,20 +18,14 @@
                 echo "<th>" . "Nom" . "</th>";
                 echo "<th>" . "Description" . "</th>";
                 echo "<th>" . "Photo" . "</th>";
-                echo "<th>" . "Année" . "</th>";
-                echo "<th>" . "Editeur" . "</th>";
-                echo "<th>" . "Couverture" . "</th>";
                 echo "</tr>";
                 
                 while ($data = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
                     echo "<td>" . $data['Nom'] . "</td>";
                     echo "<td>" . $data['Description'] . "</td>";
-                    echo "<td>" . $data['Phot'] . "</td>";
-                    echo "<td>" . $data['Annee'] . "</td>";
-                    echo "<td>" . $data['Editeur'] . "</td>";
                     $image = $data['Photo'];
-                    echo "<td>" . "<img src='img/macbook.jpg' height='120' width='200' >" ."</td>";
+                    echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
                     echo "</tr>";
                 }
                 echo "</table>";

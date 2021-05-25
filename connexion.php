@@ -54,7 +54,7 @@
 </tr>
 <tr>
 <td>Mot de passe:</td>
-<td><input type="text" name="Mdp"></td>
+<td><input type="password" name="Mdp"></td>
 </tr>
 <tr>
 <td colspan="2" align="center">

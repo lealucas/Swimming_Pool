@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-
     <div id="wrapper">
         <div id="header">
                 <div id="barreheader">
@@ -29,7 +28,7 @@
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
                 <a href="index.html" class="lienn">Accueil</a>
-                <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
+                <a href="#" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
                 <a href="votreCompte.php" class="lienn">Votre Compte</a>
@@ -57,7 +56,7 @@
                     <ul id="choixliste">
                         <a href="Art.php" class="lienc">Meubles et Objets D'art</a><br><br><br>
                         <a href="Accessoires_VIP.php" class="lienc">Accessoires VIP</a><br><br><br>
-                        <a href="Scolaire.php" class="lienc">Matériels Scolaires</a>
+                        <a href="Scolaire" class="lienc">Matériels Scolaires</a>
                     </ul>
                 </div>
             </div>
@@ -77,7 +76,7 @@
 
 
                     if ($db_found) {
-                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'VIP'";
+                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'Scolaire'";
                         $result = mysqli_query($db_handle, $sql);
 
                         if (mysqli_num_rows($result) == 0) {

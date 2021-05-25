@@ -3,36 +3,36 @@
     echo "<link rel=\"stylesheet\" type=\"text/css\" >";
 
     $type = isset($_POST["typePers"])? $_POST["typePers"] : "";
-    $nom = isset($_POST["name"])? $_POST["name"] : "";
-    $prenom = isset($_POST["firstname"])? $_POST["firstname"] : "";
-    $adresse = isset($_POST["adresse"])? $_POST["adresse"] : "";
-    $ville = isset($_POST["ville"])? $_POST["ville"] : "";
-    $CP = isset($_POST["CP"])? $_POST["CP"] : "";
-    $pays = isset($_POST["pays"])? $_POST["pays"] : "";
-    $tel = isset($_POST["tel"])? $_POST["tel"] : "";
-    $birth = isset($_POST["birthday"])? $_POST["birthday"] : "";
-    $card = isset($_POST["cb"])? $_POST["cb"] : "";
-    $numCarte = isset($_POST["numeCarte"])? $_POST["numCarte"] : "";
-    $dateExp = isset($_POST["dateExp"])? $_POST["dateExp"] : "";
-    $picto = isset($_POST["picto"])? $_POST["picto"] : "";
-    $mail = isset($_POST["mail"])? $_POST["mail"] : "";
-    $pswd = isset($_POST["pwd"])? $_POST["pwd"] : "";
+    $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
+    $Prenom = isset($_POST["Prenom"])? $_POST["Prenom"] : "";
+    $Adresse = isset($_POST["Adresse"])? $_POST["Adresse"] : "";
+    $Ville = isset($_POST["Ville"])? $_POST["Ville"] : "";
+    $CodePostal = isset($_POST["CodePostal"])? $_POST["CodePostal"] : "";
+    $Pays = isset($_POST["Pays"])? $_POST["Pays"] : "";
+    $Tel = isset($_POST["Tel"])? $_POST["Tel"] : "";
+    $Birthday = isset($_POST["Birthday"])? $_POST["Birthday"] : "";
+    $Carte = isset($_POST["Carte"])? $_POST["Carte"] : "";
+    $NumCarte = isset($_POST["NumCarte"])? $_POST["NumCarte"] : "";
+    $DateExp = isset($_POST["DateExp"])? $_POST["DateExp"] : "";
+    $Picto = isset($_POST["Picto"])? $_POST["Picto"] : "";
+    $email = isset($_POST["email"])? $_POST["email"] : "";
+    $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
 
     echo $type;
-    echo $nom;
-    echo $prenom;
-    echo $adresse;
-    echo $ville;
-    echo $CP;
-    echo $pays;
-    echo $tel;
-    echo $birth;
-    echo $card;
-    echo $numCarte;
-    echo $dateExp;
-    echo $picto;
-    echo $mail;
-    echo $pswd;
+    echo $Nom;
+    echo $Prenom;
+    echo $Adresse;
+    echo $Ville;
+    echo $CodePostal;
+    echo $Pays;
+    echo $Tel;
+    echo $Birthday;
+    echo $Carte;
+    echo $NumCarte;
+    echo $DateExp;
+    echo $Picto;
+    echo $email;
+    echo $Mdp;
     
     
     $database = "Swimming_Pool";
@@ -40,20 +40,24 @@
     $db_handle = mysqli_connect('localhost', 'root', 'root');
     $db_found = mysqli_select_db($db_handle, $database);
     $bug = false;
-    if (isset($_POST['bouffon'])){
+    if (isset($_POST["bouffon"])){
     if ($db_found) {
         if ($type == "C") {
             echo "<br>Test du connard <br>";
-            $sql = "INSERT INTO Client (ID, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, Birthday, Carte, NumCarte, DateExp, Picto, email, Mdp) 
-            VALUES ('', '$nom', '$prenom', '$adresse', '$ville', '$CP', '$pays', '$tel', '$birth', '$card', '$numCarte', '$dateExp', '$picto', '$email', '$pswd')";
+            $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
             $result = mysqli_query($db_handle, $sql);
             echo"encore la";
+            $sql ="SELECT * FROM Client";
+            $result = mysqli_query($db_handle,$sql);
+            while($data = mysqli_fetch_assoc($result)){
+                echo "Nom :".$data['Nom']. '<br>';
+            }
             
         }
 
         elseif ($type == "V") {
-            $sql = "INSERT INTO Client('ID', 'Nom', 'Prenom', 'Adresse', 'Ville', 'Code Postal', 'Pays', 'Numero de telephone', 'Date de naissance', 'Type de carte', 'Numero de carte', 'Date d'expiration', 'Code de securite', 'email', 'Mdp') 
-            VALUES ('', $nom, $prenom, $adresse, $ville, $CP, $pays, $tel, $birth, $card, $numCarte, $dateExp, $picto, $email, $m)";
+            $sql = "INSERT INTO Client (ID, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, Birthday, Carte, NumCarte, DateExp, Picto, email, Mdp) 
+            VALUES ('', '$Nom', '$Prenom', '$Adresse', '$Ville', '$CodePostal', '$Pays', '$Tel', '$Birthday', '$Carte', '$NumCarte', '$DateExp', '$Picto', '$email', '$Mdp')";
             $result = mysqli_query($db_handle, $sql);
         }
     }

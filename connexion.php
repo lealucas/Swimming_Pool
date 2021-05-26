@@ -93,7 +93,10 @@
             }
             $result = mysqli_query($db_handle, $sql);
             $result2 = mysqli_query($db_handle, $sql2);
-            
+            $number=mysqli_num_rows($result);
+            $number2=mysqli_num_rows($result2);
+            echo "$number";
+            echo "$number2";
             if(mysqli_num_rows($result) != 0){
                 $data = mysqli_fetch_assoc($result);
                 echo"<h3 align='center'>";

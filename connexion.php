@@ -94,20 +94,29 @@
             $result = mysqli_query($db_handle, $sql);
             $result2 = mysqli_query($db_handle, $sql2);
             
-            if (mysqli_num_rows($result) == 0 || $bug == true ) {
-            echo "Email ou mot de passe incorrect";
-            } else {
-                $data = mysqli_fetch_assoc($result);
+            if($bug==true){
+                echo "Email ou mot de passe incorrect. Veuillez réessayer";
+            }
+            else{
+                if(mysqli_num_rows($result) != 0){
+                    $data = mysqli_fetch_assoc($result);
                     echo"<h3 align='center'>";
                     echo"Bonjour ";
                     echo"<a href='index.php' align='center'>".$data['Prenom']."</a></h3>";
                     session_start();
                     $_SESSION['Prenom'] = $data['Prenom'];
+                }
+                elseif (mysqli_num_rows($result2) != 0) {
+                    $data = mysqli_fetch_assoc($result2);
+                    echo"<h3 align='center'>";
+                    echo"Bonjour ";
+                    echo"<a href='index.php' align='center'>".$data['Prenom']."</a></h3>";
+                    session_start();
+                    $_SESSION['Prenom'] = $data['Prenom'];
+                }
             }
         }
-        else {
-            echo "Database not found";
-        }
+        else {echo "Database not found";}
     }
     $bizare = "blabla";
         mysqli_close($db_handle);

@@ -237,7 +237,7 @@
                         echo "</tr>";
                     echo"</table>";
                 }
-                else{echo "L'email joint est déjà relatif à un membre de notre base de données. Veuillez en saisir un nouveau s'il vous plait.";}
+                else{echo "L'email joint est déjà relatif à un membre de notre base de données. Veuillez en saisir un nouveau s'il vous plait. <a href='inscription.html'> Cliquez sur ce lien pour accéder au formulaire</a>";}
             }
         }
     }

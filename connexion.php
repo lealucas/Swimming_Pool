@@ -100,7 +100,7 @@
                 $data = mysqli_fetch_assoc($result);
                 echo"<h3 align='center'>";
                 echo"Bonjour ";
-                echo"<a href='index.php' align='center'>".$data['Prenom']."</a></h3>";
+                echo"<a href='index_session.php' align='center'>".$data['Prenom']."</a></h3>";
                 session_start();
                 $_SESSION['Prenom'] = $data['Prenom'];
             }
@@ -108,7 +108,7 @@
                 $data = mysqli_fetch_assoc($result2);
                 echo"<h3 align='center'>";
                 echo"Bonjour ";
-                echo"<a href='index.php' align='center'>".$data['Prenom']."</a></h3>";
+                echo"<a href='index_session.php' align='center'>".$data['Prenom']."</a></h3>";
                 session_start();
                 $_SESSION['Prenom'] = $data['Prenom'];
             }

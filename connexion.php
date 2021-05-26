@@ -13,11 +13,10 @@
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
-                    Bienvenue : (Identifiant)
-                    <a href="index.php" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
+                    <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
-                    <a href="" class="lienh">Mon compte</a> | 
-                    <a href="#" class="lienh">Se connecter</a>
+                    <a href="votreCompte.html" class="lienh">Mon compte</a> | 
+                    <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>
         </div>
 
@@ -33,7 +32,7 @@
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <a href="votreCompte.html" class="lienn">Votre Compte</a>
             </ul>
         </div>
 

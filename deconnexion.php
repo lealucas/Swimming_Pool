@@ -16,10 +16,10 @@
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
-                    Bienvenue : (Identifiant)
+                    Bienvenue : <?php echo $_SESSION['Prenom']; ?>
                     <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
-                    <a href="" class="lienh">Mon compte</a> | 
+                    <a href="votreCompte.html" class="lienh">Mon compte</a> | 
                     <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>
         </div>
@@ -35,7 +35,7 @@
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
-                <a href="connexion.php" class="lienn">Votre Compte</a>
+                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
             </ul>
         </div>
 

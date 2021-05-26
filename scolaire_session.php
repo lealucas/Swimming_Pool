@@ -17,7 +17,7 @@ session_start();
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
-                    <a href="votreCompte.html" class="lienh" STYLE="padding:0 0 0 900px">Mon compte</a> | 
+                    <a href="compte_vendeur.php" class="lienh" STYLE="padding:0 0 0 900px">Mon compte</a> | 
                     <a href="deconnexion.php" class="lienh">Se déconnecter</a>
                 </div>
         </div>
@@ -34,7 +34,7 @@ session_start();
                 <a href="#" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="votreCompte.php" class="lienn">Votre Compte</a>
+                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
             </ul>
         </div>
 

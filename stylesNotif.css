@@ -25,7 +25,7 @@ body{
     color: whitesmoke;
 }
 .lienh:hover{
-    color: black;
+    color: rgb(0, 117, 126);
     transition: all 0.3s;
 }
 #barreheader{

@@ -66,22 +66,6 @@
     $email = isset($_POST["email"])? $_POST["email"] : "";
     $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
 
-    /*echo $type;
-    echo $Nom;
-    echo $Prenom;
-    echo $Adresse;
-    echo $Ville;
-    echo $CodePostal;
-    echo $Pays;
-    echo $Tel;
-    echo $Birthday;
-    echo $Carte;
-    echo $NumCarte;
-    echo $DateExp;
-    echo $Picto;
-    echo $email;
-    echo $Mdp;*/
-    
     
     $database = "Swimming_Pool";
 
@@ -89,93 +73,162 @@
     $db_found = mysqli_select_db($db_handle, $database);
     $bug = false;
     if (isset($_POST["bouffon"])){
-    if ($db_found) {
-        if ($type == "C") {
-            $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
-            $result = mysqli_query($db_handle, $sql);
-            $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
-            $result = mysqli_query($db_handle,$sql);
-            $data = mysqli_fetch_assoc($result);
+        if ($db_found) {
+            if ($type == "C") {
+                $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
+                $result = mysqli_query($db_handle, $sql);
+                $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
+                $result = mysqli_query($db_handle,$sql);
+                $data = mysqli_fetch_assoc($result);
                 echo"Les informations suivantes ont bien été enregistrées : <br>";
-            echo "<table border='3'>";
-                echo"<td colspan='2' align='center'>";
-                    echo"| Information Personnelles |";
-                echo"</td>";
+                echo "<table border='3'>";
+                    echo"<td colspan='2' align='center'>";
+                        echo"| Information Personnelles |";
+                    echo"</td>";
 
-                echo "<tr>";
-                    echo "<td>" . "Nom : " . "</td>";
-                    echo "<td>" . $data['Nom'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Prenom : " . "</td>";
-                    echo "<td>" . $data['Prenom'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Adresse : " . "</td>";
-                    echo "<td>" . $data['Adresse'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Ville : " . "</td>";
-                    echo "<td>" . $data['Ville'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Code Postal : " . "</td>";
-                    echo "<td>" . $data['CodePostal'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Pays : " . "</td>";
-                    echo "<td>" . $data['Pays'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Téléphone" . "</td>";
-                    echo "<td>" . $data['Tel'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Date de naissance : " . "</td>";
-                    echo "<td>" . $data['Birthday'] . "</td>";
-                echo "</tr>";
-                echo"<td colspan=\"2\" align=\"center\">";
-                    echo"| Information bancaires|";
-                echo"</td>";
-                echo "<tr>";
-                    echo "<td>" . "Carte : " . "</td>";
-                    echo "<td>" . $data['Carte'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Numéros de carte : " . "</td>";
-                    echo "<td>" . "*****************" . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Date d'éxpiration" . "</td>";
-                    echo "<td>" . $data['DateExp'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Pictogramme : " . "</td>";
-                    echo "<td>" . "************" . "</td>";
-                echo "</tr>";
-                echo"<td colspan=\"2\" align=\"center\">";
-                    echo"| Information Personnelles |";
-                echo"</td>";
-                echo "<tr>";
-                    echo "<td>" . "E-mail : " . "</td>";
-                    echo "<td>" . $data['email'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<td>" . "Mot de passe : " . "</td>";
-                    echo "<td>" . "*************" . "</td>";
-                echo "</tr>";
-            echo"</table>";
+                    echo "<tr>";
+                        echo "<td>" . "Nom : " . "</td>";
+                        echo "<td>" . $data['Nom'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Prenom : " . "</td>";
+                        echo "<td>" . $data['Prenom'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Adresse : " . "</td>";
+                        echo "<td>" . $data['Adresse'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Ville : " . "</td>";
+                        echo "<td>" . $data['Ville'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Code Postal : " . "</td>";
+                        echo "<td>" . $data['CodePostal'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Pays : " . "</td>";
+                        echo "<td>" . $data['Pays'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Téléphone" . "</td>";
+                        echo "<td>" . $data['Tel'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Date de naissance : " . "</td>";
+                        echo "<td>" . $data['Birthday'] . "</td>";
+                    echo "</tr>";
+                    echo"<td colspan=\"2\" align=\"center\">";
+                        echo"| Information bancaires|";
+                    echo"</td>";
+                    echo "<tr>";
+                        echo "<td>" . "Carte : " . "</td>";
+                        echo "<td>" . $data['Carte'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Numéros de carte : " . "</td>";
+                        echo "<td>" . "*****************" . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Date d'éxpiration" . "</td>";
+                        echo "<td>" . $data['DateExp'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Pictogramme : " . "</td>";
+                        echo "<td>" . "************" . "</td>";
+                    echo "</tr>";
+                    echo"<td colspan=\"2\" align=\"center\">";
+                        echo"| Information Personnelles |";
+                    echo"</td>";
+                    echo "<tr>";
+                        echo "<td>" . "E-mail : " . "</td>";
+                        echo "<td>" . $data['email'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Mot de passe : " . "</td>";
+                        echo "<td>" . "*************" . "</td>";
+                    echo "</tr>";
+                echo"</table>";
             }
-            
-        }
 
-        elseif ($type == "V") {
-            $sql = "INSERT INTO Client (ID, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, Birthday, Carte, NumCarte, DateExp, Picto, email, Mdp) 
-            VALUES ('', '$Nom', '$Prenom', '$Adresse', '$Ville', '$CodePostal', '$Pays', '$Tel', '$Birthday', '$Carte', '$NumCarte', '$DateExp', '$Picto', '$email', '$Mdp')";
-            $result = mysqli_query($db_handle, $sql);
+            elseif ($type == "V") {
+                $sql = "INSERT INTO Vendeur (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp,Cagnotte) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp','0')";
+                $result = mysqli_query($db_handle, $sql);
+                $sql ="SELECT * FROM Vendeur WHERE Nom LIKE '%$Nom%'";
+                $result = mysqli_query($db_handle,$sql);
+                $data = mysqli_fetch_assoc($result);
+                    echo"Les informations suivantes ont bien été enregistrées : <br>";
+                echo "<table border='3'>";
+                    echo"<td colspan='2' align='center'>";
+                        echo"| Information Personnelles |";
+                    echo"</td>";
+    
+                    echo "<tr>";
+                        echo "<td>" . "Nom : " . "</td>";
+                        echo "<td>" . $data['Nom'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Prenom : " . "</td>";
+                        echo "<td>" . $data['Prenom'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Adresse : " . "</td>";
+                        echo "<td>" . $data['Adresse'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Ville : " . "</td>";
+                        echo "<td>" . $data['Ville'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Code Postal : " . "</td>";
+                        echo "<td>" . $data['CodePostal'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Pays : " . "</td>";
+                        echo "<td>" . $data['Pays'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Téléphone : " . "</td>";
+                        echo "<td>" . $data['Tel'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Date de naissance : " . "</td>";
+                        echo "<td>" . $data['Birthday'] . "</td>";
+                    echo "</tr>";
+                    echo"<td colspan=\"2\" align=\"center\">";
+                        echo"| Information bancaires|";
+                    echo"</td>";
+                    echo "<tr>";
+                        echo "<td>" . "Carte : " . "</td>";
+                        echo "<td>" . $data['Carte'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Numéros de carte : " . "</td>";
+                        echo "<td>" . "*****************" . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Date d'éxpiration" . "</td>";
+                        echo "<td>" . $data['DateExp'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Pictogramme : " . "</td>";
+                        echo "<td>" . "************" . "</td>";
+                    echo "</tr>";
+                    echo"<td colspan=\"2\" align=\"center\">";
+                        echo"| Information Personnelles |";
+                    echo"</td>";
+                    echo "<tr>";
+                        echo "<td>" . "E-mail : " . "</td>";
+                        echo "<td>" . $data['email'] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                        echo "<td>" . "Mot de passe : " . "</td>";
+                        echo "<td>" . "*************" . "</td>";
+                    echo "</tr>";
+                echo"</table>";
+            }
         }
     }
-
 
     mysqli_close($db_handle);
 ?>

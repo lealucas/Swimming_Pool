@@ -44,10 +44,11 @@ session_start();
 
         <div id="section">
             <div id="position">
-                <a href="produits_vente.php" class="lienn">Vos Produits en vente</a>
-                <a href="formulaire_vente.php" class="lienn">Mettre en vente un produit</a>
-                <a href="cagnotte.php" class="lienn">Ma cagnotte</a>
+                <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
+                <a href="formulaire_vente.php" class="lienC">Mettre en vente un produit</a>
+                <a href="cagnotte.php" class="lienC">Ma cagnotte</a>
             </div>
+        </div>
 
 
         

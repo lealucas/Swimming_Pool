@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesAccueil.css" >
+    <link rel="stylesheet" href="stylesCompteVendeur.css" >
     <title>Document</title>
 </head>
 <body>
@@ -44,7 +44,9 @@ session_start();
 
         <div id="section">
             <div id="position">
-                <p id="position_texte">Que voulez-vous consulter ?</p>
+                <a href="produits_vente.php" class="lienn">Vos Produits en vente</a>
+                <a href="formulaire_vente.php" class="lienn">Mettre en vente un produit</a>
+                <a href="cagnotte.php" class="lienn">Ma cagnotte</a>
             </div>
 
 

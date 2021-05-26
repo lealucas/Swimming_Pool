@@ -50,11 +50,11 @@
                     <table>
                         <tr>
                             <td>Email:</td>
-                            <td><input type="text" name="email"></td>
+                            <td><input type="text" required name="email"></td>
                         </tr>
                         <tr>
                             <td>Mot de passe:</td>
-                            <td><input type="password" name="Mdp"></td>
+                            <td><input type="password" required name="Mdp"></td>
                         </tr>
                         <tr>
                             <td colspan="2" align="center">
@@ -80,9 +80,10 @@
                             if ($email != "") {
                                 $sql = "SELECT * FROM Client WHERE email LIKE '%$email%'";
                                 $sql2 = "SELECT * FROM Vendeur WHERE email LIKE '%$email%'";
+                                $len =strlen($Mdp);
                                 if ($Mdp != "") {
-                                    $sql .= " AND Mdp LIKE '%$Mdp%'";
-                                    $sql2 .= " AND Mdp LIKE '%$Mdp%'";
+                                    $sql .= " AND Mdp LIKE '%$Mdp%' AND LENGTH(Mdp) LIKE $len";
+                                    $sql2 .= " AND Mdp LIKE '%$Mdp%' AND LENGTH(Mdp) LIKE $len";
                                 }
                                 else{
                                     $bug = true;

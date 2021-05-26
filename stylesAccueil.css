@@ -132,10 +132,16 @@ img{
 	transform: rotate(10deg) scale(1.25);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
+    -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }
 img:hover{
     -webkit-transform: rotate(0) scale(1);
 	transform: rotate(0) scale(1);
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0);
 }
 
 .title{

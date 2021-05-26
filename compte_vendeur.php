@@ -33,43 +33,22 @@ session_start();
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <a href="#" class="lienn">Accueil</a>
+                <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <a href="#" class="lienn">Votre Compte</a>
             </ul>
         </div>
 
 
-
         <div id="section">
             <div id="position">
-                <p id="position_texte">Affichage de la position dans les pages</p>
+                <p id="position_texte">Que voulez-vous consulter ?</p>
             </div>
 
-            <!-- Selection Journalière -->
-            <form action="daySelection.php" method="post"></form>
-            <div id="daySelection">
-                <div class="title">
-                    <p>Notre Sélection De Produits Quotidienne</p>
-                </div>
-                <div class="content">
-                    <img class="content" src="" alt="">
-                    
-                </div>
-            </div>
 
-            <!-- Les bests Sellers -->
-            <div id="bestSellers">
-                <div class="title">
-                    <p>Les Best Sellers de cette Semaine</p>
-                </div>
-                <div class="content">
-
-                </div>
-            </div>
-        </div>
+        
 
 
 

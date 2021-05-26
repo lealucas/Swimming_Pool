@@ -95,8 +95,9 @@
             $result = mysqli_query($db_handle, $sql);
             $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
             $result = mysqli_query($db_handle,$sql);
-            echo"Les informations suivantes ont bien été enregistrées : <br>";
-            echo "<table>";
+            while($data = mysqli_fetch_assoc($result)){
+                echo"Les informations suivantes ont bien été enregistrées : <br>";
+            echo "<table border='3'>";
                 echo"<td colspan='2' align='center'>";
                     echo"| Information Personnelles |";
                 echo"</td>";
@@ -164,13 +165,14 @@
                     echo "<td>" . "*************" . "</td>";
                 echo "</tr>";
             echo"</table>";
+            }
+            
         }
 
         elseif ($type == "V") {
             $sql = "INSERT INTO Client (ID, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, Birthday, Carte, NumCarte, DateExp, Picto, email, Mdp) 
             VALUES ('', '$Nom', '$Prenom', '$Adresse', '$Ville', '$CodePostal', '$Pays', '$Tel', '$Birthday', '$Carte', '$NumCarte', '$DateExp', '$Picto', '$email', '$Mdp')";
             $result = mysqli_query($db_handle, $sql);
-
         }
     }
 }

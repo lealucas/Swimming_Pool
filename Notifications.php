@@ -48,6 +48,7 @@ session_start();
                     <p>Nos Catégories de produits</p>
                 </div>
                 <div id="content">
+                    <form action="traitement_notif_session.php" method="post">
                     <table>
                         <tr>
                             <td rowspan="3">Tranche de prix : </td>
@@ -67,6 +68,7 @@ session_start();
                         <tr><td><input type="radio" name="video" value="non" id="">Non</td></tr>
                         <td colspan="2" align="center"><input type="submit" name="oui" value="Envoyer" ></td>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>

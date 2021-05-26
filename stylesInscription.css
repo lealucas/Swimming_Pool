@@ -108,7 +108,7 @@ table{
     text-align: center;
     padding-bottom: 5px;
     padding-top: 5px;
-    border-bottom: black solid 1px;
+    border-bottom: black solid 2px;
     background-color: rgba(0, 0, 0, 0.211);
     border-radius: 10px;
 }

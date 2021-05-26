@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +19,9 @@
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
-                    Bienvenue : (Identifiant)
-                    <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
-                    <a href="inscription.html" class="lienh">S'inscrire</a> | 
-                    <a href="" class="lienh">Mon compte</a> | 
-                    <a href="connexion.php" class="lienh">Se connecter</a>
+                    Bienvenue : <?php echo $_SESSION['Prenom']; ?>
+                    <a href="votreCompte.html" class="lienh" STYLE="padding:0 0 0 900px">Mon compte</a> | 
+                    <a href="deconnexion.php" class="lienh">Se déconnecter</a>
                 </div>
         </div>
 
@@ -30,9 +34,9 @@
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
                 <a href="#" class="lienn">Accueil</a>
-                <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
-                <a href="Notifications.html" class="lienn">Notifications</a>
-                <a href="Panier.html" class="lienn">Panier</a>
+                <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
+                <a href="Notifications.php" class="lienn">Notifications</a>
+                <a href="Panier.php" class="lienn">Panier</a>
                 <a href="connexion.php" class="lienn">Votre Compte</a>
             </ul>
         </div>
@@ -48,13 +52,10 @@
             <form action="daySelection.php" method="post"></form>
             <div id="daySelection">
                 <div class="title">
-                    <p>Notre Sélection De Produits Hebdomadaire</p>
+                    <p>Notre Sélection De Produits Quotidienne</p>
                 </div>
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide"></div>
-
-                    </div>
+                <div class="content">
+                    <img class="content" src="" alt="">
                     
                 </div>
             </div>
@@ -62,13 +63,9 @@
             <!-- Les bests Sellers -->
             <div id="bestSellers">
                 <div class="title">
-                    <p>Les Best Sellers</p>
+                    <p>Les Best Sellers de cette Semaine</p>
                 </div>
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide"></div>
-
-                    </div>
+                <div class="content">
 
                 </div>
             </div>

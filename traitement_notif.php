@@ -41,6 +41,7 @@
             </div>
             <div id="categorie">
                 <div id="title">
+                    
                     <p>Nos Catégories de produits</p>
                 </div>
                 <div id="content">
@@ -63,6 +64,56 @@
                         <tr><td><input type="radio" name="video" value="non" id="">Non</td></tr>
                         <td colspan="2" align="center"><input type="submit" name="oui" value="Envoyer" ></td>
                     </table>
+                </div>
+            </div>
+                <div id="content">
+                    <?php
+
+                    $database = "Swimming_Pool";
+
+                    $db_handle = mysqli_connect('localhost', 'root', 'root');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    $prixMin = isset($_POST["prixMin"])? $_POST["prixMin"] : "";
+                    $prixMax = isset($_POST["prixMax"])? $_POST["prixMax"] : "";
+                    $typeProduit = isset($_POST["typeProduit"])? $_POST["typeProduit"] : "";
+                    $video = isset($_POST["video"])? $_POST["video"] : "";
+
+                    if ($db_found) {
+                        if($_POST['oui']){
+                            if($prixMin !="" && $prixMax !=""){
+                                $sql = "SELECT * FROM Article WHERE Prix IN ($prixMin,$prixMax)";
+                            }
+                            if($typeProduit !=""){
+                                $sql .= "AND Categorie LIKE $typeProduit";
+                            }
+
+                            $result = mysqli_query($db_handle, $sql);
+
+                            if (mysqli_num_rows($result) == 0) {
+                                echo "Pas d'article dans cette catégorie <br>";
+                            } else {
+                                echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
+                                echo "</tr>";
+
+                            while ($data = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                                echo "<td>" . $data['Description'] . "</td>";
+                                $image = $data['Photo'];
+                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
+                                echo "<td>". $data['Prix']. "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
+                        }
+                    } else {
+                        echo "Database not found. <br>";
+                    }       
+                    mysqli_close($db_handle);
+                ?>
+            </div> 
+
                 </div>
             </div>
         </div>

@@ -15,9 +15,9 @@
                 <div id="barreheader">
                     Bienvenue : (Identifiant)
                     <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
-                    <a href="" class="lienh">S'inscrire</a> | 
-                    <a href="" class="lienh">Mon compte</a> | 
-                    <a href="votreCompte.html" class="lienh">Se connecter</a>
+                    <!--<a href="" class="lienh">S'inscrire</a> | -->
+                    <a href="votreCompte.html" class="lienh">Mon compte</a> | 
+                    <a href="deconnexion.php" class="lienh">Se déconnecter</a>
                 </div>
         </div>
 

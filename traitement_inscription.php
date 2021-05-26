@@ -175,7 +175,7 @@
             $result = mysqli_query($db_handle, $sql);
         }
     }
-}
+
     mysqli_close($db_handle);
 ?>
 

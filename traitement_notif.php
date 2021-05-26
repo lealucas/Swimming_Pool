@@ -70,6 +70,10 @@
                 </div>
             </div>
             <div id="result">
+            <div class="title">
+                    <p>Résultat du filtre : </p> 
+                </div>
+                <div>
                     <?php
 
                     $database = "Swimming_Pool";
@@ -113,6 +117,7 @@
                     }       
                     mysqli_close($db_handle);
                 ?>
+                </div>
                 </div>
             </div> 
 

@@ -43,13 +43,14 @@
                 <div id="title">
                     <p>Nos Catégories de produits</p>
                 </div>
+                <form action="traitement_notif.php" method="post">
                 <div id="content">
                     <table>
                         <tr>
                             <td rowspan="3">Tranche de prix : </td>
                         </tr>
-                        <tr><td> <input type="number" name="prixMin" id="" placeholder="Prix Minimum...">€</td></tr>
-                        <tr><td> <input type="number" name="prixMax" id="" placeholder="Prix Maximum...">€</td></tr>
+                        <tr><td> <input type="number" name="prixMin" id="" required placeholder="Prix Minimum...">€</td></tr>
+                        <tr><td> <input type="number" name="prixMax" id="" required placeholder="Prix Maximum...">€</td></tr>
                         <tr>
                             <td rowspan="4">Catégorie : </td>
                         </tr>
@@ -63,6 +64,7 @@
                         <tr><td><input type="radio" name="video" value="non" id="">Non</td></tr>
                         <td colspan="2" align="center"><input type="submit" name="oui" value="Envoyer" ></td>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>

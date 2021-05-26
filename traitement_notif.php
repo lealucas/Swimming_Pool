@@ -8,18 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="wrapper">
 
+    <div id="wrapper">
+        <!-- Header -->
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : (Identifiant)
                     <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
-                    <a href="votreCompte.html" class="lienh">Mon compte</a> | 
+                    <a href="" class="lienh">Mon compte</a> | 
                     <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>
-
         </div>
+
+
+        <!-- Menu de navigation -->
         <div id="nav">
             <h1>ECE MarketPlace</h1>
             
@@ -29,10 +32,9 @@
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="#" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
-                <a href="votreCompte.php" class="lienn">Votre Compte</a>
+                <a href="connexion.php" class="lienn">Votre Compte</a>
             </ul>
         </div>
-
 
 
         <div id="section">
@@ -41,16 +43,16 @@
             </div>
             <div id="categorie">
                 <div id="title">
-                    
                     <p>Nos Catégories de produits</p>
                 </div>
+                <form action="traitement_notif.php" method="post">
                 <div id="content">
                     <table>
                         <tr>
                             <td rowspan="3">Tranche de prix : </td>
                         </tr>
-                        <tr><td> <input type="number" name="prixMin" id="" placeholder="Prix Minimum...">€</td></tr>
-                        <tr><td> <input type="number" name="prixMax" id="" placeholder="Prix Maximum...">€</td></tr>
+                        <tr><td> <input type="number" name="prixMin" id="" required placeholder="Prix Minimum...">€</td></tr>
+                        <tr><td> <input type="number" name="prixMax" id="" required placeholder="Prix Maximum...">€</td></tr>
                         <tr>
                             <td rowspan="4">Catégorie : </td>
                         </tr>
@@ -64,9 +66,10 @@
                         <tr><td><input type="radio" name="video" value="non" id="">Non</td></tr>
                         <td colspan="2" align="center"><input type="submit" name="oui" value="Envoyer" ></td>
                     </table>
+                    </form>
                 </div>
             </div>
-                <div id="content">
+            <div id="result">
                     <?php
 
                     $database = "Swimming_Pool";
@@ -80,11 +83,9 @@
 
                     if ($db_found) {
                         if($_POST['oui']){
-                            if($prixMin !="" && $prixMax !=""){
-                                $sql = "SELECT * FROM Article WHERE Prix IN ($prixMin,$prixMax)";
-                            }
+                            $sql = "SELECT * FROM Article WHERE Prix < '$prixMax'";
                             if($typeProduit !=""){
-                                $sql .= "AND Categorie LIKE $typeProduit";
+                                $sql .= "AND Categorie LIKE '$typeProduit'";
                             }
 
                             $result = mysqli_query($db_handle, $sql);
@@ -112,17 +113,18 @@
                     }       
                     mysqli_close($db_handle);
                 ?>
+                </div>
             </div> 
 
-                </div>
+
             </div>
         </div>
 
 
-
+        <!-- Footer -->
         <footer>
             <small>
-                Copyright &copy; 2021, Sezille_Lucas_-_Industry <br>
+                Copyright &copy; 2021, Sezille_Lucas_-_Industry<br>
                 <a href="mailto:sezille_lucas@gmail.com">sezille_lucas@gmail.com</a>
             </small>
         </footer>

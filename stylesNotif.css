@@ -66,6 +66,7 @@ h1{
 }
 .lienn:hover{
     background-color: rgb(69, 69, 69);
+    border-radius: 10px;
     color: whitesmoke;
     transition: all 0.3s;
 }

@@ -19,7 +19,7 @@ session_start();
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
-                    <a href="votreCompte.html" class="lienh" STYLE="padding:0 0 0 990px">Mon compte</a> | 
+                    <a href="votreCompte.html" class="lienh" STYLE="padding:0 0 0 900px">Mon compte</a> | 
                     <a href="connexion.php" class="lienh">Se déconnecter</a>
                 </div>
         </div>
@@ -45,7 +45,7 @@ session_start();
                 <p id="position_texte">Affichage de la position dans les pages</p>
             </div>
             <div id="categorie">
-                <div id="title">
+                <div class="title">
                     <p>Nos Catégories de produits</p>
                 </div>
                 <form action="traitement_notif_session.php" method="post">

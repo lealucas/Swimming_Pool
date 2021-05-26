@@ -97,18 +97,19 @@
             if (mysqli_num_rows($result) == 0 || $bug == true ) {
             echo "Email ou mot de passe incorrect";
             } else {
-                while ($data = mysqli_fetch_assoc($result)) {
+                $data = mysqli_fetch_assoc($result);
                     echo"<h3 align='center'>";
                     echo"Bonjour ";
-                    echo$data['Prenom'];
-                    echo"</h3>";
-                }
+                    echo"<a href='index.php' align='center'>".$data['Prenom']."</a></h3>";
+                    session_start();
+                    $_SESSION['Prenom'] = $data['Prenom'];
             }
         }
         else {
             echo "Database not found";
         }
     }
+    $bizare = "blabla";
         mysqli_close($db_handle);
 ?>
             </div>

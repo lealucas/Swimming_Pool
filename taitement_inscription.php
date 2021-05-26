@@ -1,4 +1,52 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesInscription.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="wrapper">
+        <!-- Header -->
+        <div id="header">
+                <div id="barreheader">
+                    Bienvenue : (Identifiant)
+                    <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
+                    <a href="inscription.html" class="lienh">S'inscrire</a> | 
+                    <a href="" class="lienh">Mon compte</a> | 
+                    <a href="connexion.php" class="lienh">Se connecter</a>
+                </div>
+        </div>
+
+
+        <!-- Menu de navigation -->
+        <div id="nav">
+            <h1>ECE MarketPlace</h1>
+            
+            <ul id="menuNav">
+                Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
+                <a href="#" class="lienn">Accueil</a>
+                <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
+                <a href="Notifications.html" class="lienn">Notifications</a>
+                <a href="Panier.html" class="lienn">Panier</a>
+                <a href="connexion.php" class="lienn">Votre Compte</a>
+            </ul>
+        </div>
+
+
+        <div id="section">
+            <div id="position">
+                <p id="position_texte">Affichage de la position dans les pages</p>
+            </div>
+
+            <div id="formulaire">
+                <div class="title"><p>Formulaire d'inscription : </p></div>
+
+
+                <?php
     echo "<meta charset=\"utf-8\">";
     echo "<link rel=\"stylesheet\" type=\"text/css\" >";
 
@@ -18,7 +66,7 @@
     $email = isset($_POST["email"])? $_POST["email"] : "";
     $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
 
-    echo $type;
+    /*echo $type;
     echo $Nom;
     echo $Prenom;
     echo $Adresse;
@@ -32,7 +80,7 @@
     echo $DateExp;
     echo $Picto;
     echo $email;
-    echo $Mdp;
+    echo $Mdp;*/
     
     
     $database = "Swimming_Pool";
@@ -43,24 +91,105 @@
     if (isset($_POST["bouffon"])){
     if ($db_found) {
         if ($type == "C") {
-            echo "<br>Test du connard <br>";
             $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
             $result = mysqli_query($db_handle, $sql);
-            echo"encore la";
-            $sql ="SELECT * FROM Client";
+            $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
             $result = mysqli_query($db_handle,$sql);
-            while($data = mysqli_fetch_assoc($result)){
-                echo "Nom :".$data['Nom']. '<br>';
-            }
-            
+            echo"Les informations suivantes ont bien été enregistrées : <br>";
+            echo "<table>";
+                echo"<td colspan='2' align='center'>";
+                    echo"| Information Personnelles |";
+                echo"</td>";
+
+                echo "<tr>";
+                    echo "<td>" . "Nom : " . "</td>";
+                    echo "<td>" . $data['Nom'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Prenom : " . "</td>";
+                    echo "<td>" . $data['Prenom'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Adresse : " . "</td>";
+                    echo "<td>" . $data['Adresse'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Ville : " . "</td>";
+                    echo "<td>" . $data['Ville'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Code Postal : " . "</td>";
+                    echo "<td>" . $data['CodePostal'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Pays : " . "</td>";
+                    echo "<td>" . $data['Pays'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Téléphone" . "</td>";
+                    echo "<td>" . $data['Tel'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Date de naissance : " . "</td>";
+                    echo "<td>" . $data['Birthday'] . "</td>";
+                echo "</tr>";
+                echo"<td colspan=\"2\" align=\"center\">";
+                    echo"| Information bancaires|";
+                echo"</td>";
+                echo "<tr>";
+                    echo "<td>" . "Carte : " . "</td>";
+                    echo "<td>" . $data['Carte'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Numéros de carte : " . "</td>";
+                    echo "<td>" . "*****************" . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Date d'éxpiration" . "</td>";
+                    echo "<td>" . $data['DateExp'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Pictogramme : " . "</td>";
+                    echo "<td>" . "************" . "</td>";
+                echo "</tr>";
+                echo"<td colspan=\"2\" align=\"center\">";
+                    echo"| Information Personnelles |";
+                echo"</td>";
+                echo "<tr>";
+                    echo "<td>" . "E-mail : " . "</td>";
+                    echo "<td>" . $data['email'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<td>" . "Mot de passe : " . "</td>";
+                    echo "<td>" . "*************" . "</td>";
+                echo "</tr>";
+            echo"</table>";
         }
 
         elseif ($type == "V") {
             $sql = "INSERT INTO Client (ID, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, Birthday, Carte, NumCarte, DateExp, Picto, email, Mdp) 
             VALUES ('', '$Nom', '$Prenom', '$Adresse', '$Ville', '$CodePostal', '$Pays', '$Tel', '$Birthday', '$Carte', '$NumCarte', '$DateExp', '$Picto', '$email', '$Mdp')";
             $result = mysqli_query($db_handle, $sql);
+
         }
     }
 }
     mysqli_close($db_handle);
 ?>
+
+
+
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <small>
+                Copyright &copy; 2021, Sezille_Lucas_-_Industry<br>
+                <a href="mailto:sezille_lucas@gmail.com">sezille_lucas@gmail.com</a>
+            </small>
+        </footer>
+    </div>
+</body>
+</html>

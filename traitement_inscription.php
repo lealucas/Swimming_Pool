@@ -95,16 +95,7 @@
             $result = mysqli_query($db_handle, $sql);
             $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
             $result = mysqli_query($db_handle,$sql);
-            while($data = mysqli_fetch_assoc($result)){
-                echo"Les informations suivantes ont bien été enregistrées : <br>";
-            echo "<table border='3'>";
-                echo"<td colspan='2' align='center'>";
-                    echo"| Information Personnelles |";
-                echo"</td>";
-
-                echo "<tr>";
-                    echo "<td>" . "Nom : " . "</td>";
-                    echo "<td>" . $data['Nom'] . "</td>";
+                echo "Bonjour " .$data['Nom']. "<br>";
                 echo "</tr>";
                 echo "<tr>";
                     echo "<td>" . "Prenom : " . "</td>";

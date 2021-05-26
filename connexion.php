@@ -110,7 +110,9 @@
                 echo"Bonjour ";
                 echo"<a href='index_session.php' align='center'>".$data['Prenom']."</a></h3>";
                 session_start();
+                $_SESSION['IDVendeur'] = $data['IDVendeur'];
                 $_SESSION['Prenom'] = $data['Prenom'];
+                $_SESSION['Cagnotte'] = $data['Cagnotte'];
             }
             else{echo "Email ou mot de passe incorrect. Veuillez réessayer";}
         }

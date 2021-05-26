@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesAccueil.css" >
+    <link rel="stylesheet" href="stylesInscription.css" >
     <title>Document</title>
 </head>
 <body>
@@ -43,24 +43,26 @@
             <div id="position">
                 <p id="position_texte">Affichage de la position dans les pages</p>
             </div>
-
-        <div id="section">
-        <h2>Connectez-vous</h2>
-<form action="connexion.php" method="post">
-<table>
-<tr>
-<td>Email:</td>
-<td><input type="text" name="email"></td>
-</tr>
-<tr>
-<td>Mot de passe:</td>
-<td><input type="password" name="Mdp"></td>
-</tr>
-<tr>
-<td colspan="2" align="center">
-<input type="submit" name="bouton" value="Connexion">
-
-        <?php
+            <div id="formulaire">
+                <div class="title"><h2>Connectez-vous</h2></div>
+            
+                <form action="connexion.php" method="post">
+                    <table>
+                        <tr>
+                            <td>Email:</td>
+                            <td><input type="text" name="email"></td>
+                        </tr>
+                        <tr>
+                            <td>Mot de passe:</td>
+                            <td><input type="password" name="Mdp"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                            <input type="submit" name="bouton" value="Connexion"></td>
+                        </tr>
+                    </table>
+                </form>
+                <?php
     echo "<meta charset=\"utf-8\">";
     echo "<link rel=\"stylesheet\" type=\"text/css\" >";
 
@@ -96,7 +98,10 @@
             echo "Email ou mot de passe incorrect";
             } else {
                 while ($data = mysqli_fetch_assoc($result)) {
-                    echo "Bonjour " .$data['Prenom']. "<br>";
+                    echo"<h3 align='center'>";
+                    echo"Bonjour ";
+                    echo$data['Prenom'];
+                    echo"</h3>";
                 }
             }
         }
@@ -106,6 +111,8 @@
     }
         mysqli_close($db_handle);
 ?>
+            </div>
+        </div>
 
 
         <!-- Footer -->

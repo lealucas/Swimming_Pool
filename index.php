@@ -30,9 +30,9 @@
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
                 <a href="#" class="lienn">Accueil</a>
-                <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
-                <a href="traitement_notif.php" class="lienn">Notifications</a>
-                <a href="Panier.html" class="lienn">Panier</a>
+                <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
+                <a href="Notification.php" class="lienn">Notifications</a>
+                <a href="Panier.php" class="lienn">Panier</a>
                 <a href="connexion.php" class="lienn">Votre Compte</a>
             </ul>
         </div>

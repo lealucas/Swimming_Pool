@@ -46,8 +46,10 @@ session_start();
             <div id="position">
                 <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
+                <a href="cagnotte.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Ma cagnotte</a>
                 <a href="vidercagnotte.php" class="lienC">Vider ma cagnotte <img src="img/caddy.png" width="22px"></a>
+                
             </div>
         </div>
 

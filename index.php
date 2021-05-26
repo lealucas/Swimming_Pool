@@ -45,40 +45,34 @@
             </div>
 
             <!-- Selection Journalière -->
-            <form action="daySelection.php" method="post"></form>
             <div id="daySelection">
                 <div class="title">
-                    <p>Notre Sélection De Produits Hebdomadaire</p>
+                    <h3>Notre Sélection De Produits Hebdomadaire</h3>
                 </div>
-                <div class="slider">
-                    <div class="slides">
-                        <!--<div class="slide">-->
-                            <?php
-                                $database = "Swimming_Pool";
+                <div class="zoomcolonne">
+                    <?php
+                        echo"<link rel=\"stylesheet\" href=\"stylesAccueil.css\" >";
+                        $database = "Swimming_Pool";
 
-                                $db_handle = mysqli_connect('localhost', 'root', 'root');
-                                $db_found = mysqli_select_db($db_handle, $database);
-                                if ($db_found) {
-                                    $sql = "SELECT * FROM Article ORDER BY IDArticle DESC LIMIT 5";
-                                    $result = mysqli_query($db_handle, $sql);
-                                    while ($data = mysqli_fetch_assoc($result)) { 
-                                        $image = $data['Photo'];
-                                        echo"<img src='/img/$image' width='500px'>";
-                                    }
-                                }else {echo "Database not found";}
-                                mysqli_close($db_handle);
-                            ?>
-                        <!--</div>-->
-
-                    </div>
-                    
+                        $db_handle = mysqli_connect('localhost', 'root', 'root');
+                        $db_found = mysqli_select_db($db_handle, $database);
+                        if ($db_found) {
+                            $sql = "SELECT * FROM Article ORDER BY IDArticle DESC LIMIT 5";
+                            $result = mysqli_query($db_handle, $sql);
+                            while ($data = mysqli_fetch_assoc($result)) { 
+                                $image = $data['Photo'];
+                                echo"<img src='/img/$image' width='180px'>";
+                            }
+                        }else {echo "Database not found";}
+                        mysqli_close($db_handle);
+                    ?>
                 </div>
             </div>
 
             <!-- Les bests Sellers -->
             <div id="bestSellers">
                 <div class="title">
-                    <p>Les Best Sellers</p>
+                    <h3>Les Best Sellers</h3>
                 </div>
                 <div class="slider">
                     <div class="slides">

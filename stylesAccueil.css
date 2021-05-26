@@ -114,6 +114,31 @@ h1{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
 }
+
+/* Slider */
+.slides{
+    display: flex;
+    flex-direction: row;
+    animation: glisse 15s infinite ease;
+    width: 200px;
+}
+@keyframes glisse {
+    0%{
+        transform: translateX(0);
+    }
+
+    33%{
+        transform: translateX(-100px);
+    }
+
+    66%{
+        transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
 .title{
     text-align: center;
     padding-bottom: 5px;

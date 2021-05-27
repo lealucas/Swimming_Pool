@@ -87,7 +87,7 @@ session_start();
                             while ($data = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . $data['Description'] . "</td>";
+                                echo "<td>" . $data['Discrib'] . "</td>";
                                 $image = $data['Photo'];
                                 echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
                                 echo "<td>". $data['Prix']. "</td>";

@@ -39,9 +39,7 @@
 
 
         <div id="section">
-            <div id="position">
-                <p id="position_texte">Affichage de la position dans les pages</p>
-            </div>
+           
             <div id="formulaire">
                 <div class="title"><h2>Connectez-vous</h2></div>
             

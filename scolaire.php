@@ -40,12 +40,6 @@
 
         <div id="section">
 
-
-            <div id="position">
-                <p id="position_texte">Affichage de la position dans les pages</p>
-            </div>
-
-
             <div id="categorie">
                 <div class="title">
                     <p>Nos Catégories de produits</p>

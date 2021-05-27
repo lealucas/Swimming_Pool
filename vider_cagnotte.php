@@ -3,7 +3,6 @@
 session_start();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +13,15 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-
     <div id="wrapper">
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
-                    <a href="compte_vendeur.php" class="lienh" STYLE="padding:0 0 0 900px">Mon compte</a> | 
-                    <a href="deconnexion.php" class="lienh">Se déconnecter</a>
+                    <a href="compte_vendeur.php" class="lienh" STYLE="padding:0 0 0 900px">Mon compte</a> | 
+                    <a href="deconnexion.php" class="lienh">Se deconnecter</a>
                 </div>
         </div>
-
-
 
         <!-- Menu de navigation -->
         <div id="nav">
@@ -37,7 +33,7 @@ session_start();
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="#" class="lienn">Votre Compte</a>
+                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
             </ul>
         </div>
 
@@ -48,14 +44,26 @@ session_start();
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
                 <a href="cagnotte.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Ma cagnotte</a>
-                <a href="vider_cagnotte.php" class="lienC">Vider ma cagnotte <img src="img/caddy.png" width="22px"></a>
+                <a href="vidercagnotte.php" class="lienC">Vider ma cagnotte <img src="img/caddy.png" width="22px"></a>
                 
             </div>
         </div>
 
+            <div id="formulaire">
+                <div class="title"><p>Etes-vous sur de vouloir vider votre cagnotte sur votre compte personnel ? </p></div>
+                <form action="traitement_vider_cagnotte.php" method="post">
+                    <table border="2">
 
-        
-
+                            <td rowspan="3">Réponse :</td>
+                        </tr>
+                        <tr><td><input type="radio" name="Reponse" value="oui" required id="">Oui</td></tr>
+                        <tr><td><input type="radio" name="Reponse" value="non" required id="">Non</td></tr>
+                        
+                        <td colspan="2" align="center"><input type="submit" name="goo" value="Valider"></td>
+                    </table>
+                </form>
+            </div>
+        </div>
 
 
         <!-- Footer -->

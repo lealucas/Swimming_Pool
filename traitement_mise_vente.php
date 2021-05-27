@@ -46,7 +46,7 @@ session_start();
             </div>
 
             <div id="formulaire">
-                <div class="title"><p>Formulaire d'inscription : </p></div>
+                <div class="title"><p>Que voulez-vous mettre en vente ?  </p></div>
 
 
                 <?php

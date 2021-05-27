@@ -83,6 +83,7 @@ h1{
 }
 table{
     margin: auto;
+    max-width: 200px;
 }
 .title{
     text-align: center;

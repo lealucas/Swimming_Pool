@@ -45,7 +45,7 @@ session_start();
             <div id="position">
                 <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
-                <a href="cagnotte.php" class="lienC">Vos produits en attente</a>
+                <a href="produits_attentes.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Votre cagnotte</a>
                 <a href="vider_cagnotte.php" class="lienC">Vider votre cagnotte <img src="img/caddy.png" width="22px"></a>
             </div>
@@ -58,14 +58,33 @@ session_start();
 
                     $db_handle = mysqli_connect('localhost', 'root', 'root');
                     $db_found = mysqli_select_db($db_handle, $database);
+                    
                     if ($db_found){
                         $IDVendeur = $_SESSION['IDVendeur'];
-                        $sql = "SELECT * FROM Vendeur WHERE IDVendeur='$IDVendeur'";
+                        $sql = "SELECT * FROM Article WHERE IDVendeur='$IDVendeur' AND Valider ='1'";
                         $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        echo "<p id=\"p_vide_cagnotte\">";
+
+                        if (mysqli_num_rows($result) == 0) {
+                            echo "Vous n'avez pas d'articles en vente";
+                        }
+                        else{
+                            echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
+                            echo "</tr>";
+
+                            while ($data = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                                echo "<td>" . $data['Description'] . "</td>";
+                                $image = $data['Photo'];
+                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
+                                echo "<td>". $data['Prix']. "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
                     }
                     else{echo"Database not found";}
+                    mysqli_close($db_handle);
                 ?>
             </div>
         </div>

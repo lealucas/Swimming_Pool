@@ -3,13 +3,14 @@
 session_start();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesCompteVendeur.css">
+    <link rel="stylesheet" href="stylesCompteVendeur.css" >
     <title>Document</title>
 </head>
 <body>
@@ -24,6 +25,7 @@ session_start();
         </div>
 
 
+
         <!-- Menu de navigation -->
         <div id="nav">
             <h1>ECE MarketPlace</h1>
@@ -34,63 +36,62 @@ session_start();
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <a href="#" class="lienn">Votre Compte</a>
             </ul>
         </div>
 
 
         <div id="section">
-        <div id="position">
+            <div id="position">
                 <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
                 <a href="produits_attentes.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Votre cagnotte</a>
                 <a href="vider_cagnotte.php" class="lienC">Vider votre cagnotte <img src="img/caddy.png" width="22px"></a>
-                
             </div>
 
             <div id="formulaire">
-                <div class="title"><p>Que voulez-vous mettre en vente ?  </p></div>
-
-
+                <div class="title"><p>Vos produits en Vente </p></div><br>
                 <?php
-    echo "<meta charset=\"utf-8\">";
-    echo "<link rel=\"stylesheet\" type=\"text/css\" >";
+                    echo"<link rel=\"stylesheet\" href=\"stylesCompteVendeur.css\" >";
+                    $database = "Swimming_Pool";
 
-    $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
-    $Photo = isset($_POST["Photo"])? $_POST["Photo"] : "";
-    $Discrib = isset($_POST["Discrib"])? $_POST["Discrib"] : "";
-    $Video = isset($_POST["Video"])? $_POST["Video"] : "";
-    $Categorie = isset($_POST["Categorie"])? $_POST["Categorie"] : "";
-    $Prix = isset($_POST["Prix"])? $_POST["Prix"] : "";
-    $Vente = isset($_POST["Vente"])? $_POST["Vente"] : "";
-
-    
-    $database = "Swimming_Pool";
-
-    $db_handle = mysqli_connect('localhost', 'root', 'root');
-    $db_found = mysqli_select_db($db_handle, $database);
-    $bug = false;
-    if (isset($_POST["gogo"])){
-        if ($db_found) {
-                    $IDVendeur=$_SESSION['IDVendeur'];
-                    $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Vente,Prix,IDVendeur,Valider) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Vente','$Prix','$IDVendeur','0')";
-                    $result = mysqli_query($db_handle, $sql);
-                    echo "Votre Article vient d'être soumit à la validation par l'administrateur.<br><br>";
-                    echo "Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.";
+                    $db_handle = mysqli_connect('localhost', 'root', 'root');
+                    $db_found = mysqli_select_db($db_handle, $database);
                     
-                }
-        else{echo"Database not found";}
-        
-    }
+                    if ($db_found){
+                        $IDVendeur = $_SESSION['IDVendeur'];
+                        $sql = "SELECT * FROM Article WHERE IDVendeur='$IDVendeur' AND Valider ='0'";
+                        $result = mysqli_query($db_handle,$sql);
 
-    mysqli_close($db_handle);
-?>
+                        if (mysqli_num_rows($result) == 0) {
+                            echo "Vous n'avez pas d'articles en vente";
+                        }
+                        else{
+                            echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
+                            echo "</tr>";
 
-
-
+                            while ($data = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                                echo "<td>" . $data['Description'] . "</td>";
+                                $image = $data['Photo'];
+                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
+                                echo "<td>". $data['Prix']. "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
+                    }
+                    else{echo"Database not found";}
+                    mysqli_close($db_handle);
+                ?>
             </div>
         </div>
+
+
+        
+
 
 
         <!-- Footer -->

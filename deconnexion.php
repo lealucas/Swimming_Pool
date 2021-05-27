@@ -16,7 +16,6 @@
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
-                    Bienvenue : <?php echo $_SESSION['Prenom']; ?>
                     <a href="" class="lienh" STYLE="padding:0 0 0 790px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
                     <a href="votreCompte.html" class="lienh">Mon compte</a> | 

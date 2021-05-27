@@ -39,7 +39,7 @@
         <div id="section">
             <div id="formulaire">
                 <div class="title"><h2>Connectez-vous</h2></div>            
-                    <form action="connexion.php" method="post">
+                    <form action="admin.php" method="post">
                         <table>
                             <tr>
                                 <td>Email:</td>
@@ -55,6 +55,54 @@
                             </tr>
                         </table>
                     </form>
+                    <?php
+                    echo "<meta charset=\"utf-8\">";
+                    echo "<link rel=\"stylesheet\" type=\"text/css\" >";
+
+                    $email = isset($_POST["email"])? $_POST["email"] : "";
+                    $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
+    
+                    $database = "Swimming_Pool";
+
+                    $db_handle = mysqli_connect('localhost', 'root', 'root');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    $bug = false;
+
+                    if (isset($_POST['bouton'])) {
+                        if ($db_found) {
+                            if ($email != "") {
+                                $sql = "SELECT * FROM Client WHERE email LIKE '%$email%'";
+                                $sql2 = "SELECT * FROM Vendeur WHERE email LIKE '%$email%'";
+                                $len =strlen($Mdp);
+                                if ($Mdp != "") {
+                                    $sql .= " AND Mdp LIKE '%$Mdp%' AND LENGTH(Mdp) LIKE $len";
+                                    $sql2 .= " AND Mdp LIKE '%$Mdp%' AND LENGTH(Mdp) LIKE $len";
+                                }
+                                else{
+                                    $bug = true;
+                                }
+                            }
+            else{
+                $bug = true;
+            }
+            $result = mysqli_query($db_handle, $sql);
+            $result2 = mysqli_query($db_handle, $sql2);
+            $number=mysqli_num_rows($result);
+            $number2=mysqli_num_rows($result2);
+            if(mysqli_num_rows($result) != 0){
+                $data = mysqli_fetch_assoc($result);
+                echo"<h3 align='center'>";
+                echo"Bonjour ";
+                echo"<a href='index_session.php' align='center'>".$data['Prenom']."</a></h3>";
+                session_start();
+                $_SESSION['Prenom'] = $data['Prenom'];
+            }
+            else{echo "Email ou mot de passe incorrect. Veuillez réessayer";}
+        }
+        else {echo "Database not found";}
+    }
+        mysqli_close($db_handle);
+?>
             </div>
         </div>   
 

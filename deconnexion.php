@@ -40,9 +40,6 @@
 
 
         <div id="section">
-            <div id="position">
-                <p id="position_texte">Vous êtes bien déconnecté, merci de votre passage.</p>
-            </div>
         </div>
 
 

@@ -132,8 +132,12 @@ h1{
     margin-top: 40px;
 }
 .lienc{
-    color: rgb(89, 89, 227);
+    color: rgb(0, 0, 0);
     text-decoration: none;
+}
+.lienc:hover{
+    color: rgba(0, 118, 126);
+    transition: all 0.3s;
 }
 
 

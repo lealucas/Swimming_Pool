@@ -29,6 +29,9 @@ session_start();
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
+                } ?>
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="#" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>

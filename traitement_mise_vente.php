@@ -59,6 +59,7 @@ session_start();
     $Video = isset($_POST["Video"])? $_POST["Video"] : "";
     $Categorie = isset($_POST["Categorie"])? $_POST["Categorie"] : "";
     $Prix = isset($_POST["Prix"])? $_POST["Prix"] : "";
+    $Vente = isset($_POST["Vente"])? $_POST["Vente"] : "";
 
     
     $database = "Swimming_Pool";
@@ -69,7 +70,7 @@ session_start();
     if (isset($_POST["gogo"])){
         if ($db_found) {
                     $IDVendeur=$_SESSION['IDVendeur'];
-                    $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Prix,IDVendeur,Valider) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Prix','$IDVendeur','0')";
+                    $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Vente,Prix,IDVendeur,Valider) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Vente','$Prix','$IDVendeur','0')";
                     $result = mysqli_query($db_handle, $sql);
                     echo "Votre Article vient d'être soumit à la validation par l'administrateur. Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.";
                     

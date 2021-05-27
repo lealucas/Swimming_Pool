@@ -71,6 +71,12 @@ session_start();
                         <tr><td><input type="radio" name="Categorie" value="VIP" required id="">Accessoires VIP</td></tr>
                         <tr><td><input type="radio" name="Categorie" value="Scolaire" required id="">Matériels Scolaires</td></tr>
                         <tr>
+                            <td rowspan="4">Type de vente :</td>
+                        </tr>
+                        <tr><td><input type="radio" name="Vente" value="Enchere" required id="">Enchères</td></tr>
+                        <tr><td><input type="radio" name="Vente" value="Direct" required id="">Vente Direct</td></tr>
+                        <tr><td><input type="radio" name="Vente" value="Nego" required id="">Négociation</td></tr>
+                        <tr>
                             <td>Prix : </td>
                             <td><input type="text" name="Prix" required  id=""></td>
                         </tr>

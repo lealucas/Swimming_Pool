@@ -40,7 +40,7 @@
 
         <div id="section">
             <div id="position">
-                <p id="position_texte">Affichage de la position dans les pages</p>
+                <p id="position_texte">Affichage de la </p>
             </div>
 
             <!-- Selection Journalière -->

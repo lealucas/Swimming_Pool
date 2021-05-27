@@ -44,7 +44,7 @@ session_start();
                 <div id="title">
                     <p>Nos Catégories de produits</p>
                 </div>
-                <div id="content">
+                <div class="content">
                     <form action="traitement_notif_session.php" method="post">
                     <table>
                         <tr>

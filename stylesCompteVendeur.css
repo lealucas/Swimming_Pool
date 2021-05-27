@@ -101,7 +101,7 @@ table{
     padding-top: 2px;
 }
 #position{
-    background-color: rgba(207, 207, 207, 0.5);
+    background-color: rgba(207, 207, 207);
     border: solid 2px rgba(0, 118, 126);
     width: 900px;
     height: 30px;
@@ -116,16 +116,14 @@ table{
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    margin: auto;
-    margin-top: 1px;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    height: 100%;
 }
 .lienC:hover{
-    background-color: rgb(69, 69, 69);
-    border-radius: 10px;
-    color: whitesmoke;
+    color: rgba(0, 118, 126);
     transition: all 0.3s;
 }
 #position_texte{

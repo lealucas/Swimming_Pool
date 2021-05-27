@@ -101,7 +101,8 @@ table{
     padding-top: 2px;
 }
 #position{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(207, 207, 207, 0.5);
+    border: solid 2px rgba(0, 118, 126);
     width: 900px;
     height: 30px;
     padding-top: 10px;
@@ -114,11 +115,11 @@ table{
 .lienC{
     font-size: 14px;
     font-weight: bold;
-    margin-left: 10px;
-    margin-top: 3px;
+    text-align: center;
+    margin: auto;
+    margin-top: 1px;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    background-color: rgba(165, 204, 255, 0);
     padding: 10px;
 }
 .lienC:hover{

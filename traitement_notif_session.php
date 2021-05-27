@@ -90,7 +90,7 @@ session_start();
 
                     if ($db_found) {
                         if($_POST['oui']){
-                            $sql = "SELECT * FROM Article WHERE Prix < '$prixMax'";
+                            $sql = "SELECT * FROM Article WHERE Prix < '$prixMax' AND Prix > '$prixMin'";
                             if($typeProduit !=""){
                                 $sql .= "AND Categorie LIKE '$typeProduit'";
                             }

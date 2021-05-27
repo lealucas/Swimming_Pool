@@ -52,8 +52,8 @@ session_start();
                     <table>
                             <td rowspan="3">Réponse :</td>
                         </tr>
-                        <tr><td><input type="radio" name="Reponse" value="oui" required id="">Oui</td></tr>
-                        <tr><td><input type="radio" name="Reponse" value="non" required id="">Non</td></tr>
+                        <tr><td><input type="radio" name="Reponse" value="0" required id="">Oui</td></tr>
+                        <tr><td><input type="radio" name="Reponse" value="1" required id="">Non</td></tr>
                         
                         <td colspan="2" align="center"><input type="submit" name="goo" value="Valider"></td>
                     </table>

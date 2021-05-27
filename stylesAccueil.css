@@ -81,7 +81,8 @@ h1{
     padding-top: 2px;
 }
 #position{
-    background-color:rgb(240, 240, 240);
+    background-color:rgba(207, 207, 207, 0.5);
+    border: solid 1px rgba(0, 118, 126);
     width: 550px;
     height: auto;
     padding-top: 10px;

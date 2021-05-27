@@ -45,15 +45,12 @@ session_start();
                 <a href="cagnotte.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Ma cagnotte</a>
                 <a href="vidercagnotte.php" class="lienC">Vider ma cagnotte <img src="img/caddy.png" width="22px"></a>
-                
             </div>
-        </div>
 
             <div id="formulaire">
                 <div class="title"><p>Etes-vous sur de vouloir vider votre cagnotte sur votre compte personnel ? </p></div>
                 <form action="traitement_vider_cagnotte.php" method="post">
-                    <table border="2">
-
+                    <table>
                             <td rowspan="3">Réponse :</td>
                         </tr>
                         <tr><td><input type="radio" name="Reponse" value="oui" required id="">Oui</td></tr>

@@ -82,7 +82,7 @@ h1{
     border-radius: 10px;
 }
 table{
-    margin-left: 29%;
+    margin: auto;
 }
 .title{
     text-align: center;
@@ -182,14 +182,6 @@ table{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
     padding-bottom: 7px;
-}
-.title{
-    text-align: center;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    border-bottom: black solid 1px;
-    background-color: rgba(0, 0, 0, 0.211);
-    border-radius: 10px;
 }
 #result{
     width: 800px;

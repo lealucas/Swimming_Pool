@@ -157,6 +157,10 @@ table{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
 }
+#p_vide_cagnotte{
+    text-align: center;
+    padding-bottom: 30px;
+}
 
 
 /* Slider */

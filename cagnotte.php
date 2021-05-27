@@ -53,6 +53,7 @@ session_start();
             <div id="formulaire">
                 <div class="title"><p>Votre cagnotte </p></div><br>
                 <?php
+                    echo"<link rel=\"stylesheet\" href=\"stylesCompteVendeur.css\" >";
                     $database = "Swimming_Pool";
 
                     $db_handle = mysqli_connect('localhost', 'root', 'root');
@@ -62,12 +63,13 @@ session_start();
                         $sql = "SELECT Cagnotte FROM Vendeur WHERE IDVendeur='$IDVendeur'";
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
-                        echo "Votre cagnotte s'élève à un montant de ";
+                        echo "<p id=\"p_vide_cagnotte\">Votre cagnotte s'élève à un montant de ";
                         echo $data['Cagnotte'];
-                        echo " €.";
+                        echo " €.</p>";
                     }
                     else{echo"Database not found";}
                 ?>
+            </div>
         </div>
 
 

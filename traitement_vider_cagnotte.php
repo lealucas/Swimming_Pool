@@ -60,7 +60,7 @@ session_start();
                         if ($db_found){
                             if($Reponse == 0){
                                 $IDVendeur = $_SESSION['IDVendeur'];
-                                $sql = "UPDATE Vendeur SET Cagnotte = '0' WHERE IDVENDEUR = '$IDVENDEUR' ";
+                                $sql = "UPDATE Vendeur SET Cagnotte = '0' WHERE IDVendeur = '$IDVendeur' ";
                                 $result = mysqli_query($db_handle,$sql);
                                 $data = mysqli_fetch_assoc($result);
                                 echo $data['Cagnotte'];

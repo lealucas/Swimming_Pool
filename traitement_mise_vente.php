@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesInscription.css">
+    <link rel="stylesheet" href="stylesCompteVendeur.css">
     <title>Document</title>
 </head>
 <body>
@@ -77,7 +77,8 @@ session_start();
                     $IDVendeur=$_SESSION['IDVendeur'];
                     $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Vente,Prix,IDVendeur,Valider) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Vente','$Prix','$IDVendeur','0')";
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Votre Article vient d'être soumit à la validation par l'administrateur. Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.";
+                    echo "Votre Article vient d'être soumit à la validation par l'administrateur.<br>";
+                    echo "Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.";
                     
                 }
         else{echo"Database not found";}

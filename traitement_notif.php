@@ -100,7 +100,7 @@
                                 echo "<td>" . $data['Nom'] . "</td>";
                                 echo "<td>" . $data['Description'] . "</td>";
                                 $image = $data['Photo'];
-                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
+                                echo "<td>" . "<img src='$image' height='120' width='200' >" ."</td>";
                                 echo "<td>". $data['Prix']. "</td>";
                                 echo "</tr>";
                             }

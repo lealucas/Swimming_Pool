@@ -29,7 +29,7 @@
                 <a href="#" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
-                <a href="votreCompte.php" class="lienn">Votre Compte</a>
+                <a href="votreCompte.html" class="lienn">Votre Compte</a>
             </ul>
         </div>
 
@@ -80,9 +80,9 @@
                             while ($data = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . $data['Description'] . "</td>";
+                                echo "<td>" . $data['Discrib'] . "</td>";
                                 $image = $data['Photo'];
-                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
+                                echo "<td>" . "<img src='$image' height='120' width='200' >" ."</td>";
                                 echo "<td>". $data['Prix']. "</td>";
                                 echo "</tr>";
                             }

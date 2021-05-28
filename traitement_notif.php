@@ -97,26 +97,19 @@
                             if (mysqli_num_rows($result) == 0) {
                                 echo "Pas d'article dans cette catégorie <br>";
                             } else {
-                                echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
-                                echo "</tr>";
-
-                            while ($data = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . $data['Description'] . "</td>";
-                                $image = $data['Photo'];
-                                echo "<td>" . "<img src='$image' height='120' width='200' >" ."</td>";
-                                echo "<td>". $data['Prix']. "</td>";
-                                echo "</tr>";
+                                while ($data = mysqli_fetch_assoc($result)) {
+                                    $image = $data['Photo'];
+                                    echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                    echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."<br>Vente par : ".$data['Vente']."</p></div>";
+                                }
                             }
-                            echo "</table>";
-                        }
-                        }
-                    } else {
+                        } 
+                    }
+                    else {
                         echo "Database not found. <br>";
-                    }       
+                    }
                     mysqli_close($db_handle);
-                ?>
+                    ?>
                 </div>
                 </div>
             </div> 

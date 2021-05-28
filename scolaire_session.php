@@ -92,7 +92,7 @@ session_start();
                     } else {
                         echo "Database not found. <br>";
                     }
-                mysqli_close($db_handle);
+                    mysqli_close($db_handle);
                 ?>
                 </div>
             </div>

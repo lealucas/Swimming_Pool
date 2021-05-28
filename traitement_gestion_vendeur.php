@@ -44,8 +44,8 @@ session_start();
 
         <div id="section">
             <div id="position">
-                <a href="#.php" class="lienC">Gestion des vendeurs</a>
-                <a href="produits_attentes.php" class="lienC">Valider des articles</a>
+                <a href="traitement_gestion_vendeur.php" class="lienC">Gestion des vendeurs</a>
+                <a href="traitement_gestion_article.php" class="lienC">Gestion des articles</a>
                 <a href="cagnotte.php" class="lienC">????????</a>
                 <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
             </div>
@@ -65,7 +65,8 @@ session_start();
                             if ($db_found) {
                                 $sql = "UPDATE Vendeur SET Valider ='1' WHERE Valider ='0' LIMIT 1 ";
                                 $result = mysqli_query($db_handle, $sql);
-                                    echo"Le vendeur a bien été ajouté.";
+                                    echo"<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >Le vendeur a bien été ajouté.";
+                                    echo"</div>";
                             }
                             else{echo "Databse not found";}
                         }

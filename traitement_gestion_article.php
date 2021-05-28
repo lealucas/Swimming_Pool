@@ -45,7 +45,7 @@ session_start();
         <div id="section">
             <div id="position">
                 <a href="gestion_vendeur.php" class="lienC">Gestion des vendeurs</a>
-                <a href="#.php" class="lienC">Gestion des articles</a>
+                <a href="traitement_gestion_article.php" class="lienC">Gestion des articles</a>
                 <a href="cagnotte.php" class="lienC">????????</a>
                 <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
             </div>

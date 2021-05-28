@@ -78,8 +78,7 @@
                         } else {
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
-                                echo "<div class=\"gallery\"><img src='$image' width='200px'></div>";
-                                echo
+                                echo "<div class=\"titlebis\"><img src='$image' width='200px'></div>";
                             }
                         }
                     } else {

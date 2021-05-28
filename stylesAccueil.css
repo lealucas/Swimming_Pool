@@ -129,7 +129,7 @@ h1{
     border-bottom-right-radius: 10px;
     display: flex;
 }
-#daySelection.zoomcolonne img{
+#daySelection img{
     margin-top: 50px;
     margin-left: 50px;
     -webkit-transform: rotate(10deg) scale(1.25);
@@ -137,7 +137,7 @@ h1{
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-#bestSellers.zoomcolonne img{
+#bestSellers img{
     margin-top: 50px;
     margin-left: 50px;
     -webkit-transform: rotate(-10deg) scale(1.25);
@@ -145,7 +145,11 @@ h1{
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-img:hover{
+#bestSellers img:hover{
+    -webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
+}
+#daySelection img:hover{
     -webkit-transform: rotate(0) scale(1);
 	transform: rotate(0) scale(1);
 }

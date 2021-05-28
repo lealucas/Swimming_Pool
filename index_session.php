@@ -83,7 +83,12 @@ session_start();
                 <div class="title">
                     <p>Les Best Sellers de cette Semaine</p>
                 </div>
-                <div class="content">
+                <div class="zoomcolonne">
+                <img src='$img/DB11_Mansory.jpg' width='180px' height='180px'>
+                <img src='$image' width='180px' height='180px'>
+                <img src='$image' width='180px' height='180px'>
+                <img src='$image' width='180px' height='180px'>
+                <img src='$image' width='180px' height='180px'>
 
                 </div>
             </div>

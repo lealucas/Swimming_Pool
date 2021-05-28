@@ -43,7 +43,6 @@ session_start();
             </ul>
         </div>
 
-
         <div id="section">
             
             <div id="categorie">

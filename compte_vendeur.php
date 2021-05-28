@@ -46,7 +46,7 @@ session_start();
 
         <div id="section">
             <?php
-            $sql ="SELECT * FROM Vendeur WHERE ";
+
             if($_SESSION['IDVendeur']!=0){
                 echo"<div id=\"position\">";
                 echo"<a href=\"produits_vente.php\" class=\"lienC\">Vos Produits en vente</a>";
@@ -56,9 +56,6 @@ session_start();
                 echo"<a href=\"vider_cagnotte.php\" class=\"lienC\">Vider votre cagnotte <img src=\"img/caddy.png\" width=\"22px\"></a>";
             }
             else{
-                echo $_SESSION['IDVendeur'];
-                echo"<br>";
-                echo $_SESSION['IDClient'];
                 echo"<div id=\"position\">";
                 echo"<a href=\"produits_vente.php\" class=\"lienC\">Informations</a>";
                 echo"<a href=\"mettre_vente.php\" class=\"lienC\">Vos échanges vendeur</a>";

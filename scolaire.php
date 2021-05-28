@@ -70,7 +70,7 @@
 
 
                     if ($db_found) {
-                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'Art' AND Valider = '1'";
+                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'Scolaire' AND Valider = '1'";
                         $result = mysqli_query($db_handle, $sql);
 
                         if (mysqli_num_rows($result) == 0) {
@@ -79,7 +79,7 @@
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\">".$data['Nom'].".<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."<br>Vente par : ".$data['Vente']."</p></div>";
+                                echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."<br>Vente par : ".$data['Vente']."</p></div>";
                             }
                         }
                     } else {

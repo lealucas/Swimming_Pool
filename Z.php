@@ -7,8 +7,12 @@
         $sql = "SELECT * FROM Article ORDER BY IDArticle DESC LIMIT 5";
         $result = mysqli_query($db_handle, $sql);
         while ($data = mysqli_fetch_assoc($result)) { 
-            "<img src='/img/$image' height='120' width='200' >";
+            $image = $data['Photo'];
+            echo"<img src='$image' height='120' width='200'>";
         }
     }else {echo "Database not found";}
     mysqli_close($db_handle);
 ?>
+<html>
+    <input type="button" value="">
+</html>

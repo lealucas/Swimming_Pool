@@ -1,0 +1,12 @@
+p#description{
+    display:none;
+    
+    }
+        .test:hover p#text{
+            display: none;
+    
+        }
+        .test:hover p#description{
+            display: block;
+        }
+    

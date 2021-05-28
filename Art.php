@@ -79,9 +79,8 @@
                         } else {
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
-                                echo "<div class=\"titlebis\"><img src='$image' width='200px'></div>";
-                                echo"<p id=\"nom\">".$data['Nom']."</p>";
-                                echo"<p id=\"infos\">".$data['Discrib']."<br>Prix : ".$data['Prix']."<br>Vente par : ".$data['Vente']."</p>";
+                                echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                echo"<p class=\"describ\">".$data['Nom'].".<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."<br>Vente par : ".$data['Vente']."</p></div>";
                             }
                         }
                     } else {

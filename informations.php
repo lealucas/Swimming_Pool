@@ -45,22 +45,107 @@ session_start();
 
 
         <div id="section">
-            <?php
+            <div id="position">
+            <a href="informations.php" class="lienC">Informations</a>
+            <a href="echange_vendeur.php" class="lienC">Vos échanges vendeur</a>
 
-            if($_SESSION['IDVendeur']!=0){
-                echo"<div id=\"position\">";
-                echo"<a href=\"produits_vente.php\" class=\"lienC\">Vos Produits en vente</a>";
-                echo"<a href=\"mettre_vente.php\" class=\"lienC\">Mettre en vente un produit</a>";
-                echo"<a href=\"produits_attentes.php\" class=\"lienC\">Vos produits en attente</a>";
-                echo"<a href=\"cagnotte.php\" class=\"lienC\">Votre cagnotte</a>";
-                echo"<a href=\"vider_cagnotte.php\" class=\"lienC\">Vider votre cagnotte <img src=\"img/caddy.png\" width=\"22px\"></a>";
-            }
-            else{
-                echo"<div id=\"position\">";
-                echo"<a href=\"informations.php\" class=\"lienC\">Informations</a>";
-                echo"<a href=\"echange_vendeur.php\" class=\"lienC\">Vos échanges vendeur</a>";
-            }
+            <?php
+                echo "<meta charset=\"utf-8\">";
+                echo "<link rel=\"stylesheet\" type=\"text/css\" >";
+
+                $database = "Swimming_Pool";
+
+                $db_handle = mysqli_connect('localhost', 'root', 'root');
+                $db_found = mysqli_select_db($db_handle, $database);
+                $bug = false;
+                if ($db_found) {
+                    $IDClient =$_SESSION['IDClient'];
+                    $sql = "SELECT * FROM Client WHERE IDClient LIKE '%$IDClient%'";
+                    $result = mysqli_query($db_handle,$sql);
+                    $number=mysqli_num_rows($result);
+                    if($number==0){
+                        $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
+                        $result = mysqli_query($db_handle, $sql);
+                        $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
+                        $result = mysqli_query($db_handle,$sql);
+                        $data = mysqli_fetch_assoc($result);
+                        echo"Les informations suivantes ont bien été enregistrées : <br>";
+                        echo "<table border='3'>";
+                            echo"<td colspan='2' align='center'>";
+                                echo"| Information Personnelles |";
+                            echo"</td>";
+
+                            echo "<tr>";
+                                echo "<td>" . "Nom : " . "</td>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Prenom : " . "</td>";
+                                echo "<td>" . $data['Prenom'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Adresse : " . "</td>";
+                                echo "<td>" . $data['Adresse'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Ville : " . "</td>";
+                                echo "<td>" . $data['Ville'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Code Postal : " . "</td>";
+                                echo "<td>" . $data['CodePostal'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Pays : " . "</td>";
+                                echo "<td>" . $data['Pays'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Téléphone" . "</td>";
+                                echo "<td>" . $data['Tel'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Date de naissance : " . "</td>";
+                                echo "<td>" . $data['Birthday'] . "</td>";
+                            echo "</tr>";
+                            echo"<td colspan=\"2\" align=\"center\">";
+                                echo"| Information bancaires|";
+                            echo"</td>";
+                            echo "<tr>";
+                                echo "<td>" . "Carte : " . "</td>";
+                                echo "<td>" . $data['Carte'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Numéros de carte : " . "</td>";
+                                echo "<td>" . "*****************" . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Date d'éxpiration" . "</td>";
+                                echo "<td>" . $data['DateExp'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Pictogramme : " . "</td>";
+                                echo "<td>" . "************" . "</td>";
+                            echo "</tr>";
+                            echo"<td colspan=\"2\" align=\"center\">";
+                                echo"| Information Personnelles |";
+                            echo"</td>";
+                            echo "<tr>";
+                                echo "<td>" . "E-mail : " . "</td>";
+                                echo "<td>" . $data['email'] . "</td>";
+                            echo "</tr>";
+                            echo "<tr>";
+                                echo "<td>" . "Mot de passe : " . "</td>";
+                                echo "<td>" . "*************" . "</td>";
+                            echo "</tr>";
+                        echo"</table>";
+                    }
+                    else{echo "L'email joint est déjà relatif à un membre de notre base de données. Veuillez en saisir un nouveau s'il vous plait.";}
+                }
+                else{echo "Database not found";}
+
+                mysqli_close($db_handle);
             ?>
+
             </div>
         </div>
 

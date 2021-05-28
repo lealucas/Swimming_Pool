@@ -44,73 +44,62 @@ session_start();
                 <form action="traitement_informations.php" method="post">
                     <table border="2">
                         <td colspan="2" align="center">| Informations Personnelles |</td>
-                        <tr>
-                            <td rowspan="3">Vendeur / Client ?</td>
-                        </tr>
-                        <tr><td><input type="radio" name="typePers" value="C" required id="">Client</td></tr>
-                        <tr><td><input type="radio" name="typePers" value="V" required  id="">Vendeur</td></tr>
+                        
                         <tr>
                             <td>Nom : </td>
-                            <td><input type="text" name="Nom" required  id=""></td>
+                            <td><input type="text" name="Nom" id=""></td>
                         </tr>
                         <tr>
                             <td>Prénom : </td>
-                            <td><input type="text" name="Prenom" required  id=""></td>
+                            <td><input type="text" name="Prenom" id=""></td>
                         </tr>
                         <tr>
                             <td>Adresse : </td>
-                            <td><input type="text" name="Adresse" required  id=""></td>
+                            <td><input type="text" name="Adresse" id=""></td>
                         </tr>
                         <tr>
                             <td>Ville : </td>
-                            <td><input type="text" name="Ville" required  id=""></td>
+                            <td><input type="text" name="Ville" id=""></td>
                         </tr>
                         <tr>
                             <td>Code Postal : </td>
-                            <td><input type="number" name="CodePostal" required  id=""></td>
+                            <td><input type="number" name="CodePostal" id=""></td>
                         </tr>
                         <tr>
                             <td>Pays : </td>
-                            <td><input type="text" name="Pays" required  id=""></td>
+                            <td><input type="text" name="Pays" id=""></td>
                         </tr>
                         <tr>
                             <td>Téléphone : </td>
-                            <td><input type="tel" name="Tel" required  id=""></td>
-                        </tr>
-                        <tr>
-                            <td>Date de naissance : </td>
-                            <td><input type="date" name="Birthday" required  id=""></td>
+                            <td><input type="tel" name="Tel" id=""></td>
                         </tr>
                         <td colspan="2" align="center">| Informations Bancaires |</td>
                         <tr>
                             <td rowspan="5">Type de carte</td>
                         </tr>
-                        <tr><td><input type="radio" name="Carte" value="Visa" required id="">Visa <img src="img/Symbole-Visa.png" width="25px" alt=""></td></tr>
-                        <tr><td><input type="radio" name="Carte" value="MasterCard" required id="">MasterCard<img src="img/MasterCard_Logo.png" width="22px" alt=""></td></tr>
-                        <tr><td><input type="radio" name="Carte" value="AmericanExpress" required id="">American Express<img src="img/logo-amercian_express.png" width="18px" alt=""></td></tr>
-                        <tr><td><input type="radio" name="Carte" value="Paypal" required id="">Paypal<img src="img/Paypal-logo.jpg" width="24px" alt=""></td></tr>
+                        <tr><td><input type="radio" name="Carte" value="Visa" id="">Visa <img src="img/Symbole-Visa.png" width="25px" alt=""></td></tr>
+                        <tr><td><input type="radio" name="Carte" value="MasterCard" id="">MasterCard<img src="img/MasterCard_Logo.png" width="22px" alt=""></td></tr>
+                        <tr><td><input type="radio" name="Carte" value="AmericanExpress" id="">American Express<img src="img/logo-amercian_express.png" width="18px" alt=""></td></tr>
+                        <tr><td><input type="radio" name="Carte" value="Paypal" id="">Paypal<img src="img/Paypal-logo.jpg" width="24px" alt=""></td></tr>
                         <tr>
                             <td>Numéro de carte : </td>
-                            <td><input type="number" name="NumCarte" required  id=""></td>
+                            <td><input type="number" name="NumCarte" id=""></td>
                         </tr>
                         <tr>
                             <td>Date d'expiration : </td>
-                            <td><input type="date" name="DateExp" required id=""></td>
+                            <td><input type="date" name="DateExp" id=""></td>
                         </tr>
                         <tr>
                             <td>Pictogramme : </td>
-                            <td><input type="number" name="Picto" required id=""></td>
+                            <td><input type="number" name="Picto" id=""></td>
                         </tr>
                         <td colspan="2" align="center">| Informations du compte |</td>
-                        <tr>
-                            <td>Email : </td>
-                            <td><input type="email" name="email" required id=""></td>
-                        </tr>
+                        
                         <tr>
                             <td>Mot de passe : </td>
-                            <td><input type="password" name="Mdp" required id=""></td>
+                            <td><input type="password" name="Mdp" id=""></td>
                         </tr>
-                        <td colspan="2" align="center"><input type="submit" name="bouffon" value="Envoyer"></td>
+                        <td colspan="2" align="center"><input type="submit" name="modif" value="Modifier"></td>
                     </table>
                 </form>
             </div>

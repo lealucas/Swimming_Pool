@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,14 +46,11 @@
 
         <div id="section">
             <div id="formulaire">
-                <div class="title"><p>Formulaire d'inscription : </p></div>
-
 
                 <?php
     echo "<meta charset=\"utf-8\">";
     echo "<link rel=\"stylesheet\" type=\"text/css\" >";
 
-    $type = isset($_POST["typePers"])? $_POST["typePers"] : "";
     $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
     $Prenom = isset($_POST["Prenom"])? $_POST["Prenom"] : "";
     $Adresse = isset($_POST["Adresse"])? $_POST["Adresse"] : "";
@@ -56,30 +58,72 @@
     $CodePostal = isset($_POST["CodePostal"])? $_POST["CodePostal"] : "";
     $Pays = isset($_POST["Pays"])? $_POST["Pays"] : "";
     $Tel = isset($_POST["Tel"])? $_POST["Tel"] : "";
-    $Birthday = isset($_POST["Birthday"])? $_POST["Birthday"] : "";
     $Carte = isset($_POST["Carte"])? $_POST["Carte"] : "";
     $NumCarte = isset($_POST["NumCarte"])? $_POST["NumCarte"] : "";
     $DateExp = isset($_POST["DateExp"])? $_POST["DateExp"] : "";
     $Picto = isset($_POST["Picto"])? $_POST["Picto"] : "";
-    $email = isset($_POST["email"])? $_POST["email"] : "";
-    $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
 
-    
     $database = "Swimming_Pool";
 
     $db_handle = mysqli_connect('localhost', 'root', 'root');
     $db_found = mysqli_select_db($db_handle, $database);
     $bug = false;
-    if (isset($_POST["bouffon"])){
+    if (isset($_POST["modif"])){
         if ($db_found) {
-            if ($type == "C") {
-                $sql = "SELECT * FROM Client WHERE email LIKE '%$email%'";
+            $IDClient = $_SESSION['IDClient'];
+                $sql = "SELECT * FROM Client WHERE IDClient LIKE '$IDClient'";
                 $result = mysqli_query($db_handle,$sql);
                 $number=mysqli_num_rows($result);
-                if($number==0){
-                    $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
-                    $result = mysqli_query($db_handle, $sql);
-                    $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
+                if($number!=0){
+                    if($Nom){
+                        $sql ="UPDATE Client SET Nom='$Nom' WHERE IDClient LIKE '$IDClient'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Prenom != null){
+                        $sql ="UPDATE Client SET Prenom='$Prenom'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Adresse != null){
+                        $sql ="UPDATE Client SET Adresse='$Adresse'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Ville != null){
+                        $sql ="UPDATE Client SET Ville='$Ville'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($CodePostal != null){
+                        $sql ="UPDATE CodePostal SET CodePostal='$CodePostal'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Pays != null){
+                        $sql ="UPDATE Client SET Pays='$Pays'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Tel != null){
+                        $sql ="UPDATE Client SET Tel='$Tel'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Carte != null){
+                        $sql ="UPDATE Client SET Carte='$Carte'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($NumCarte != null){
+                        $sql ="UPDATE Client SET NumCarte='$NumCarte'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($DateExp != null){
+                        $sql ="UPDATE Client SET DateExp='$DateExp'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Picto != null){
+                        $sql ="UPDATE Client SET Picto='$Picto'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    if($Mdp != null){
+                        $sql ="UPDATE Client SET Mdp='$Mdp'";
+                        $result = mysqli_query($db_handle,$sql);
+                    }
+                    $sql = "SELECT * FROM Client WHERE IDClient LIKE '$IDClient'";
                     $result = mysqli_query($db_handle,$sql);
                     $data = mysqli_fetch_assoc($result);
                     echo"Les informations suivantes ont bien été enregistrées : <br>";
@@ -152,13 +196,10 @@
                         echo "</tr>";
                     echo"</table>";
                 }
-                else{echo "L'email joint est déjà relatif à un membre de notre base de données. Veuillez en saisir un nouveau s'il vous plait.";}
             }
         }
-    }
-
-    mysqli_close($db_handle);
-?>
+        mysqli_close($db_handle);
+        ?>
 
 
 

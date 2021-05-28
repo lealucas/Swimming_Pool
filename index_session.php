@@ -52,8 +52,8 @@ session_start();
 
         <div id="section">
             <div id="position">
-                <p class="position_texte">Bienvenue sur notre site ECE Market Place. Nous vous souhaitons un agréable moment sur notre site en éspérant que vous trouverez votre bonheur à travers notre large gamme de produit.</p> <br>
-                <p class="position_texte">Et n'oubliez pas de créer votre compte pour bénéficiez d'une offre irrésistible le jour de votre anniversaire</p>
+                <p class="position_texte">Bienvenue sur notre site ECE Market Place. Nous vous souhaitons un agréable moment sur notre site en espérant que vous trouverez votre bonheur à travers notre large gamme de produit.</p> <br>
+                <p class="position_texte">Et n'oubliez pas de créer votre compte pour bénéficier d'une offre irrésistible le jour de votre anniversaire !</p>
             </div>
 
             <!-- Selection Journalière -->

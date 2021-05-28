@@ -49,8 +49,11 @@ session_start();
 
 
         <div id="section">
+            <div id="position">
+            <p class="position_texte">Votre panier</p>
+            </div>
+            
         </div>
-
             
 
 

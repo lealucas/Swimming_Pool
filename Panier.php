@@ -52,7 +52,23 @@ session_start();
             <div id="position">
             <p class="position_texte">Votre panier</p>
             </div>
-            
+
+            <?php
+                $database = "Swimming_Pool";
+
+                $db_handle = mysqli_connect('localhost', 'root', 'root');
+                $db_found = mysqli_select_db($db_handle, $database);
+
+                if ($db_found){
+                    if($_POST['panier']){
+                        $IDClient = $_SESSION['IDClient'];
+                        $sql = "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient')";
+                        $result = mysqli_query($db_handle,$sql);
+                        $data = mysqli_fetch_assoc($result);
+                        $sql = "";
+                    }
+                }
+            ?>
         </div>
             
 

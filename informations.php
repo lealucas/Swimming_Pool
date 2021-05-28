@@ -133,11 +133,14 @@ session_start();
                                 echo "<td>" . "Mot de passe : " . "</td>";
                                 echo "<td>" . "*************" . "</td>";
                             echo "</tr>";
+                            echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Modifier vos données\"></td>";
                         echo"</table>";
+
                 }
                 else{echo "Database not found";}
 
                 mysqli_close($db_handle);
+                
             ?>
 
             </div>

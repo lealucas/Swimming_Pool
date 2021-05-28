@@ -71,24 +71,17 @@ session_start();
                         $result = mysqli_query($db_handle,$sql);
 
                         if (mysqli_num_rows($result) == 0) {
-                            echo "Vous n'avez pas d'articles en vente";
-                        }
-                        else{
-                            echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
-                            echo "</tr>";
-
+                            echo "Pas d'article dans cette catégorie <br>";
+                        } else {
                             while ($data = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . $data['Discrib'] . "</td>";
-                                echo "<td><img width=100px src=\"" . $data['Photo']. "\"></td>";
-                                echo "<td>". $data['Prix']. "</td>";
-                                echo "</tr>";
+                                $image = $data['Photo'];
+                                echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<a href='index.php'><img src=\"img/logo_panier.jpg\"width=30px></a></p></div>";
                             }
-                            echo "</table>";
                         }
+                    } else {
+                        echo "Database not found. <br>";
                     }
-                    else{echo"Database not found";}
                     mysqli_close($db_handle);
                 ?>
             </div>

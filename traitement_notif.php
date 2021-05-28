@@ -109,8 +109,6 @@
                     }
                     mysqli_close($db_handle);
                     ?>
-                </div>
-                </div>
             </div> 
 
 

@@ -76,14 +76,12 @@ session_start();
                     $IDVendeur=$_SESSION['IDVendeur'];
                     $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Vente,Prix,IDVendeur,Valider) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Vente','$Prix','$IDVendeur','0')";
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Votre Article vient d'être soumit à la validation par l'administrateur.<br><br>";
-                    echo "Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.";
+                    echo "<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >Votre Article vient d'être soumit à la validation par l'administrateur.<br><br>";
+                    echo "Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.</div>";
                     
                 }
         else{echo"Database not found";}
-        
     }
-
     mysqli_close($db_handle);
 ?>
 

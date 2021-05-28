@@ -51,7 +51,7 @@ session_start();
             </div>
             
             <div id="formulaire">
-            <form action="traitement_informations.php" method="post">
+            <form action="formulaire_info.php" method="post">
             <?php
                 echo "<meta charset=\"utf-8\">";
                 echo "<link rel=\"stylesheet\" type=\"text/css\" >";

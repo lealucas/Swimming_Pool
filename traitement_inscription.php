@@ -85,7 +85,7 @@
                     echo"Les informations suivantes ont bien été enregistrées : <br>";
                     echo "<table border='3'>";
                         echo"<td colspan='2' align='center'>";
-                            echo"| Information Personnelles |";
+                            echo"| Informations Personnelles |";
                         echo"</td>";
 
                         echo "<tr>";
@@ -93,7 +93,7 @@
                             echo "<td>" . $data['Nom'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                            echo "<td>" . "Prenom : " . "</td>";
+                            echo "<td>" . "Prénom : " . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
@@ -121,7 +121,7 @@
                             echo "<td>" . $data['Birthday'] . "</td>";
                         echo "</tr>";
                         echo"<td colspan=\"2\" align=\"center\">";
-                            echo"| Information bancaires|";
+                            echo"| Informations bancaires |";
                         echo"</td>";
                         echo "<tr>";
                             echo "<td>" . "Carte : " . "</td>";
@@ -132,7 +132,7 @@
                             echo "<td>" . "*****************" . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                            echo "<td>" . "Date d'éxpiration" . "</td>";
+                            echo "<td>" . "Date d'expiration" . "</td>";
                             echo "<td>" . $data['DateExp'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
@@ -140,7 +140,7 @@
                             echo "<td>" . "************" . "</td>";
                         echo "</tr>";
                         echo"<td colspan=\"2\" align=\"center\">";
-                            echo"| Information Personnelles |";
+                            echo"| Informations Personnelles |";
                         echo"</td>";
                         echo "<tr>";
                             echo "<td>" . "E-mail : " . "</td>";

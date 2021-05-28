@@ -74,8 +74,10 @@ h1{
 
 
 table{
-    margin: auto;
-    max-width: 200px;
+    margin : auto;
+}
+tr{
+    width : 150px;
 }
 .title{
     text-align: center;
@@ -85,6 +87,7 @@ table{
     background-color: rgba(0, 0, 0, 0.211);
     border-radius: 10px;
 }
+
 
 
 #section{

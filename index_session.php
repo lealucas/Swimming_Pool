@@ -41,10 +41,6 @@ session_start();
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
                 ?>
-                
-                <!-- mettre un if pour accéder a compte_client.php
-                     et else emmene sur compte_vendeur.php
-                     tester avec variable $_SESSION['de quelque chose'] -->
             </ul>
         </div>
 
@@ -74,7 +70,7 @@ session_start();
                             $result = mysqli_query($db_handle, $sql);
                             while ($data = mysqli_fetch_assoc($result)) { 
                                 $image = $data['Photo'];
-                                echo"<img src='$image' width='180px' height = '180px'>";
+                                echo"<img src='$image' width='180px' height='180px'>";
                             }
                         }else {echo "Database not found";}
                         mysqli_close($db_handle);

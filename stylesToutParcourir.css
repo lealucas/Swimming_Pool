@@ -103,7 +103,7 @@ h1{
     height: 275px;
     margin-left: 120px;
     margin-top: 50px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(161, 231, 236, 0.402);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
 }
@@ -113,7 +113,7 @@ h1{
     padding-bottom: 5px;
     padding-top: 5px;
     border-bottom: black solid 1px;
-    background-color: rgba(0, 0, 0, 0.211);
+    background-color: rgb(193, 193, 193);
     border-radius: 10px;
 }
 /* Résultat de recherche de filtre*/
@@ -123,7 +123,8 @@ h1{
     margin-left: 590px;
     margin-top: 50px;
     margin-bottom: 100px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(161, 231, 236, 0.402);
+    border: solid 2px black;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
 }
@@ -139,18 +140,14 @@ h1{
     color: rgba(0, 118, 126);
     transition: all 0.3s;
 }
-<<<<<<< HEAD
-.titlebis{
-    margin-left: 38%;
-=======
 .cadre{
     border-bottom: solid 2px black;
     border-top: solid 2px black;
->>>>>>> 71d109474144a78272a561abee4dc7fd801313a0
 }
 .objet{
     margin-top: 20px;
-    border: solid 2px rgb(0, 117, 126);;
+    border: solid 2px rgb(0, 117, 126);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     display: block;
     border-radius: 20px;
     margin-left: auto;

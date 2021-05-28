@@ -187,16 +187,46 @@ table{
     border-radius: 10px;
     padding-bottom: 7px;
 }
-#result{
-    width: 800px;
+#formulaire{
+    width: 500px;
     height: auto;
-    margin-left: 560px;
+    margin-left: 590px;
     margin-top: 50px;
     margin-bottom: 100px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(161, 231, 236, 0.402);
+    border: solid 2px black;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
     border-radius: 10px;
 }
+.cadre{
+    border-bottom: solid 2px black;
+}
+.objet{
+    margin-top: 20px;
+    border: solid 2px rgb(0, 117, 126);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
+    display: block;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+img:hover{
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+    transition: all 0.3s;
+}
+.describ{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+
 
 footer{
     background-color: rgba(221, 221, 221, 0.574);

@@ -73,10 +73,9 @@ h1{
 
 
 #formulaire{
-    width: 500px;
+    width: auto;
     height: auto;
-    margin-left: 590px;
-    margin-top: 50px;
+    margin: auto;
     margin-bottom: 100px;
     background-color: rgba(161, 231, 236, 0.402);
     border: solid 2px black;

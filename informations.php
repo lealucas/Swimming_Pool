@@ -48,7 +48,9 @@ session_start();
             <div id="position">
             <a href="informations.php" class="lienC">Informations</a>
             <a href="echange_vendeur.php" class="lienC">Vos échanges vendeur</a>
-
+            </div>
+            
+            <div id="formulaire">
             <?php
                 echo "<meta charset=\"utf-8\">";
                 echo "<link rel=\"stylesheet\" type=\"text/css\" >";
@@ -63,18 +65,12 @@ session_start();
                     $sql = "SELECT * FROM Client WHERE IDClient LIKE '%$IDClient%'";
                     $result = mysqli_query($db_handle,$sql);
                     $number=mysqli_num_rows($result);
-                    if($number==0){
-                        $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
-                        $result = mysqli_query($db_handle, $sql);
-                        $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
-                        $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        echo"Les informations suivantes ont bien été enregistrées : <br>";
+                    $data = mysqli_fetch_assoc($result);
+                    echo"Les informations suivantes ont bien été enregistrées : <br>";
                         echo "<table border='3'>";
                             echo"<td colspan='2' align='center'>";
                                 echo"| Information Personnelles |";
                             echo"</td>";
-
                             echo "<tr>";
                                 echo "<td>" . "Nom : " . "</td>";
                                 echo "<td>" . $data['Nom'] . "</td>";
@@ -138,8 +134,6 @@ session_start();
                                 echo "<td>" . "*************" . "</td>";
                             echo "</tr>";
                         echo"</table>";
-                    }
-                    else{echo "L'email joint est déjà relatif à un membre de notre base de données. Veuillez en saisir un nouveau s'il vous plait.";}
                 }
                 else{echo "Database not found";}
 
@@ -148,11 +142,6 @@ session_start();
 
             </div>
         </div>
-
-
-        
-
-
 
         <!-- Footer -->
         <footer>

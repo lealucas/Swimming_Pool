@@ -139,9 +139,8 @@ h1{
     color: rgba(0, 118, 126);
     transition: all 0.3s;
 }
-.Photo_gallery{
-    
-    margin-left: 30%;
+.gallery{
+    margin-bottom: 30px;
 }
 
 

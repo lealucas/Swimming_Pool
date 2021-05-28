@@ -142,6 +142,17 @@ h1{
 .titlebis{
     margin-bottom: 300px;
 }
+p#infos{
+    display:none;
+}
+.titlebis:hover p#nom{
+    display: none;
+
+}
+.titlebis:hover p#infos{
+    display: block;
+
+}
 
 
 

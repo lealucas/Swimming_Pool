@@ -163,6 +163,14 @@ img:hover{
     margin-bottom: 40px;
 }
 
+.describ input{
+    text-align:center; 
+    font-weight:bold; 
+    font-size: 17px; 
+    background-color: transparent;
+    border: 0px solid;
+}
+
 #info{
     margin-bottom: 20px;
 }

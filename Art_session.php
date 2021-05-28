@@ -86,7 +86,7 @@ session_start();
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\"><input type='text' STYLE='padding:0 0 0 10px; text-align:center; font-weight:bold; font-size: 17px; background-color: rgba(0,0,0,0)' readonly value=\"".$data['Nom']."\">.<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<br><input type='submit' value='Panier' name='panier' STYLE='border-radius:5px'></div>";
+                                echo"<p class=\"describ\"><input type='text' readonly value=\"".$data['Nom']."\">.<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<br><input type='submit' value='Panier' name='panier' STYLE='border-radius:5px'></div>";
                             }
                         }
                     } else {

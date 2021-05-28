@@ -139,14 +139,9 @@ h1{
     color: rgba(0, 118, 126);
     transition: all 0.3s;
 }
-<<<<<<< HEAD
-.titlebis{
-    margin-left: 38%;
-=======
 .cadre{
     border-bottom: solid 2px black;
     border-top: solid 2px black;
->>>>>>> 71d109474144a78272a561abee4dc7fd801313a0
 }
 .objet{
     margin-top: 20px;

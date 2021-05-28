@@ -52,6 +52,7 @@ session_start();
             
             <div id="formulaire">
             <form action="formulaire_info.php" method="post">
+            <div class="title"><p>Formulaire d'inscription : </p></div>
             <?php
                 echo "<meta charset=\"utf-8\">";
                 echo "<link rel=\"stylesheet\" type=\"text/css\" >";

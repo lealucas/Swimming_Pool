@@ -127,6 +127,7 @@ session_start();
                     $result = mysqli_query($db_handle,$sql);
                     $data = mysqli_fetch_assoc($result);
                     echo"Les informations suivantes ont bien été enregistrées : <br>";
+                    
                     echo "<table border='3'>";
                         echo"<td colspan='2' align='center'>";
                             echo"| Information Personnelles |";

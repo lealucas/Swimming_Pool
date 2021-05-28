@@ -32,22 +32,24 @@ session_start();
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
-                } ?>
+
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="#" class="lienn">Votre Compte</a>
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
             </ul>
         </div>
 
 
         <div id="section">
             <div id="position">
-                <a href="valider_vendeur.php" class="lienC">Gestion des vendeurs</a>
-                <a href="produits_attentes.php" class="lienC">Valider des articles</a>
+                <a href="gestion_vendeur.php" class="lienC">Gestion des vendeurs</a>
+                <a href="gestion_article.php" class="lienC">Gestion des articles</a>
                 <a href="cagnotte.php" class="lienC">????????</a>
                 <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
                 

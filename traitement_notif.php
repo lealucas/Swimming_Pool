@@ -26,14 +26,16 @@
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
-                } ?>
+
                 <a href="index.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="#" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
-                <a href="connexion.php" class="lienn">Votre Compte</a>
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
             </ul>
         </div>
 

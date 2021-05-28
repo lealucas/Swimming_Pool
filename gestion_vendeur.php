@@ -44,41 +44,49 @@ session_start();
 
         <div id="section">
             <div id="position">
-                <a href="#.php" class="lienC">Gestion des vendeurs</a>
-                <a href="produits_attentes.php" class="lienC">Valider des articles</a>
+                <a href="#" class="lienC">Gestion des vendeurs</a>
+                <a href="gestion_article.php" class="lienC">Gestion des articles</a>
                 <a href="cagnotte.php" class="lienC">????????</a>
                 <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
             </div>
 
             <div id="formulaire">
-                <div class="title"><p>Voulez-vous ajouter ces vendeurs? </p></div>
+                <div class="title"><p>Voici les vendeurs en attente : </p></div>
                 <form action="traitement_valider_vendeur.php" method="post">
                     <?php
                         $database = "Swimming_Pool";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
                         $db_found = mysqli_select_db($db_handle, $database);
+                      
+                        if ($db_found) {
+                            $sql = "SELECT * FROM Vendeur WHERE Valider ='0' LIMIT 1";
+                            $result = mysqli_query($db_handle, $sql);
 
-                        $Valider=isset($_POST["Reponse"])? $_POST["Reponse"] : "";
-                        
-                        if($_POST['goo']){
-                            if ($db_found) {
-                                $sql = "UPDATE Vendeur SET Valider ='1' WHERE Valider ='0' LIMIT 1 ";
-                                $result = mysqli_query($db_handle, $sql);
-                                    echo"Le vendeur a bien été ajouté";
+                            
+                            while ($data = mysqli_fetch_assoc($result)) { 
+                                echo"<table>";
+                                echo "<td>" . "ID : " . "</td>";
+                                echo "<td>" . $data['ID'] . "</td>";
+                                echo "<td>" . "Nom : " . "</td>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                                echo "<td>" . "Prenom : " . "</td>";
+                                echo "<td>" . $data['Prenom'] . "</td>";
+                                echo "<td>" . "Adresse : " . "</td>";
+                                echo "<td>" . $data['Adresse'] . "</td>";
+                                echo "<td>" . "Code Postal : " . "</td>";
+                                echo "<td>" . $data['CodePostal'] . "</td>";
+                                echo "<td>" . "Tel : " . "</td>";
+                                echo "<td>" . $data['Tel'] . "</td>";
+                                echo "<td>" . "email : " . "</td>";
+                                echo "<td>" . $data['email'] . "</td>";
+                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td>";
+                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";
                             }
-                            else{echo "Databse not found";}
+                            echo"</table>";
                         }
-                        elseif($_POST['noo']){
-                            if ($db_found) {
-                                $sql = "DELETE FROM Vendeur WHERE Valider ='0'LIMIT 1";
-                                $result = mysqli_query($db_handle, $sql);
+                        else{echo "Databse not found";}
 
-                                    echo"Le vendeur a bien été supprimé";
-                            }
-                            else{echo "Databse not found";}
-                        }
-                    
                     ?>
                 </form>
             </div>

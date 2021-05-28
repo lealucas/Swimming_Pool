@@ -30,7 +30,11 @@
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
-                <a href="connexion.php" class="lienn">Votre Compte</a>
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
             </ul>
         </div>
 

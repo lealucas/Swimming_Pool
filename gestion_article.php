@@ -28,29 +28,31 @@ session_start();
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
-                } ?>
+
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
             </ul>
         </div>
 
 
         <div id="section">
             <div id="position">
-                <a href="#" class="lienC">Gestion des vendeurs</a>
-                <a href="produits_attentes.php" class="lienC">Valider des articles</a>
+                <a href="gestion_vendeur.php" class="lienC">Gestion des vendeurs</a>
+                <a href="#.php" class="lienC">Gestion des articles</a>
                 <a href="cagnotte.php" class="lienC">????????</a>
                 <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
             </div>
 
             <div id="formulaire">
-                <div class="title"><p>Voulez-vous ajouter ces vendeurs? </p></div>
-                <form action="traitement_valider_vendeur.php" method="post">
+                <div class="title"><p>Voici les articles en attente d'ajout : </p></div>
+                <form action="traitement_valider_article.php" method="post">
                     <?php
                         $database = "Swimming_Pool";
 
@@ -58,7 +60,7 @@ session_start();
                         $db_found = mysqli_select_db($db_handle, $database);
                       
                         if ($db_found) {
-                            $sql = "SELECT * FROM Vendeur WHERE Valider ='0' LIMIT 1";
+                            $sql = "SELECT * FROM Article WHERE Valider ='0' LIMIT 1";
                             $result = mysqli_query($db_handle, $sql);
 
                             

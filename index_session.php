@@ -32,14 +32,16 @@ session_start();
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
-                } ?>
                 <a href="#" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
+                
                 <!-- mettre un if pour accéder a compte_client.php
                      et else emmene sur compte_vendeur.php
                      tester avec variable $_SESSION['de quelque chose'] -->

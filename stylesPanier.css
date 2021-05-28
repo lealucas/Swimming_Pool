@@ -102,15 +102,16 @@ h1{
 .lienC{
     font-size: 14px;
     font-weight: bold;
-    text-align: center;
+    margin-left: 10px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    margin-bottom: 10px;
-    margin-left: 30px;
-    height: 100%;
+    color: black;
+    background-color: rgba(165, 204, 255, 0);
+    padding: 15px;
 }
 .lienC:hover{
-    color: rgba(0, 118, 126);
+    background-color: rgb(69, 69, 69);
+    border-radius: 10px;
+    color: rgb(0, 117, 126);
     transition: all 0.3s;
 }
 

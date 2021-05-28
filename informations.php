@@ -51,6 +51,7 @@ session_start();
             </div>
             
             <div id="formulaire">
+            <form action="traitement_informations.php" method="post">
             <?php
                 echo "<meta charset=\"utf-8\">";
                 echo "<link rel=\"stylesheet\" type=\"text/css\" >";
@@ -140,8 +141,9 @@ session_start();
                 else{echo "Database not found";}
 
                 mysqli_close($db_handle);
-                
+
             ?>
+            </form>
 
             </div>
         </div>

@@ -26,7 +26,7 @@
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <a href="#" class="lienn">Accueil</a>
+                <a href="index.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
@@ -156,7 +156,7 @@
                 $result = mysqli_query($db_handle,$sql);
                 $number=mysqli_num_rows($result);
                 if($number==0){
-                    $sql = "INSERT INTO Vendeur (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp,Cagnotte) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp','0')";
+                    $sql = "INSERT INTO Vendeur (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp,Cagnotte,Valider) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp','0','0')";
                     $result = mysqli_query($db_handle, $sql);
                     $sql ="SELECT * FROM Vendeur WHERE Nom LIKE '%$Nom%'";
                     $result = mysqli_query($db_handle,$sql);

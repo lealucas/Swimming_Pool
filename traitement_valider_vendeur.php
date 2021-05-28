@@ -3,18 +3,16 @@
 session_start();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesAccueil.css" >
+    <link rel="stylesheet" href="stylesCompteVendeur.css" >
     <title>Document</title>
 </head>
 <body>
-
     <div id="wrapper">
         <!-- Header -->
         <div id="header">
@@ -24,8 +22,6 @@ session_start();
                 </div>
         </div>
 
-
-
         <!-- Menu de navigation -->
         <div id="nav">
             <h1>ECE MarketPlace</h1>
@@ -33,9 +29,9 @@ session_start();
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
                 <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
                 } ?>
-                <a href="#" class="lienn">Accueil</a>
+                <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
@@ -44,50 +40,47 @@ session_start();
         </div>
 
 
-
         <div id="section">
             <div id="position">
-                <p class="position_texte">Bienvenue sur notre site ECE Market Place. Nous vous souhaitons un agréable moment sur notre site en éspérant que vous trouverez votre bonheur à travers notre large gamme de produit.</p> <br>
-                <p class="position_texte">Et n'oubliez pas de créer votre compte pour bénéficiez d'une offre irrésistible le jour de votre anniversaire</p>
+                <a href="#.php" class="lienC">Gestion des vendeurs</a>
+                <a href="produits_attentes.php" class="lienC">Valider des articles</a>
+                <a href="cagnotte.php" class="lienC">????????</a>
+                <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
             </div>
 
-            <!-- Selection Journalière -->
-            <form action="daySelection.php" method="post"></form>
-            <div id="daySelection">
-                <div class="title">
-                    <p>Notre Sélection De Produits Quotidienne</p>
-                </div>
-                <div class="zoomcolonne">
+            <div id="formulaire">
+                <div class="title"><p>Voulez-vous ajouter ces vendeurs? </p></div>
+                <form action="traitement_valider_vendeur.php" method="post">
                     <?php
-                        echo"<link rel=\"stylesheet\" href=\"stylesAccueil.css\" >";
                         $database = "Swimming_Pool";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
                         $db_found = mysqli_select_db($db_handle, $database);
-                        if ($db_found) {
-                            $sql = "SELECT * FROM Article WHERE Valider='1' ORDER BY IDArticle DESC LIMIT 5 ";
-                            $result = mysqli_query($db_handle, $sql);
-                            while ($data = mysqli_fetch_assoc($result)) { 
-                                $image = $data['Photo'];
-                                echo"<img src='$image' width='180px'>";
+
+                        $Valider=isset($_POST["Reponse"])? $_POST["Reponse"] : "";
+                        
+                        if($_POST['goo']){
+                            if ($db_found) {
+                                $sql = "UPDATE Vendeur SET Valider ='1' WHERE Valider ='0' LIMIT 1 ";
+                                $result = mysqli_query($db_handle, $sql);
+                                    echo"Le vendeur a bien été ajouté";
                             }
-                        }else {echo "Database not found";}
-                        mysqli_close($db_handle);
+                            else{echo "Databse not found";}
+                        }
+                        elseif($_POST['noo']){
+                            if ($db_found) {
+                                $sql = "DELETE FROM Vendeur WHERE Valider ='0'LIMIT 1";
+                                $result = mysqli_query($db_handle, $sql);
+
+                                    echo"Le vendeur a bien été supprimé";
+                            }
+                            else{echo "Databse not found";}
+                        }
+                    
                     ?>
-                </div>
-            </div>
-
-            <!-- Les bests Sellers -->
-            <div id="bestSellers">
-                <div class="title">
-                    <p>Les Best Sellers de cette Semaine</p>
-                </div>
-                <div class="content">
-
-                </div>
+                </form>
             </div>
         </div>
-
 
 
         <!-- Footer -->

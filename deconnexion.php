@@ -1,10 +1,5 @@
 <?php
-    
     session_destroy();
-    session_destroy();
-    $_SESSION['IDClient']=null;
-    $_SESSION['IDVendeur']=null;  
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

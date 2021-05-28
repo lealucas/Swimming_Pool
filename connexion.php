@@ -103,6 +103,7 @@
                 session_start();
                 $_SESSION['IDClient'] = $data['IDClient'];
                 $_SESSION['Prenom'] = $data['Prenom'];
+                $_SESSION['IDVendeur'] = 0;
                 
             }
             elseif (mysqli_num_rows($result2) != 0) {
@@ -114,6 +115,7 @@
                 $_SESSION['IDVendeur'] = $data['IDVendeur'];
                 $_SESSION['Prenom'] = $data['Prenom'];
                 $_SESSION['Cagnotte'] = $data['Cagnotte'];
+                $_SESSION['IDClient'] = 0;
             }
             else{echo "Email ou mot de passe incorrect. Veuillez réessayer";}
         }

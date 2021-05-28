@@ -65,9 +65,10 @@ session_start();
                             if ($db_found) {
                                 $sql = "UPDATE Article SET Valider ='1' WHERE Valider ='0' LIMIT 1 ";
                                 $result = mysqli_query($db_handle, $sql);
-                                    echo"L'article a bien été ajouté.";
+                                    echo"<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >L'article a bien été ajouté.";
+                                    echo"</div>";
                             }
-                            else{echo "Databse not found";}
+                            else{echo "Database not found";}
                         }
                         elseif($_POST['noo']){
                             if ($db_found) {

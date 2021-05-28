@@ -36,7 +36,8 @@ session_start();
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="#" class="lienn">Panier</a>
-                <?php if ($_SESSION['Prenom'] == "Admin") {
+                <?php 
+                if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 

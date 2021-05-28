@@ -39,7 +39,6 @@
             </ul>
         </div>
 
-
         <div id="section">
             <div id="categorie">
                 <div class="title">

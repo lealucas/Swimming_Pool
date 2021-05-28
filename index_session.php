@@ -40,6 +40,9 @@ session_start();
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
                 <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <!-- mettre un if pour accéder a compte_client.php
+                     et else emmene sur compte_vendeur.php
+                     tester avec variable $_SESSION['de quelque chose'] -->
             </ul>
         </div>
 

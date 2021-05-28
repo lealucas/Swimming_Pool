@@ -68,7 +68,7 @@ session_start();
                             while ($data = mysqli_fetch_assoc($result)) { 
                                 echo"<div class='liste'>";
                                 echo"<ul>";
-                                echo"<li>\"ID : \" </li>";
+                                echo"<li>ID : </li>";
                                     echo"<li>".$data['IDArticle']."</li>";
                                 echo"</ul>";
                                 echo"<ul>";

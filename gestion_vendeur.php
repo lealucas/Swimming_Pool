@@ -65,7 +65,41 @@ session_start();
 
                             
                             while ($data = mysqli_fetch_assoc($result)) { 
-                                echo"<table>";
+                                echo"<div class='liste'>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>ID : </li>";
+                                    echo"<li>".$data['IDVendeur']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>Nom : </li>";
+                                    echo"<li>".$data['Nom']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>Prenom : </li>";
+                                    echo"<li>".$data['Prenom']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>Adresse : </li>";
+                                    echo"<li>".$data['Adresse'] ."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>Code Postal : </li>";
+                                    echo"<li>".$data['CodePostal']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>Tel : </li>";
+                                    echo"<li>".$data['Tel']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li class='vert'>email : </li>";
+                                    echo"<li>".$data['email']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li><td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td></li>";
+                                    echo"<li><td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td></li>";
+                                echo"</ul>";
+                                echo"</div>";
+                                /*echo"<table>";
                                 echo "<td>" . "ID : " . "</td>";
                                 echo "<td>" . $data['IDClient'] . "</td>";
                                 echo "<td>" . "Nom : " . "</td>";
@@ -81,7 +115,7 @@ session_start();
                                 echo "<td>" . "email : " . "</td>";
                                 echo "<td>" . $data['email'] . "</td>";
                                 echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td>";
-                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";
+                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";*/
                             }
                             echo"</table>";
                         }

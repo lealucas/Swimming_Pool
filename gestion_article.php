@@ -55,6 +55,7 @@ session_start();
                 <form action="traitement_gestion_article.php" method="post">
                     <?php
                         $database = "Swimming_Pool";
+                        echo"<link rel=\"stylesheet\" href=\"stylesCompteVendeur.css\" >";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
                         $db_found = mysqli_select_db($db_handle, $database);
@@ -65,7 +66,41 @@ session_start();
 
                             
                             while ($data = mysqli_fetch_assoc($result)) { 
-                                echo"<table>";
+                                echo"<div class='liste'>";
+                                echo"<ul>";
+                                echo"<li>\"ID : \" </li>";
+                                    echo"<li>".$data['IDArticle']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li>Nom : </li>";
+                                    echo"<li>".$data['Nom']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<div id='imge'><li>Photo : </li>";
+                                    echo"<li><img src=".$data['Photo']." width='30px'></li></div>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li>Description : </li>";
+                                    echo"<li>".$data['Discrib'] ."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li>Catégorie : </li>";
+                                    echo"<li>".$data['Categorie']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li>Mode de vente : </li>";
+                                    echo"<li>".$data['Vente']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li>Prix : </li>";
+                                    echo"<li>".$data['Prix']."</li>";
+                                echo"</ul>";
+                                echo"<ul>";
+                                    echo"<li><td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td></li>";
+                                    echo"<li><td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td></li>";
+                                echo"</ul>";
+                                echo"</div>";
+                                /*echo"<table>";
                                 echo "<td>" . "ID : " . "</td>";
                                 echo "<td>" . $data['IDArticle'] . "</td>";
                                 echo "<td>" . "Nom : " . "</td>";
@@ -81,7 +116,7 @@ session_start();
                                 echo "<td>" . "Prix : " . "</td>";
                                 echo "<td>" . $data['Prix'] . "</td>";
                                 echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td>";
-                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";
+                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";*/
                             }
                             echo"</table>";
                         }

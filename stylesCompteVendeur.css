@@ -72,16 +72,7 @@ h1{
 }
 
 
-#formulaire{
-    width: auto;
-    height: auto;
-    margin: auto;
-    margin-bottom: 100px;
-    background-color: rgba(161, 231, 236, 0.402);
-    border: solid 2px black;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
-    border-radius: 10px;
-}
+
 table{
     margin: auto;
     max-width: 200px;
@@ -218,6 +209,26 @@ img:hover{
 .describ{
     text-align: center;
     margin-bottom: 40px;
+}
+
+
+/*Pour doc gestion_article.php  et  gestion_vendeur.php*/
+
+.liste{
+    background-color:rgba(0, 0, 0, 0.211);
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius:20px;
+}
+
+ul{
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+    margin: auto;
 }
 
 

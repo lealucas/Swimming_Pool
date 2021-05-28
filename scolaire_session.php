@@ -68,6 +68,8 @@ session_start();
                 <div>
                 <?php
 
+                    echo"<link rel=\"stylesheet\" href=\"stylesToutParcourir.css\">";
+
                     $database = "Swimming_Pool";
 
                     $db_handle = mysqli_connect('localhost', 'root', 'root');
@@ -75,30 +77,22 @@ session_start();
 
 
                     if ($db_found) {
-                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'Scolaire'";
+                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'Art' AND Valider = '1'";
                         $result = mysqli_query($db_handle, $sql);
 
                         if (mysqli_num_rows($result) == 0) {
                             echo "Pas d'article dans cette catégorie <br>";
                         } else {
-                            echo "<table border='1'><tr><th>Nom</th><th>Description</th><th>Photo</th><th>Prix en €</th>";
-                            echo "</tr>";
-            
                             while ($data = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . $data['Discrib'] . "</td>";
                                 $image = $data['Photo'];
-                                echo "<td>" . "<img src='/img/$image' height='120' width='200' >" ."</td>";
-                                echo "<td>". $data['Prix']. "</td>";
-                                echo "</tr>";
+                                echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                echo"<p class=\"describ\">".$data['Nom'].".<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."<br>Vente par : ".$data['Vente']."</p></div>";
                             }
-                            echo "</table>";
                         }
                     } else {
                         echo "Database not found. <br>";
                     }
-                mysqli_close($db_handle);
+                    mysqli_close($db_handle);
                 ?>
                 </div>
             </div>

@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesInscription.css">
+    <link rel="stylesheet" href="stylesCompteVendeur.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,9 +18,8 @@ session_start();
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
-                    <a href="admin.php" class="lienh" STYLE="padding:0 0 0 1080px">Admin</a> |
-                    <a href="inscription.html" class="lienh">S'inscrire</a> | 
-                    <a href="connexion.php" class="lienh">Se connecter</a>
+                    Bienvenue : <?php echo $_SESSION['Prenom']; ?>
+                    <a href="deconnexion.php" class="lienh" STYLE="padding:0 0 0 1080px">Se déconnecter</a>
                 </div>
         </div>
 
@@ -45,6 +44,10 @@ session_start();
 
 
         <div id="section">
+        <div id="position">
+                <a href="informations.php" class="lienC">Informations</a>
+                <a href="echange_vendeur.php" class="lienC">Vos échanges vendeur</a>
+            </div>
             <div id="formulaire">
 
                 <?php
@@ -126,11 +129,10 @@ session_start();
                     $sql = "SELECT * FROM Client WHERE IDClient LIKE '$IDClient'";
                     $result = mysqli_query($db_handle,$sql);
                     $data = mysqli_fetch_assoc($result);
-                    echo"Les informations suivantes ont bien été enregistrées : <br>";
-                    
+                    echo"<div class=\"title\"><p>Ces données ont bien été prises en compte : </p></div>";
                     echo "<table border='3'>";
                         echo"<td colspan='2' align='center'>";
-                            echo"| Information Personnelles |";
+                            echo"| Informations Personnelles |";
                         echo"</td>";
 
                         echo "<tr>";
@@ -138,7 +140,7 @@ session_start();
                             echo "<td>" . $data['Nom'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                            echo "<td>" . "Prenom : " . "</td>";
+                            echo "<td>" . "Prénom : " . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
@@ -166,7 +168,7 @@ session_start();
                             echo "<td>" . $data['Birthday'] . "</td>";
                         echo "</tr>";
                         echo"<td colspan=\"2\" align=\"center\">";
-                            echo"| Information bancaires|";
+                            echo"| Informations bancaires |";
                         echo"</td>";
                         echo "<tr>";
                             echo "<td>" . "Carte : " . "</td>";
@@ -177,7 +179,7 @@ session_start();
                             echo "<td>" . "*****************" . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                            echo "<td>" . "Date d'éxpiration" . "</td>";
+                            echo "<td>" . "Date d'expiration" . "</td>";
                             echo "<td>" . $data['DateExp'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
@@ -185,7 +187,7 @@ session_start();
                             echo "<td>" . "************" . "</td>";
                         echo "</tr>";
                         echo"<td colspan=\"2\" align=\"center\">";
-                            echo"| Information Personnelles |";
+                            echo"| Informations Personnelles |";
                         echo"</td>";
                         echo "<tr>";
                             echo "<td>" . "E-mail : " . "</td>";

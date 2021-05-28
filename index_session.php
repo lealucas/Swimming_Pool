@@ -74,7 +74,7 @@ session_start();
                             $result = mysqli_query($db_handle, $sql);
                             while ($data = mysqli_fetch_assoc($result)) { 
                                 $image = $data['Photo'];
-                                echo"<img src='$image' width='180px'>";
+                                echo"<img src='$image' width='180px' height='180px'>";
                             }
                         }else {echo "Database not found";}
                         mysqli_close($db_handle);

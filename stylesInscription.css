@@ -103,7 +103,10 @@ h1{
     border-radius: 10px;
 }
 table{
-    margin-left: 29%;
+    margin : auto;
+}
+tr{
+    width : 150px;
 }
 .title{
     text-align: center;

@@ -101,7 +101,9 @@
                 echo"Bonjour ";
                 echo"<a href='index_session.php' align='center'>".$data['Prenom']."</a></h3>";
                 session_start();
+                $_SESSION['IDClient'] = $data['IDClient'];
                 $_SESSION['Prenom'] = $data['Prenom'];
+                
             }
             elseif (mysqli_num_rows($result2) != 0) {
                 $data = mysqli_fetch_assoc($result2);

@@ -140,8 +140,7 @@ h1{
     transition: all 0.3s;
 }
 .titlebis{
-    margin-bottom: 300px;
-    margin-left: 40%;
+    margin-left: 38%;
 }
 p#infos{
     display:none;
@@ -155,7 +154,13 @@ p#infos{
 
 }
 
-
+#info{
+    margin-bottom: 20px;
+}
+#nom{
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 
 

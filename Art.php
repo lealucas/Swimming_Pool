@@ -12,7 +12,7 @@
     <div id="wrapper">
         <div id="header">
                 <div id="barreheader">
-                    <a href="" class="lienh" STYLE="padding:0 0 0 1080px">Admin</a> |
+                    <a href="admin.php" class="lienh" STYLE="padding:0 0 0 1080px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
                     <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>
@@ -61,6 +61,7 @@
                 </div>
                 <div>
                 <?php
+
                     echo"<link rel=\"stylesheet\" href=\"stylesToutParcourir.css\">";
 
                     $database = "Swimming_Pool";
@@ -78,13 +79,13 @@
                         } else {
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
-                                echo "<div class=\"gallery\"><img src='$image' width='200px'></div>";
+                                echo "<img class='Photo_gallery' src='$image' width='200'><br>";
                             }
                         }
                     } else {
                         echo "Database not found. <br>";
                     }
-                    mysqli_close($db_handle);
+                mysqli_close($db_handle);
                 ?>
                 </div>
             </div>

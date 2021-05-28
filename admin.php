@@ -14,7 +14,7 @@
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : 
-                    <a href="" class="lienh" STYLE="padding:0 0 0 990px">Admin</a> |
+                    <a href="admin.php" class="lienh" STYLE="padding:0 0 0 1080px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
                     <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>

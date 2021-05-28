@@ -52,7 +52,7 @@ session_start();
 
             <div id="formulaire">
                 <div class="title"><p>Voici les vendeurs en attente : </p></div>
-                <form action="traitement_valider_vendeur.php" method="post">
+                <form action="traitement_gestion_vendeur.php" method="post">
                     <?php
                         $database = "Swimming_Pool";
 
@@ -67,7 +67,7 @@ session_start();
                             while ($data = mysqli_fetch_assoc($result)) { 
                                 echo"<table>";
                                 echo "<td>" . "ID : " . "</td>";
-                                echo "<td>" . $data['ID'] . "</td>";
+                                echo "<td>" . $data['IDClient'] . "</td>";
                                 echo "<td>" . "Nom : " . "</td>";
                                 echo "<td>" . $data['Nom'] . "</td>";
                                 echo "<td>" . "Prenom : " . "</td>";

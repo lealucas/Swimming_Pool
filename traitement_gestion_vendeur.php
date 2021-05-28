@@ -65,7 +65,7 @@ session_start();
                             if ($db_found) {
                                 $sql = "UPDATE Vendeur SET Valider ='1' WHERE Valider ='0' LIMIT 1 ";
                                 $result = mysqli_query($db_handle, $sql);
-                                    echo"Le vendeur a bien été ajouté";
+                                    echo"Le vendeur a bien été ajouté.";
                             }
                             else{echo "Databse not found";}
                         }
@@ -74,7 +74,7 @@ session_start();
                                 $sql = "DELETE FROM Vendeur WHERE Valider ='0'LIMIT 1";
                                 $result = mysqli_query($db_handle, $sql);
 
-                                    echo"Le vendeur a bien été supprimé";
+                                    echo"Le vendeur a bien été supprimé.";
                             }
                             else{echo "Databse not found";}
                         }

@@ -51,42 +51,34 @@ session_start();
             </div>
 
             <div id="formulaire">
-                <div class="title"><p>Voici les articles en attente d'ajout : </p></div>
+                <div class="title"><p>Voici les articles en attente d'acceptation : </p></div>
                 <form action="traitement_gestion_article.php" method="post">
                     <?php
                         $database = "Swimming_Pool";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
                         $db_found = mysqli_select_db($db_handle, $database);
-                      
-                        if ($db_found) {
-                            $sql = "SELECT * FROM Article WHERE Valider ='0' LIMIT 1";
-                            $result = mysqli_query($db_handle, $sql);
 
-                            
-                            while ($data = mysqli_fetch_assoc($result)) { 
-                                echo"<table>";
-                                echo "<td>" . "ID : " . "</td>";
-                                echo "<td>" . $data['IDArticle'] . "</td>";
-                                echo "<td>" . "Nom : " . "</td>";
-                                echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . "Photo : " . "</td>";
-                                echo "<td><img width=100px src=\"" . $data['Photo']. "\"></td>";
-                                echo "<td>" . "Description : " . "</td>";
-                                echo "<td>" . $data['Discrib'] . "</td>";
-                                echo "<td>" . "Catégorie : " . "</td>";
-                                echo "<td>" . $data['Categorie'] . "</td>";
-                                echo "<td>" . "Mode de vente : " . "</td>";
-                                echo "<td>" . $data['Vente'] . "</td>";
-                                echo "<td>" . "Prix : " . "</td>";
-                                echo "<td>" . $data['Prix'] . "</td>";
-                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td>";
-                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";
+                        $Valider=isset($_POST["Reponse"])? $_POST["Reponse"] : "";
+                        
+                        if($_POST['goo']){
+                            if ($db_found) {
+                                $sql = "UPDATE Article SET Valider ='1' WHERE Valider ='0' LIMIT 1 ";
+                                $result = mysqli_query($db_handle, $sql);
+                                    echo"L'article a bien été ajouté.";
                             }
-                            echo"</table>";
+                            else{echo "Databse not found";}
                         }
-                        else{echo "Databse not found";}
+                        elseif($_POST['noo']){
+                            if ($db_found) {
+                                $sql = "DELETE FROM Article WHERE Valider ='0'LIMIT 1";
+                                $result = mysqli_query($db_handle, $sql);
 
+                                    echo"L'article a bien été supprimé.";
+                            }
+                            else{echo "Databse not found";}
+                        }
+                    
                     ?>
                 </form>
             </div>

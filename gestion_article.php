@@ -64,7 +64,6 @@ session_start();
                             $sql = "SELECT * FROM Article WHERE Valider ='0' LIMIT 1";
                             $result = mysqli_query($db_handle, $sql);
 
-                            
                             while ($data = mysqli_fetch_assoc($result)) { 
                                 echo"<div class='liste'>";
                                 echo"<ul>";

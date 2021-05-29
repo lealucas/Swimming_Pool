@@ -49,9 +49,17 @@ session_start();
 
 
         <div id="section">
-            <div id="result">
+            <div id="formulaire">
                     <div class="title">
                         <p>Votre panier</p>
+                        <form action="fin_achat.php" method="post">
+                <tr>
+                    <td rowspan="3">Souhaitez-vous acheter tout ces articles ? </td>
+                </tr>
+                <tr><td><input type="radio" name="Achat" value="oui" id="">Oui</td></tr>
+                <tr><td><input type="radio" name="Achat" value="non" id="">Non</td></tr>
+                <td colspan="2" align="center"><input type="submit" name="Acheter" value="Valider"></td>
+            </form>
                     </div>
             <?php
                 $database = "Swimming_Pool";
@@ -78,26 +86,18 @@ session_start();
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                            echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."</div>";
+                            echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente']."</div>";
                             $PrixGlob+=$data['Prix'];
                         }
                     echo"<br><br>";
-                    echo "Voici le prix global de votre panier :";
-                    echo $PrixGlob;
+                    echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Voici le prix global de votre panier : ";
+                    echo $nombre_format_francais = number_format($PrixGlob, 2, ',', ' ');
+                
                     echo "€";
                 }
             ?>
             </div>
-            <form action="fin_achat.php" method="post">
-                <tr>
-                    <td rowspan="3">Souhaitez-vous acheter tout ces articles ? </td>
-                </tr>
-                <tr><td><input type="radio" name="Achat" value="oui" id="">Oui</td></tr>
-                <tr><td><input type="radio" name="Achat" value="non" id="">Non</td></tr>
-                <td colspan="2" align="center"><input type="submit" name="Acheter" value="Valider"></td>
-            </form>
 
-        </div>
         </div>
             
 

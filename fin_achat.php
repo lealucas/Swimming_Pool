@@ -45,8 +45,12 @@ session_start();
             </ul>
         </div>
         
-        <div id="formulaire">
-                <div class="title"><p> Votre panier : </p></div>
+        <div id="section">
+            
+            <div id="result">
+                <div class="title">
+                    <p> Votre panier : </p>
+                </div>
 
             <?php
                 $database = "Swimming_Pool";
@@ -62,17 +66,18 @@ session_start();
                             $sql = "UPDATE Article SET Valider='0' WHERE IDPanier='$IDClient'";
                             $result = mysqli_query($db_handle,$sql);
                             $data = mysqli_fetch_assoc($result);
-                            echo "Félicitations pour vos achats." ;
+                            echo "<div STYLE='text-align:center; margin-top: 10px; margin-bottom: 10px'>Félicitations pour vos achats." ;
                             echo "<br>";
-                            echo"A très bientôt sur ECE MarketPlace ! :)";
+                            echo"A très bientôt sur ECE MarketPlace ! :)</div>";
                         }
-                        else{echo "Tous vos articles sont encore dans votre panier.";
+                        else{echo "<div STYLE='text-align:center'>Tous vos articles sont encore dans votre panier.";
                             echo"<br>";
-                            echo"Vous n'avez pas procédé à un achat.";}
+                            echo"Vous n'avez pas procédé à un achat.</div>";}
                     }
                 }
             ?>
 
+        </div>
         </div>
             
 

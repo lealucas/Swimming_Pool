@@ -100,23 +100,7 @@ session_start();
                                     echo"<li><td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td></li>";
                                 echo"</ul>";
                                 echo"</div>";
-                                /*echo"<table>";
-                                echo "<td>" . "ID : " . "</td>";
-                                echo "<td>" . $data['IDArticle'] . "</td>";
-                                echo "<td>" . "Nom : " . "</td>";
-                                echo "<td>" . $data['Nom'] . "</td>";
-                                echo "<td>" . "Photo : " . "</td>";
-                                echo "<td><img width=100px src=\"" . $data['Photo']. "\"></td>";
-                                echo "<td>" . "Description : " . "</td>";
-                                echo "<td>" . $data['Discrib'] . "</td>";
-                                echo "<td>" . "Catégorie : " . "</td>";
-                                echo "<td>" . $data['Categorie'] . "</td>";
-                                echo "<td>" . "Mode de vente : " . "</td>";
-                                echo "<td>" . $data['Vente'] . "</td>";
-                                echo "<td>" . "Prix : " . "</td>";
-                                echo "<td>" . $data['Prix'] . "</td>";
-                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"goo\" value=\"Valider\"></td>";
-                                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"noo\" value=\"Supprimer\"></td>";*/
+                               
                             }
                             echo"</table>";
                         }

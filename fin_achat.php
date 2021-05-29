@@ -63,9 +63,14 @@ session_start();
                 if ($db_found){
                     if (isset($_POST["Acheter"])){
                         if($Achat == "oui"){
-                            $sql = "UPDATE Article SET Valider='0' AND SET IDPanier='0' WHERE IDPanier='$IDClient'";
+                            $sql = "UPDATE Article SET Valider='0' WHERE IDPanier='$IDClient'";
                             $result = mysqli_query($db_handle,$sql);
                             $data = mysqli_fetch_assoc($result);
+
+                            $sql = "UPDATE Article SET IDPanier='0' WHERE IDPanier='$IDClient'";
+                            $result = mysqli_query($db_handle,$sql);
+                            $data = mysqli_fetch_assoc($result);
+
                             echo "<div STYLE='text-align:center; margin-top: 10px; margin-bottom: 10px'>Félicitations pour vos achats." ;
                             echo "<br>";
                             echo"A très bientôt sur ECE MarketPlace ! :)</div>";

@@ -58,27 +58,33 @@ session_start();
 
                 $db_handle = mysqli_connect('localhost', 'root', 'root');
                 $db_found = mysqli_select_db($db_handle, $database);
-                
-                $IDArticle = isset($_POST["$IDArticle"])? $_POST["$IDArticle"] : "";
-                echo "je suis devant la boucle ";
-                echo $IDArticle;
-                if ($db_found){
-                    echo"j'ai trouve la bdd";
-                    if($_POST["panier"]){
-                        echo"j ai trouve le panier";
-                        $IDClient = $_SESSION['IDClient'];
-                        $sql = "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient')";
-                        
-                        $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        $IDPanier = $data['IDPanier'];
+                $PrixGlob=0;
 
-                        $sql = "UPDATE Article SET IDPanier='$IDPanier' WHERE Nom LIKE '$Nom' ";
+                if ($db_found){
+
+                    $IDArticle=$_GET['IDArticle'];
+                    
+                        $IDClient = $_SESSION['IDClient'];
+                        $sql= "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient') ";
+                        $result = mysqli_query($db_handle,$sql);
+                        $data = mysqli_fetch_assoc($result);
+                        $sql = "UPDATE Article SET IDPanier='$IDClient' WHERE IDArticle='$IDArticle'";
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
                         
+                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient'";
+                        $result = mysqli_query($db_handle,$sql);
+                        $data = mysqli_fetch_assoc($result);
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            $image = $data['Photo'];
+                            echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                            echo"<p class=\"describ\"><input type='text' name=\"love\" readonly value=\"".$data['Nom']."\"><br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                            $PrixGlob+=$data['Prix'];
+                        }
+                    echo"<br>";
+                    echo $PrixGlob;
+                    echo "€";
                     }
-                }
             ?>
         </div>
             

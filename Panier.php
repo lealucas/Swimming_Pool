@@ -80,7 +80,7 @@ session_start();
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
                         
-                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient'";
+                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1'";
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
                         while ($data = mysqli_fetch_assoc($result)) {

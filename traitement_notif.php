@@ -58,11 +58,6 @@
                         <tr><td><input type="radio" name="typeProduit" value="Art" id="">Meubles et Objets d'Art</td></tr>
                         <tr><td><input type="radio" name="typeProduit" value="VIP" id="">Accessoires VIP</td></tr>
                         <tr><td><input type="radio" name="typeProduit" value="Scolaire" id="">Fournitures Scolaires</td></tr>
-                        <tr>
-                            <td rowspan="3">Vidéo : </td>
-                        </tr>
-                        <tr><td><input type="radio" name="video" value="oui" id="">Oui</td></tr>
-                        <tr><td><input type="radio" name="video" value="non" id="">Non</td></tr>
                         <td colspan="2" align="center"><input type="submit" name="oui" value="Envoyer" ></td>
                     </table>
                     </form>
@@ -74,7 +69,7 @@
                 </div>
                 <div>
                     <?php
-                    echo"<link rel=\"stylesheet\" href=\"stylesToutParcourir.css\">";
+                    echo"<link rel=\"stylesheet\" href=\"stylesNotif.css\">";
                     echo"<meta charset='UTF-8'>";
                     $database = "Swimming_Pool";
 

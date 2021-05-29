@@ -100,7 +100,7 @@ h1{
     float: left;
     width: 450px;
     height: 275px;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-top: 50px;
     background-color: rgba(161, 231, 236, 0.402);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.600);
@@ -117,7 +117,7 @@ h1{
 #result{
     width: 500px;
     height: auto;
-    margin-left: 590px;
+    margin-left: 690px;
     margin-top: 50px;
     margin-bottom: 100px;
     background-color: rgba(161, 231, 236, 0.402);

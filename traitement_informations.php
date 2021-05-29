@@ -83,47 +83,47 @@ session_start();
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Prenom != null){
-                        $sql ="UPDATE Client SET Prenom='$Prenom'";
+                        $sql ="UPDATE Client SET Prenom='$Prenom' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Adresse != null){
-                        $sql ="UPDATE Client SET Adresse='$Adresse'";
+                        $sql ="UPDATE Client SET Adresse='$Adresse' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Ville != null){
-                        $sql ="UPDATE Client SET Ville='$Ville'";
+                        $sql ="UPDATE Client SET Ville='$Ville' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($CodePostal != null){
-                        $sql ="UPDATE CodePostal SET CodePostal='$CodePostal'";
+                        $sql ="UPDATE CodePostal SET CodePostal='$CodePostal' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Pays != null){
-                        $sql ="UPDATE Client SET Pays='$Pays'";
+                        $sql ="UPDATE Client SET Pays='$Pays' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Tel != null){
-                        $sql ="UPDATE Client SET Tel='$Tel'";
+                        $sql ="UPDATE Client SET Tel='$Tel' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Carte != null){
-                        $sql ="UPDATE Client SET Carte='$Carte'";
+                        $sql ="UPDATE Client SET Carte='$Carte' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($NumCarte != null){
-                        $sql ="UPDATE Client SET NumCarte='$NumCarte'";
+                        $sql ="UPDATE Client SET NumCarte='$NumCarte' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($DateExp != null){
-                        $sql ="UPDATE Client SET DateExp='$DateExp'";
+                        $sql ="UPDATE Client SET DateExp='$DateExp' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Picto != null){
-                        $sql ="UPDATE Client SET Picto='$Picto'";
+                        $sql ="UPDATE Client SET Picto='$Picto' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     if($Mdp != null){
-                        $sql ="UPDATE Client SET Mdp='$Mdp'";
+                        $sql ="UPDATE Client SET Mdp='$Mdp' WHERE IDClient LIKE '$IDClient'";
                         $result = mysqli_query($db_handle,$sql);
                     }
                     $sql = "SELECT * FROM Client WHERE IDClient LIKE '$IDClient'";

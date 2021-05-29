@@ -38,13 +38,17 @@
             <div id="formulaire">
                 <div class="title"><p>Formulaire d'inscription : </p></div>
                 <form action="traitement_inscription.php" method="post">
-                    <table border="2">
-                        <td colspan="2" align="center">| Informations Personnelles |</td>
+                    <table border="2"STYLE ='margin-top: 30px; margin-bottom: 30px'>
+                        <td colspan="2" align="center"STYLE ='padding-top: 10px;padding-bottom: 10px'>| Informations Personnelles |</td>
                         <tr>
                             <td rowspan="3">Vendeur / Client ?</td>
                         </tr>
                         <tr><td><input type="radio" name="typePers" value="C" required id="">Client</td></tr>
                         <tr><td><input type="radio" name="typePers" value="V" required  id="">Vendeur</td></tr>
+                        <tr>
+                            <td>Photo de profil : </td>
+                            <td><input type="url" name="PdP" required id=""></td>
+                        </tr>
                         <tr>
                             <td>Nom : </td>
                             <td><input type="text" name="Nom" required maxlength="25" id=""></td>
@@ -77,7 +81,7 @@
                             <td>Date de naissance : </td>
                             <td><input type="date" name="Birthday" required  id=""></td>
                         </tr>
-                        <td colspan="2" align="center">| Informations Bancaires |</td>
+                        <td colspan="2" align="center" STYLE ='padding-top: 10px;padding-bottom: 10px'>| Informations Bancaires |</td>
                         <tr>
                             <td rowspan="5">Type de carte</td>
                         </tr>
@@ -97,7 +101,7 @@
                             <td>Pictogramme : </td>
                             <td><input type="number" name="Picto" required maxlength="3"id=""></td>
                         </tr>
-                        <td colspan="2" align="center">| Informations du compte |</td>
+                        <td colspan="2" align="center"STYLE ='padding-top: 10px;padding-bottom: 10px'>| Informations du compte |</td>
                         <tr>
                             <td>Email : </td>
                             <td><input type="email" name="email" required maxlength="25" id=""></td>

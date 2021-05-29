@@ -36,7 +36,7 @@ session_start();
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\"STYLE=\"text-decoration: underline\">Gestion</a>";
                 }
-                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\"STYLE=\"text-decoration: underline\">Votre Compte</a>";} 
                 ?>
             </ul>
         </div>

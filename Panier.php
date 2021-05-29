@@ -81,11 +81,22 @@ session_start();
                             echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."</div>";
                             $PrixGlob+=$data['Prix'];
                         }
-                    echo"<br>";
+                    echo"<br><br>";
+                    echo "Voici le prix global de votre panier :";
                     echo $PrixGlob;
                     echo "€";
-                    }
+                }
             ?>
+            </div>
+            <form action="fin_achat.php" method="post">
+                <tr>
+                    <td rowspan="3">Souhaitez-vous acheter tout ces articles ? </td>
+                </tr>
+                <tr><td><input type="radio" name="Achat" value="oui" id="">Oui</td></tr>
+                <tr><td><input type="radio" name="Achat" value="non" id="">Non</td></tr>
+                <td colspan="2" align="center"><input type="submit" name="Acheter" value="Valider"></td>
+            </form>
+
         </div>
         </div>
             

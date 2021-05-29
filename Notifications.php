@@ -54,8 +54,8 @@ session_start();
                         <tr>
                             <td rowspan="3">Tranche de prix : </td>
                         </tr>
-                        <tr><td> <input type="number" name="prixMin" id="" placeholder="Prix Minimum...">€</td></tr>
-                        <tr><td> <input type="number" name="prixMax" id="" placeholder="Prix Maximum...">€</td></tr>
+                        <tr><td> <input type="number" name="prixMin" value ="0" id="" placeholder="Prix Minimum...">€</td></tr>
+                        <tr><td> <input type="number" name="prixMax" value="999999999" id="" placeholder="Prix Maximum...">€</td></tr>
                         <tr>
                             <td rowspan="4">Catégorie : </td>
                         </tr>

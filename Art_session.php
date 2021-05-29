@@ -75,7 +75,6 @@ session_start();
                     $db_handle = mysqli_connect('localhost', 'root', 'root');
                     $db_found = mysqli_select_db($db_handle, $database);
 
-
                     if ($db_found) {
                         $sql = "SELECT * FROM Article WHERE Categorie LIKE 'Art' AND Valider = '1'";
                         $result = mysqli_query($db_handle, $sql);
@@ -84,9 +83,11 @@ session_start();
                             echo "Pas d'article dans cette catégorie <br>";
                         } else {
                             while ($data = mysqli_fetch_assoc($result)) {
+                                
                                 $image = $data['Photo'];
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\"><input type='text' name='love' readonly value=\"".$data['Nom']."\">.<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<br><input type='submit' value='Panier' name='panier' STYLE='border-radius:5px'></div>";
+                                echo"<p class=\"describ\"><input type='text' name=\"love\" readonly value=\"".$data['Nom']."\"><br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<br><input type='submit' class='PanierBtn' value='$IDArticle' name=\"panier\" STYLE='border-radius:5px'>"."</div>";
+                           
                             }
                         }
                     } else {

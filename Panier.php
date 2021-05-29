@@ -58,14 +58,25 @@ session_start();
 
                 $db_handle = mysqli_connect('localhost', 'root', 'root');
                 $db_found = mysqli_select_db($db_handle, $database);
-
+                
+                $IDArticle = isset($_POST["$IDArticle"])? $_POST["$IDArticle"] : "";
+                echo "je suis devant la boucle ";
+                echo $IDArticle;
                 if ($db_found){
-                    if($_POST['panier']){
+                    echo"j'ai trouve la bdd";
+                    if($_POST["panier"]){
+                        echo"j ai trouve le panier";
                         $IDClient = $_SESSION['IDClient'];
                         $sql = "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient')";
+                        
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
-                        $sql = "";
+                        $IDPanier = $data['IDPanier'];
+
+                        $sql = "UPDATE Article SET IDPanier='$IDPanier' WHERE Nom LIKE '$Nom' ";
+                        $result = mysqli_query($db_handle,$sql);
+                        $data = mysqli_fetch_assoc($result);
+                        
                     }
                 }
             ?>

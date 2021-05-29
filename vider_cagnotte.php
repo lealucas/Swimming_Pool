@@ -34,9 +34,9 @@ session_start();
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
                 <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                    echo"<a href=\"gestion.php\" class=\"lienn\"STYLE=\"text-decoration: underline\">Gestion</a>";
                 }
-                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\" STYLE=\"text-decoration: underline\">Votre Compte</a>";} 
                 ?>
             </ul>
         </div>
@@ -48,7 +48,7 @@ session_start();
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
                 <a href="produits_attentes.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Votre cagnotte</a>
-                <a href="vidercagnotte.php" class="lienC">Vider votre cagnotte <img src="img/caddy.png" width="22px"></a>
+                <a href="vidercagnotte.php" class="lienC" STYLE="text-decoration: underline">Vider votre cagnotte <img src="img/caddy.png" width="22px"></a>
             </div>
 
             <div id="formulaire">

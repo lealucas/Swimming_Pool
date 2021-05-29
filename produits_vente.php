@@ -39,14 +39,14 @@ session_start();
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="#" class="lienn">Votre Compte</a>
+                <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
             </ul>
         </div>
 
 
         <div id="section">
             <div id="position">
-                <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
+                <a href="produits_vente.php" class="lienC" STYLE="text-decoration: underline">Vos Produits en vente</a>
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
                 <a href="produits_attentes.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Votre cagnotte</a>

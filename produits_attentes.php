@@ -40,7 +40,7 @@ session_start();
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }
-                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\" STYLE=\"text-decoration: underline\">Votre Compte</a>";} 
                 ?>
 
             </ul>
@@ -51,7 +51,7 @@ session_start();
             <div id="position">
                 <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
                 <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
-                <a href="produits_attentes.php" class="lienC">Vos produits en attente</a>
+                <a href="produits_attentes.php" class="lienC" STYLE="text-decoration: underline">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Votre cagnotte</a>
                 <a href="vider_cagnotte.php" class="lienC">Vider votre cagnotte <img src="img/caddy.png" width="22px"></a>
             </div>
@@ -71,7 +71,7 @@ session_start();
                         $result = mysqli_query($db_handle,$sql);
 
                         if (mysqli_num_rows($result) == 0) {
-                            echo "Pas d'article dans cette catégorie <br>";
+                            echo "<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >Pas d'article dans cette catégorie </div><br>";
                         } else {
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];

@@ -34,7 +34,7 @@ session_start();
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
                 <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                    echo"<a href=\"gestion.php\" class=\"lienn\" STYLE=\"text-decoration: underline\">Gestion</a>";
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
                 ?>
@@ -45,7 +45,7 @@ session_start();
         <div id="section">
             <div id="position">
                 <a href="gestion_vendeur.php" class="lienC">Gestion des vendeurs</a>
-                <a href="gestion_articles.php" class="lienC">Gestion des articles</a>
+                <a href="gestion_articles.php" class="lienC" STYLE="text-decoration: underline">Gestion des articles</a>
                 <a href="cagnotte.php" class="lienC">????????</a>
                 <a href="vider_cagnotte.php" class="lienC">???????<img src="img/caddy.png" width="22px"></a>
             </div>

@@ -27,7 +27,7 @@
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <a href="#" class="lienn">Accueil</a>
+                <a href="#" class="lienn" STYLE="text-decoration: underline">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>

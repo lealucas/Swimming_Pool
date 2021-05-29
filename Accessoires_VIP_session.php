@@ -55,7 +55,7 @@ session_start();
                 <div id="content">
                     <ul id="choixliste">
                         <a href="Art_session.php" class="lienc">Meubles et Objets D'art</a><br><br><br>
-                        <a href="Accessoires_VIP_session.php" class="lienc">Accessoires VIP</a><br><br><br>
+                        <a href="Accessoires_VIP_session.php" class="lienc" STYLE="text-decoration: underline">Accessoires VIP</a><br><br><br>
                         <a href="Scolaire_session.php" class="lienc">Matériels Scolaires</a>
                     </ul>
                 </div>
@@ -88,7 +88,7 @@ session_start();
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<a href='panier.php'><img src=\"img/logo_panier.jpg\"width=30px></a></p></div>";
+                                echo"<p class=\"describ\"><input type='text' name='love' readonly value=\"".$data['Nom']."\">.<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<br><input type='submit' value='Panier' name='panier' STYLE='border-radius:5px'></div>";
                             }
                         }
                     } else {

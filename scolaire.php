@@ -48,7 +48,7 @@
                     <ul id="choixliste">
                         <a href="Art.php" class="lienc">Meubles et Objets D'art</a><br><br><br>
                         <a href="Accessoires_VIP.php" class="lienc">Accessoires VIP</a><br><br><br>
-                        <a href="Scolaire.php" class="lienc">Matériels Scolaires</a>
+                        <a href="Scolaire.php" class="lienc" STYLE="text-decoration: underline">Matériels Scolaires</a>
                     </ul>
                 </div>
             </div>

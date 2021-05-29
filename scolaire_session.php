@@ -55,7 +55,7 @@ session_start();
                     <ul id="choixliste">
                         <a href="Art_session.php" class="lienc">Meubles et Objets D'art</a><br><br><br>
                         <a href="Accessoires_VIP_session.php" class="lienc">Accessoires VIP</a><br><br><br>
-                        <a href="Scolaire_session.php" class="lienc">Matériels Scolaires</a>
+                        <a href="Scolaire_session.php" class="lienc" STYLE="text-decoration: underline">Matériels Scolaires</a>
                     </ul>
                 </div>
             </div>

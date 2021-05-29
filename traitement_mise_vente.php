@@ -42,7 +42,7 @@ session_start();
         <div id="section">
         <div id="position">
                 <a href="produits_vente.php" class="lienC">Vos Produits en vente</a>
-                <a href="mettre_vente.php" class="lienC">Mettre en vente un produit</a>
+                <a href="mettre_vente.php" class="lienC" STYLE="text-decoration: underline">Mettre en vente un produit</a>
                 <a href="produits_attentes.php" class="lienC">Vos produits en attente</a>
                 <a href="cagnotte.php" class="lienC">Votre cagnotte</a>
                 <a href="vider_cagnotte.php" class="lienC">Vider votre cagnotte <img src="img/caddy.png" width="22px"></a>

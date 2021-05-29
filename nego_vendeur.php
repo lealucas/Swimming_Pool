@@ -88,6 +88,7 @@ session_start();
                 }
                 else{echo "Database not found";}
             ?>
+            <td colspan="2" align="center"><input type="submit" name="Mettre" value="Mettre au panier"></td>
             </form>
 
             </div>

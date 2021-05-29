@@ -59,7 +59,7 @@ session_start();
                 if ($db_found){
                     if (isset($_POST["Acheter"])){
                         if($Achat == "oui"){
-                            $sql = "UPDATE Article SET Valider='0' WHERE IDPanier='$IDClient";
+                            $sql = "UPDATE Article SET Valider='0' WHERE IDPanier='$IDClient'";
                             $result = mysqli_query($db_handle,$sql);
                             $data = mysqli_fetch_assoc($result);
                             echo "Félicitations pour vos achats." ;

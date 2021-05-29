@@ -82,7 +82,6 @@ session_start();
                         
                         $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1'";
                         $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
@@ -95,6 +94,7 @@ session_start();
                 
                     echo "€</div>";
                 }
+                else{echo "Database not found";}
             ?>
             </div>
 

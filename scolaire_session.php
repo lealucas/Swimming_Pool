@@ -33,7 +33,7 @@ session_start();
                     echo"<a href=\"\" class=\"lienn\">Gestion</a>";
                 } ?>
                 <a href="index_session.php" class="lienn">Accueil</a>
-                <a href="#" class="lienn">Tout Parcourir</a>
+                <a href="#" class="lienn"STYLE="text-decoration: underline">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
                 <a href="compte_vendeur.php" class="lienn">Votre Compte</a>

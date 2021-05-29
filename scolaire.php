@@ -80,7 +80,10 @@
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<a href='Panier.html'><img src=\"img/logo_panier.jpg\"width=30px></a></p></div>";
+                                echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                                echo "<br>";
+                                echo"<a href=\"Panier.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                echo"</div>";
                             }
                         }
                     } else {

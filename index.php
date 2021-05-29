@@ -71,14 +71,14 @@
             <!-- Les bests Sellers -->
             <div id="bestSellers">
                 <div class="title">
-                    <h3>Les Best Sellers</h3>
+                    <p>Les Best Sellers de cette Semaine</p>
                 </div>
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide"></div>
-
-                    </div>
-
+                <div class="zoomcolonne">
+                <img src='http://cdn.shopify.com/s/files/1/0271/8977/2359/products/product-image-1356634821_1200x1200.jpg?v=1606166948' width='180px' height='180px'>
+                <img src='https://www.sportbuzzbusiness.fr/wp-content/uploads/2017/11/ballon-officiel-coupe-du-monde-russie-2018-adidas-telsar-e1510757114687.jpg' width='180px' height='180px'>
+                <img src='https://www.jet-prive.fr/wp-content/uploads/2015/09/prix-location-avion-prive.jpg' width='180px' height='180px'>
+                <img src='https://france3-regions.francetvinfo.fr/image/LkelTBwWWBZL124arYg9GuC-iUA/1200x1200/regions/2020/08/17/5f3a5526eb0fb_menton_photographe_chasseur_de_yacht-00_00_16_14-4964868.jpg' width='180px' height='180px'>
+                <img src='https://www.rapid-cadeau.com/10377-thickbox_default/balancier-de-newton-deluxe.jpg' width='180px' height='180px'>
                 </div>
             </div>
         </div>

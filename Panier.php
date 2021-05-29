@@ -49,10 +49,10 @@ session_start();
 
 
         <div id="section">
-            <div id="position">
-            <p class="position_texte">Votre panier</p>
-            </div>
-
+            <div id="result">
+                    <div class="title">
+                        <p>Votre panier</p>
+                    </div>
             <?php
                 $database = "Swimming_Pool";
 
@@ -78,7 +78,7 @@ session_start();
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                            echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                            echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."</div>";
                             $PrixGlob+=$data['Prix'];
                         }
                     echo"<br>";
@@ -86,6 +86,7 @@ session_start();
                     echo "€";
                     }
             ?>
+        </div>
         </div>
             
 

@@ -64,7 +64,7 @@ session_start();
                     <p>Résultat du filtre : </p> 
                 </div>
                 <div>
-                <?php
+                    <?php
 
                     echo"<form action=\"Panier.php\" method=\"post\">";
                     echo"<link rel=\"stylesheet\" href=\"stylesToutParcourir.css\">";
@@ -93,9 +93,9 @@ session_start();
                     } else {
                         echo "Database not found. <br>";
                     }
-                mysqli_close($db_handle);
-                echo "</form>";
-                ?>
+                    mysqli_close($db_handle);
+                    echo "</form>";
+                    ?>
                 </div>
             </div>
         </div>

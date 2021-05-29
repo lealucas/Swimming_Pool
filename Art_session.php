@@ -64,7 +64,7 @@ session_start();
                     <p>Résultat du filtre : </p> 
                 </div>
                 <div>
-                <?php
+                    <?php
 
                     echo"<form action=\"Panier.php\" method=\"post\">";
                     echo"<link rel=\"stylesheet\" href=\"stylesToutParcourir.css\">";

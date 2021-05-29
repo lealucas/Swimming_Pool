@@ -75,7 +75,7 @@ session_start();
                                 $sql = "DELETE FROM Vendeur WHERE Valider ='0'LIMIT 1";
                                 $result = mysqli_query($db_handle, $sql);
 
-                                    echo"Le vendeur a bien été supprimé.";
+                                    echo"<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >VLe vendeur a bien été supprimé.</div>";
                             }
                             else{echo "Databse not found";}
                         }

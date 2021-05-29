@@ -34,7 +34,7 @@ session_start();
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <a href="Panier.php" class="lienn">Panier</a>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <a href="compte_vendeur.php" class="lienn"STYLE="text-decoration: underline">Votre Compte</a>
             </ul>
         </div>
 

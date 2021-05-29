@@ -49,7 +49,7 @@ session_start();
 
 
         <div id="section">
-            <div id="formulaire">
+            <div id="result">
                     <div class="title">
                         <p>Votre panier</p>
                         <form action="fin_achat.php" method="post">
@@ -93,7 +93,7 @@ session_start();
                     echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Voici le prix global de votre panier : ";
                     echo $nombre_format_francais = number_format($PrixGlob, 2, ',', ' ');
                 
-                    echo "€";
+                    echo "€</div>";
                 }
             ?>
             </div>

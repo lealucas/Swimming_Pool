@@ -86,12 +86,28 @@ session_start();
                         } else {
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
-                                echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
-                                echo "<br>";
-                                echo"<a href=\"Panier.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
-                                echo"</div>";
+                                if($data['Vente']=='Direct'){
+                                    echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                    echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                                    echo "<br>";
+                                    echo"<a href=\"Panier.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                    echo"</div>";
                                 }
+                                elseif($data['Vente']=='Enchere'){
+                                    echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                    echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                                    echo "<br>";
+                                    echo"<a href=\"enchere_vendeur.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                    echo"</div>";
+                                }
+                                elseif($data['Vente']=='Nego'){
+                                    echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                    echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                                    echo "<br>";
+                                    echo"<a href=\"nego_vendeur.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                    echo"</div>";
+                                }
+                            }
                         }
                     } else {
                         echo "Database not found. <br>";

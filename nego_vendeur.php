@@ -10,12 +10,13 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesPanier.css">
+    <link rel="stylesheet" href="stylesCompteVendeur.css" >
     <title>Document</title>
 </head>
 <body>
-    <div id="wrapper">
 
+    <div id="wrapper">
+        <!-- Header -->
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
@@ -25,42 +26,33 @@ session_start();
 
 
 
-
+        <!-- Menu de navigation -->
         <div id="nav">
             <h1>ECE MarketPlace</h1>
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
+                } ?>
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
-                <a href="#" class="lienn" STYLE="text-decoration: underline">Panier</a>
-                <?php 
-                if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
-                }
-                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
-                ?>
+                <a href="Panier.php" class="lienn">Panier</a>
+                <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
             </ul>
         </div>
 
 
-
-
         <div id="section">
-            <div id="result">
-                    <div class="title">
-                        <p>Votre panier</p>
-                        <form action="fin_achat.php" method="post">
-                <tr>
-                    <td rowspan="3">Souhaitez-vous acheter tout ces articles ? </td>
-                </tr>
-                <tr><td><input type="radio" name="Achat" value="oui" id="">Oui</td></tr>
-                <tr><td><input type="radio" name="Achat" value="non" id="">Non</td></tr>
-                <td colspan="2" align="center"><input type="submit" name="Acheter" value="Valider"></td>
-            </form>
-                    </div>
+            <div id="position">
+            <a href="informations.php" class="lienC" >Informations</a>
+            <a href="nego_vendeur.php" class="lienC" STYLE="text-decoration: underline">Vos négociations</a>
+            <a href="enchere_vendeur.php" class="lienC" >Vos enchères</a>
+            </div>
+            
+            <div id="formulaire">
+            <div class="title"><p>Vos échanges avec les différents vendeurs pour des négociations : </p></div>
             <?php
                 $database = "Swimming_Pool";
 
@@ -80,7 +72,7 @@ session_start();
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
                         
-                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1' AND Vente='Direct'";
+                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1' AND Vente='Nego'";
                         $result = mysqli_query($db_handle,$sql);
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
@@ -96,17 +88,15 @@ session_start();
                 }
                 else{echo "Database not found";}
             ?>
+            </form>
+
             </div>
-
         </div>
-            
 
-
-
-
+        <!-- Footer -->
         <footer>
             <small>
-                Copyright &copy; 2021, Sezille_Lucas_-_Industry <br>
+                Copyright &copy; 2021, Sezille_Lucas_-_Industry<br>
                 <a href="mailto:sezille_lucas@gmail.com">sezille_lucas@gmail.com</a>
             </small>
         </footer>

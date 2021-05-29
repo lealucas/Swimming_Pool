@@ -68,7 +68,6 @@ session_start();
                             $result = mysqli_query($db_handle,$sql);
                             $data = mysqli_fetch_assoc($result);
 
-                            echo $IDClient;
 
                             $sql = "UPDATE Article SET IDPanier='0' WHERE IDPanier='$IDClient'";
                             $result = mysqli_query($db_handle,$sql);

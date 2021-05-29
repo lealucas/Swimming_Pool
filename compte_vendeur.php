@@ -58,7 +58,7 @@ session_start();
             else{
                 echo"<div id=\"position\">";
                 echo"<a href=\"informations.php\" class=\"lienC\">Informations</a>";
-                echo"<a href=\"echange_vendeur.php\" class=\"lienC\">Vos échanges vendeur</a>";
+                echo"<a href=\"nego_vendeur.php\" class=\"lienC\">Vos échanges vendeur</a>";
             }
             ?>
             </div>

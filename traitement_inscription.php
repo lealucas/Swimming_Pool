@@ -63,6 +63,7 @@
     $Picto = isset($_POST["Picto"])? $_POST["Picto"] : "";
     $email = isset($_POST["email"])? $_POST["email"] : "";
     $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
+    $PdP = isset($_POST["PdP"])? $_POST["PdP"] : "";
 
     
     $database = "Swimming_Pool";
@@ -77,7 +78,7 @@
                 $result = mysqli_query($db_handle,$sql);
                 $number=mysqli_num_rows($result);
                 if($number==0){
-                    $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp')";
+                    $sql = "INSERT INTO Client (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp,PdP) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp','$PdP')";
                     $result = mysqli_query($db_handle, $sql);
                     $sql ="SELECT * FROM Client WHERE Nom LIKE '%$Nom%'";
                     $result = mysqli_query($db_handle,$sql);
@@ -160,7 +161,7 @@
                 $result = mysqli_query($db_handle,$sql);
                 $number=mysqli_num_rows($result);
                 if($number==0){
-                    $sql = "INSERT INTO Vendeur (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp,Cagnotte,Valider) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp','0','0')";
+                    $sql = "INSERT INTO Vendeur (Nom,Prenom,Adresse,Ville,CodePostal,Pays,Tel,Birthday,Carte,NumCarte,DateExp,Picto,email,Mdp,Cagnotte,Valider,PdP) VALUES ('$Nom','$Prenom','$Adresse','$Ville','$CodePostal','$Pays','$Tel','$Birthday','$Carte','$NumCarte','$DateExp','$Picto','$email','$Mdp','0','0','$PdP')";
                     $result = mysqli_query($db_handle, $sql);
                     $sql ="SELECT * FROM Vendeur WHERE Nom LIKE '%$Nom%'";
                     $result = mysqli_query($db_handle,$sql);

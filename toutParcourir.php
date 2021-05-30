@@ -28,7 +28,7 @@
                             $result = mysqli_query($db_handle, $sql);
                             $data = mysqli_fetch_assoc($result);
                             $pdp = $data['PdP'];
-                            echo"<img src='$pdp' width='40px' style = 'border-radius: 40%'>";
+                            echo"<img src='$pdp' width='20px' style = 'border-radius: 40%'>";
                         }else {echo "Database not found";}
                         ?>
                     <a href="deconnexion.php" class="lienh" STYLE="margin-left:1080px">Se déconnecter</a>

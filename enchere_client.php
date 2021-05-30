@@ -74,9 +74,13 @@ session_start();
                 $db_found = mysqli_select_db($db_handle, $database);
                 $PrixGlob=0;
 
-                if ($db_found){
 
+                if ($db_found){
                     $IDArticle=$_GET['IDArticle'];
+                    $newPrice = $_GET['NewPrice'];
+                    $sql = "UPDATE Article SET Prix='$newPrice' WHERE IDArticle='$IDArticle'";
+                    $result = mysqli_query($db_handle,$sql);
+                        $data = mysqli_fetch_assoc($result);
                     
                         $IDClient = $_SESSION['IDClient'];
                         $sql= "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient') ";

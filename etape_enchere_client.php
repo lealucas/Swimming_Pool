@@ -64,7 +64,6 @@ session_start();
             <a href="nego_client.php" class="lienC">Vos négociations</a>
             <a href="enchere_client.php" class="lienC" STYLE="text-decoration: underline">Vos enchères</a>
             </div>
-            
             <div id="formulaire">
             <div class="title"><p>Vos échanges avec les différents vendeurs pour des négociations : </p></div>
             <?php
@@ -85,7 +84,8 @@ session_start();
                             echo "<img class='objet' src = '$image' width='300px'>";
                             echo"<p class=\"describ\" style='font-size:30px'> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
                             echo "<br>";
-                            echo"<form style = 'width: 13%; margin: 0 auto'action=\"\" method=\"get\">";
+                            echo"<form style = 'width: 13%; margin: 0 auto'action=\"enchere_client.php?IDArticle='$article'&\" method=\"get\">";
+                            echo"<input type=\"text\" value='$article' name=\"IDArticle\" style='font-size: 0px;background-color: transparent;border: 0px solid;'>";
                             echo"<input type='number' min='$Prix' placeholder='$Prix minimum...' name = 'NewPrice'>";
                             echo"<input type = 'Submit' value = 'Enchérir' name = 'encherir' style = 'margin-left:30%' >";
                             echo"</form>";

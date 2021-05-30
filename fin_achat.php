@@ -63,13 +63,30 @@ session_start();
                 if ($db_found){
                     if (isset($_POST["Acheter"])){
                         if($Achat == "oui"){
+
                             $IDClient=$_SESSION['IDClient'];
+
+                            $sql = "SELECT * FROM Article WHERE Valider = '1' AND IDPanier = '$IDClient'";
+                            $result = mysqli_query($db_handle,$sql);
+                            $data = mysqli_fetch_assoc($result);
+
+                            $prix = $data['Prix'];
+                            $IDVendeur = $data['IDVendeur'];
+                            $sql = "UPDATE Vendeur SET Cagnotte='$prix' WHERE IDVendeur='$IDVendeur'";
+
+                            $result = mysqli_query($db_handle,$sql);
+                            $data = mysqli_fetch_assoc($result);
                             $sql = "UPDATE Article SET Valider='0' WHERE IDPanier='$IDClient'";
+
+                            $result = mysqli_query($db_handle,$sql);
+                            $data = mysqli_fetch_assoc($result);
+
+                            $sql = "UPDATE Article SET IDPanier='0' WHERE IDPanier='$IDClient'";
                             $result = mysqli_query($db_handle,$sql);
                             $data = mysqli_fetch_assoc($result);
 
 
-                            $sql = "UPDATE Article SET IDPanier='0' WHERE IDPanier='$IDClient'";
+                            $sql = "UPDATE Vendeur SET Cagnotte='$prix' WHERE IDVendeur='$IDVendeur'";
                             $result = mysqli_query($db_handle,$sql);
                             $data = mysqli_fetch_assoc($result);
 

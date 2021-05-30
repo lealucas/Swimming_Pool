@@ -73,8 +73,12 @@ session_start();
                             while ($data = mysqli_fetch_assoc($result)) {
                                 $image = $data['Photo'];
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."</p></div>";
+                                echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<br><a STYLE='text-align:center' href=\"produits_vente.php?IDArticle=".$data['IDArticle']."\">Supprimer l'article</a></p></div>";
                             }
+                            $IDArticle = $_GET['IDArticle'];
+                            $sql = "UPDATE Article SET Valider ='0' WHERE Valider ='1' AND IDArticle = '$IDArticle'" ;
+                            $result = mysqli_query($db_handle,$sql);
+                            $data =mysqli_num_rows($result);
                         }
                     } else {
                         echo "Database not found. <br>";

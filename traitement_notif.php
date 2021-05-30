@@ -91,6 +91,7 @@
 
                             if (mysqli_num_rows($result) == 0) {
                                 echo "Pas d'article dans cette catégorie <br>";
+                                echo "Vous serez notifiés lorsqu'un produit correspondant à vos attente sera mis en vente :)";
                             } else {
                                 while ($data = mysqli_fetch_assoc($result)) {
                                     $image = $data['Photo'];

@@ -58,8 +58,8 @@ session_start();
             else{
                 echo"<div id=\"position\">";
                 echo"<a href=\"informations.php\" class=\"lienC\">Informations</a>";
-                echo"<a href=\"nego_vendeur.php\" class=\"lienC\">Vos négociations</a>";
-                echo"<a href=\"nego_vendeur.php\" class=\"lienC\">Vos enchères</a>";
+                echo"<a href=\"nego_client.php\" class=\"lienC\">Vos négociations</a>";
+                echo"<a href=\"enchere_client.php\" class=\"lienC\">Vos enchères</a>";
             }
             ?>
             </div>

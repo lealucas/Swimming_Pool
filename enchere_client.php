@@ -47,8 +47,8 @@ session_start();
         <div id="section">
         <div id="position">
             <a href="informations.php" class="lienC" >Informations</a>
-            <a href="nego_vendeur.php" class="lienC">Vos négociations</a>
-            <a href="enchere_vendeur.php" class="lienC" STYLE="text-decoration: underline">Vos enchères</a>
+            <a href="nego_client.php" class="lienC">Vos négociations</a>
+            <a href="enchere_client.php" class="lienC" STYLE="text-decoration: underline">Vos enchères</a>
             </div>
             
             <div id="formulaire">
@@ -76,9 +76,12 @@ session_start();
                         $result = mysqli_query($db_handle,$sql);
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
-                            echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                            echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente']."</div>";
                             $PrixGlob+=$data['Prix'];
+                            echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                            echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
+                            echo "<br>";
+                            echo"<a href=\"enchere_client.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                            echo"</div>";
                         }
                     echo"<br><br>";
                     echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Voici le prix global de votre panier : ";

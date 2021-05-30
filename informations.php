@@ -47,8 +47,8 @@ session_start();
         <div id="section">
         <div id="position">
             <a href="informations.php" class="lienC"STYLE="text-decoration: underline" >Informations</a>
-            <a href="nego_vendeur.php" class="lienC" >Vos négociations</a>
-            <a href="enchere_vendeur.php" class="lienC">Vos enchères</a>
+            <a href="nego_client.php" class="lienC" >Vos négociations</a>
+            <a href="enchere_client.php" class="lienC">Vos enchères</a>
             </div>
             
             <div id="formulaire">

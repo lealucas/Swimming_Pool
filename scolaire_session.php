@@ -97,14 +97,14 @@ session_start();
                                     echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                                     echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
                                     echo "<br>";
-                                    echo"<a href=\"enchere_vendeur.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                    echo"<a href=\"enchere_client.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
                                     echo"</div>";
                                 }
                                 elseif($data['Vente']=='Nego'){
                                     echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                                     echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
                                     echo "<br>";
-                                    echo"<a href=\"nego_vendeur.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                    echo"<a href=\"nego_client.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
                                     echo"</div>";
                                 }
                             }

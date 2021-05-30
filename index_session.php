@@ -20,7 +20,21 @@ session_start();
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
-                    <a href="deconnexion.php" class="lienh" STYLE="padding:0 0 0 1080px">Se déconnecter</a>
+                    <?php
+            $database = "Swimming_Pool";
+
+                        $db_handle = mysqli_connect('localhost', 'root', 'root');
+                        $db_found = mysqli_select_db($db_handle, $database);
+                        if ($db_found) {
+                            $Prenom = $_SESSION['Prenom'];
+                            $sql = "SELECT * FROM Vendeur WHERE Prenom = '$Prenom'";
+                            $result = mysqli_query($db_handle, $sql);
+                            $data = mysqli_fetch_assoc($result);
+                            $pdp = $data['PdP'];
+                            echo"<img src='$pdp' width='40px' style = 'border-radius: 50%'>";
+                        }else {echo "Database not found";}
+                        ?>
+                    <a href="deconnexion.php" class="lienh" STYLE="margin-left:1080px">Se déconnecter</a>
                 </div>
         </div>
 
@@ -40,6 +54,7 @@ session_start();
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+<<<<<<< HEAD
                 $database = "Swimming_Pool";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
@@ -52,6 +67,8 @@ session_start();
                             $pdp = $data['PdP'];
                             echo"<img src='$pdp' width='40px' style = 'border-radius: 50%'>";
                         }else {echo "Database not found";}
+=======
+>>>>>>> bfed1a6d19c156d221b7fa91fda53c1c18b944a8
                 ?>
             </ul>
         </div>

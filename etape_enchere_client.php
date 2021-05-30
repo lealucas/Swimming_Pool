@@ -76,32 +76,28 @@ session_start();
 
                 if ($db_found){
 
-                    $IDArticle=$_GET['IDArticle'];
-                    
-                        $IDClient = $_SESSION['IDClient'];
-                        $sql= "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient') ";
+                    $article=$_GET['IDArticle'];
+                        $sql = "SELECT * FROM Article WHERE IDArticle='$article'";
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
-                        $sql = "UPDATE Article SET IDPanier='$IDClient' WHERE IDArticle='$IDArticle'";
-                        $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        
-                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1' AND Vente='Enchere'";
-                        $result = mysqli_query($db_handle,$sql);
-                        while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
-                            $PrixGlob+=$data['Prix'];
-                            echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                            echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
+                            $Prix = $data['Prix'];
+                            echo "<img class='objet' src = '$image' width='300px'>";
+                            echo"<p class=\"describ\" style='font-size:30px'> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
                             echo "<br>";
-                            echo"<a href=\"etape_enchere_client.php?IDArticle=".$data['IDArticle']."\">Cliquer pour Enchérir</a>";
-                            echo"</div>";
-                        }
+                            echo"<form style = 'width: 13%; margin: 0 auto'action=\"\" method=\"get\">";
+                            echo"<input type='number' min='$Prix' placeholder='$Prix minimum...' name = 'NewPrice'>";
+                            echo"<input type = 'Submit' value = 'Enchérir' name = 'encherir' style = 'margin-left:30%' >";
+                            echo"</form>";
                     echo"<br><br>";
-                    echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Voici le prix global de votre panier : ";
+                    echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Prix de l'enchère : ";
                     echo $nombre_format_francais = number_format($PrixGlob, 2, ',', ' ');
-                
-                    echo "€</div>";
+                    echo "</div>";
+
+                    $sql = "UPDATE Article SET Prix = '$prix' WHERE IDArticle = '$IDArticle'";
+                    $result = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($result);
+
                 }
                 else{echo "Database not found";}
             ?>

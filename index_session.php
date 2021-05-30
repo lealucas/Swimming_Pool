@@ -54,7 +54,6 @@ session_start();
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
-<<<<<<< HEAD
                 $database = "Swimming_Pool";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
@@ -67,8 +66,6 @@ session_start();
                             $pdp = $data['PdP'];
                             echo"<img src='$pdp' width='40px' style = 'border-radius: 50%'>";
                         }else {echo "Database not found";}
-=======
->>>>>>> bfed1a6d19c156d221b7fa91fda53c1c18b944a8
                 ?>
             </ul>
         </div>

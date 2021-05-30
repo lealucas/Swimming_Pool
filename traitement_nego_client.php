@@ -98,15 +98,14 @@ session_start();
                     
                 }
                 else{echo "Database not found";}
+                echo"<form action=\"soumission_nego.php?IDArticle=".$data['IDArticle']."\" method=\"post\">";
+                echo"<tr>";
+                    echo"<td>Proposez votre Prix : </td><br>";
+                    echo"<td><input type=\"text\" name=\"Prenom\" required  id=\"\"></td>";
+                echo"</tr>";
+                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"Nego\" value=\"Envoyer\"></td>";
+            echo"</form>";
             ?>
-            <form action="soumission_nego.php" method="post">
-                <tr>
-                    <td>Proposez votre Prix : </td><br>
-                    <td><input type="text" name="Prenom" required  id=""></td>
-                </tr>
-                <td colspan="2" align="center"><input type="submit" name="Acheter" value="Envoyer"></td>
-            </form>
-
             </div>
         </div>
 

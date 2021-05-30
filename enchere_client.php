@@ -85,17 +85,21 @@ session_start();
                         $sql = "UPDATE Article SET IDPanier='$IDClient' WHERE IDArticle='$IDArticle'";
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
-                        
                         $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1' AND Vente='Enchere'";
                         $result = mysqli_query($db_handle,$sql);
                         while ($data = mysqli_fetch_assoc($result)) {
+                            $prix = $data['Prix'];
                             $image = $data['Photo'];
                             $PrixGlob+=$data['Prix'];
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                             echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
                             echo "<br>";
-                            echo"<a href=\"enchere_client.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                            echo"<form STYLE='margin-left:100px; margin-top:-40px'>";
+                            echo"<tr><td><input type='number' placeholder='$prix € minimum' min='$prix'></td>";
+                            echo"<td><input type='submit' name='enchere' value = 'Enchérir'></td></tr>";
+                            echo"</form>";
                             echo"</div>";
+
                         }
                     echo"<br><br>";
                     echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Voici le prix global de votre panier : ";
@@ -105,8 +109,6 @@ session_start();
                 }
                 else{echo "Database not found";}
             ?>
-            <td colspan="2" align="center"><input type="submit" name="Mettre" value="Mettre au panier"></td>
-            </form>
 
             </div>
         </div>

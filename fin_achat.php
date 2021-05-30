@@ -49,7 +49,15 @@ session_start();
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
-                <a href="#" class="lienn" STYLE="text-decoration: underline">Panier</a>
+                <?php
+                    if($_SESSION['IDClient']==0){
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                    }
+                    else{
+                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
+                    }
+                    
+                ?>
                 <?php 
                 if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";

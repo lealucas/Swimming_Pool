@@ -47,7 +47,15 @@ session_start();
                 <a href="index.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
-                <a href="Panier.html" class="lienn">Panier</a>
+                <?php
+                    if($_SESSION['IDClient']==0){
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                    }
+                    else{
+                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
+                    }
+                    
+                ?>
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }

@@ -41,6 +41,7 @@ body{
     background-color: rgb(119, 116, 116);
     border-bottom: black solid 2px;
     height: 70px;
+
 }
 h1{
     margin-left: 10px;
@@ -62,6 +63,7 @@ h1{
     text-decoration: none;
     color: black;
     background-color: rgba(165, 204, 255, 0);
+    padding: 15px;
 }
 .lienn:hover{
     background-color: rgb(69, 69, 69);

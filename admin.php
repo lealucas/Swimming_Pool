@@ -13,7 +13,7 @@
         <!-- Header -->
         <div id="header">
                 <div id="barreheader">
-                    <a href="admin.php" class="lienh" STYLE="text-decoration: underline; padding:0 0 0 1080px">Admin</a> |
+                    <a href="admin.php" class="lienh" STYLE="text-decoration: underline; margin-left:1080px">Admin</a> |
                     <a href="inscription.html" class="lienh">S'inscrire</a> | 
                     <a href="connexion.php" class="lienh">Se connecter</a>
                 </div>

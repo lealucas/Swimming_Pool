@@ -18,7 +18,7 @@ session_start();
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
-                    <a href="deconnexion.php" class="lienh" STYLE="padding:0 0 0 1080px">Se déconnecter</a>
+                    <a href="deconnexion.php" class="lienh" STYLE="margin-left:1080px">Se déconnecter</a>
                 </div>
         </div>
 

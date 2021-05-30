@@ -10,13 +10,12 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesCompteVendeur.css" >
+    <link rel="stylesheet" href="stylesPanier.css">
     <title>Document</title>
 </head>
 <body>
-
     <div id="wrapper">
-        <!-- Header -->
+
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
@@ -40,15 +39,13 @@ session_start();
 
 
 
-        <!-- Menu de navigation -->
+
         <div id="nav">
             <h1>ECE MarketPlace</h1>
             
             <ul id="menuNav">
                 Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-                <?php if ($_SESSION['Prenom'] == "Admin") {
-                    echo"<a href=\"\" class=\"lienn\">Gestion</a>";
-                } ?>
+
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
@@ -61,52 +58,57 @@ session_start();
                     }
                     
                 ?>
-                <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
+                <?php 
+                if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
             </ul>
         </div>
-
-
-        <div id="section">
-                <div id="position">
-                <a href="nego_vendeur.php" class="lienC">Négociations</a>
-                <a href="enchere_vendeur.php" class="lienC">Enchères</a>
-            </div>
-
-
         
-        <div id="formulaire">
-            <div class="title"><p>Vos échanges avec les différents vendeurs pour des négociations : </p></div>
+        <div id="section">
+            
+            <div id="result">
+                <div class="title">
+                    <p> Votre panier : </p>
+                </div>
+                
             <?php
                 $database = "Swimming_Pool";
 
                 $db_handle = mysqli_connect('localhost', 'root', 'root');
                 $db_found = mysqli_select_db($db_handle, $database);
+                $Negofin =isset($_POST["Negofin"])? $_POST["Negofin"] : "";
 
                 if ($db_found){
-
-                    $IDVendeur=$_SESSION['IDVendeur'];
-                    $sql ="SELECT * FROM Article WHERE Nego='1' AND IDVendeur='$IDVendeur'";
+                    
+                    $IDArticle=$_GET['IDArticle'];
+                    $IDVendeur = $_SESSION['IDVendeur'];
+                    $sql ="SELECT * FROM Article WHERE IDArticle='$IDArticle'";
                     $result = mysqli_query($db_handle,$sql);
                     $data = mysqli_fetch_assoc($result);
-                    $image = $data['Photo'];
-                    echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                    echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente']."</div>";
-                    echo"<tr>";
-                            echo"<td>Acceptez-vous ce Prix ?</td>";
-                            echo"<a href=\"fin_nego_vendeur_oui.php?IDArticle=".$data['IDArticle']."\">Oui</a>";
-                            echo"<a href=\"fin_nego_vendeur_non.php?IDArticle=".$data['IDArticle']."\">Non</a>";
-                        
+                    $prix = $data['Prix'];
+
+                            $sql = "UPDATE Vendeur SET Cagnotte='$prix' WHERE IDVendeur='$IDVendeur'";
+                            $result = mysqli_query($db_handle,$sql);
+                            $data = mysqli_fetch_assoc($result);
+
+                            echo "<div STYLE='text-align:center; margin-top: 10px; margin-bottom: 10px'>Félicitations pour votre vente." ;
+                            echo "<br>";
+                            echo"A très bientôt sur ECE MarketPlace ! :)</div>";
                 }
             ?>
-            </div>
+            
 
         </div>
+        </div>
+            
 
 
-        <!-- Footer -->
         <footer>
             <small>
-                Copyright &copy; 2021, Sezille_Lucas_-_Industry<br>
+                Copyright &copy; 2021, Sezille_Lucas_-_Industry <br>
                 <a href="mailto:sezille_lucas@gmail.com">sezille_lucas@gmail.com</a>
             </small>
         </footer>

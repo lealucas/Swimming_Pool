@@ -52,57 +52,31 @@ session_start();
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
-                <a href="Panier.php" class="lienn">Panier</a>
+                <?php
+                    if($_SESSION['IDClient']==0){
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                    }
+                    else{
+                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
+                    }
+                    
+                ?>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
             </ul>
         </div>
 
 
         <div id="section">
-            <div id="position">
-            <a href="informations.php" class="lienC" >Informations</a>
-            <a href="nego_client.php" class="lienC" STYLE="text-decoration: underline">Vos négociations</a>
-            <a href="enchere_client.php" class="lienC" >Vos enchères</a>
-            </div>
-            
-            <div id="formulaire">
-            <div class="title"><p>Vos échanges avec les différents vendeurs pour des négociations : </p></div>
-            <?php
-                $database = "Swimming_Pool";
-
-                $db_handle = mysqli_connect('localhost', 'root', 'root');
-                $db_found = mysqli_select_db($db_handle, $database);
-                $Negociation = isset($_POST["Negociation"])? $_POST["Negociation"] : "";
-
-                
-                if ($db_found){
-                    $IDArticle=$_GET['IDArticle'];
-
-                    $sql ="UPDATE Article SET Prix ='$Negociation' WHERE IDArticle='$IDArticle'";
-                    $result = mysqli_query($db_handle,$sql);
-                    $number=mysqli_num_rows($result);
-
-                    $sql ="UPDATE Article SET Nego='1' WHERE IDArticle='$IDArticle'";
-                    $result = mysqli_query($db_handle,$sql);
-                    $number=mysqli_num_rows($result);
-
-                    $sql ="SELECT * FROM Article WHERE IDArticle='$IDArticle'";
-                    $result = mysqli_query($db_handle,$sql);
-                    $number=mysqli_num_rows($result);
-                    $data = mysqli_fetch_assoc($result);
-                    $image = $data['Photo'];
-                        echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                        echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
-                        echo "<br>";
-                        echo "Vous avez envoyé votre négociation ";
-                        echo"</div>";
-                        echo"<tr>";
-
-                }
-
-            ?>
+                <div id="position">
+                <a href="nego_vendeur.php" class="lienC">Négociations</a>
+                <a href="enchere_vendeur.php" class="lienC">Enchères</a>
             </div>
         </div>
+
+
+        
+
+
 
         <!-- Footer -->
         <footer>

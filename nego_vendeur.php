@@ -52,20 +52,29 @@ session_start();
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
-                <a href="Panier.php" class="lienn">Panier</a>
+                <?php
+                    if($_SESSION['IDClient']==0){
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                    }
+                    else{
+                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
+                    }
+                    
+                ?>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
             </ul>
         </div>
 
 
         <div id="section">
-            <div id="position">
-            <a href="informations.php" class="lienC" >Informations</a>
-            <a href="nego_client.php" class="lienC" STYLE="text-decoration: underline">Vos négociations</a>
-            <a href="enchere_client.php" class="lienC" >Vos enchères</a>
+                <div id="position">
+                <a href="nego_vendeur.php" class="lienC">Négociations</a>
+                <a href="enchere_vendeur.php" class="lienC">Enchères</a>
             </div>
-            
-            <div id="formulaire">
+
+
+        
+        <div id="formulaire">
             <div class="title"><p>Vos échanges avec les différents vendeurs pour des négociations : </p></div>
             <?php
                 $database = "Swimming_Pool";
@@ -75,44 +84,27 @@ session_start();
 
                 if ($db_found){
 
-                    $IDArticle=$_GET['IDArticle'];
-                    
-                        $IDClient = $_SESSION['IDClient'];
-                        $sql= "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient') ";
-                        $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        $sql = "UPDATE Article SET IDPanier='$IDClient' WHERE IDArticle='$IDArticle'";
-                        $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        
-                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1' AND Vente='Nego'";
-                        $result = mysqli_query($db_handle,$sql);
-                        while ($data = mysqli_fetch_assoc($result)) {
-                            $image = $data['Photo'];
-                            $PrixGlob+=$data['Prix'];
-                            echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                            echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
-                            echo "<br>";
-                            echo"</div>";
-                            echo"<form STYLE='margin-left:110px; margin-top : -40px;'action=\"traitement_nego_client.php?IDArticle=".$data['IDArticle']."\" method=\"post\">";
-                            echo"<tr>";
-                            echo"<td>Proposez votre Prix : </td><br>";
-                            echo"<td><input type=\"text\" name=\"Negociation\" required  id=\"\"></td>";
-                            echo"</tr>";
+                    $IDVendeur=$_SESSION['IDVendeur'];
+                    $sql ="SELECT * FROM Article WHERE Nego='1' AND IDVendeur='$IDVendeur'";
+                    $result = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($result);
+                    $image = $data['Photo'];
+                    echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                    echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente']."</div>";
+                    echo"<tr>";
+                            echo"<td rowspan=\"3\">Acceptez-vous ce Prix ?</td>";
+                        echo"</tr>";
+                        echo"<tr><td><input type=\"radio\" name=\"typePers\" value=\"Oui\" required id=\"\">Oui</td></tr>";
+                        echo"<tr><td><input type=\"radio\" name=\"typePers\" value=\"Non\" required  id=\"\">Non</td></tr>";
+                        echo"<tr>";
                             echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"Nego\" value=\"Envoyer\"></td>";
                             echo"</form>";
-                            
-                        }
-                    echo"<br><br>";
-                    
                 }
-                else{echo "Database not found";}
             ?>
-            </form>
-            
-
             </div>
+
         </div>
+
 
         <!-- Footer -->
         <footer>

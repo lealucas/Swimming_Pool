@@ -93,7 +93,7 @@ session_start();
 
 
                     if ($db_found) {
-                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'VIP' AND Valider = '1'";
+                        $sql = "SELECT * FROM Article WHERE Categorie LIKE 'VIP' AND Valider = '1' ";
                         $result = mysqli_query($db_handle, $sql);
 
                         if (mysqli_num_rows($result) == 0) {

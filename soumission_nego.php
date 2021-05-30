@@ -31,7 +31,7 @@ session_start();
                             $result = mysqli_query($db_handle, $sql);
                             $data = mysqli_fetch_assoc($result);
                             $pdp = $data['PdP'];
-                            echo"<img src='$pdp' width='20px' style = 'border-radius: 40%'>";
+                            echo"<img src='$pdp' width='40px' style = 'border-radius: 40%'>";
                         }else {echo "Database not found";}
                         ?>
                     <a href="deconnexion.php" class="lienh" STYLE="margin-left:1080px">Se déconnecter</a>
@@ -72,40 +72,31 @@ session_start();
 
                 $db_handle = mysqli_connect('localhost', 'root', 'root');
                 $db_found = mysqli_select_db($db_handle, $database);
+                $Nego = isset($_POST["Nego"])? $_POST["Nego"] : "";
 
                 if ($db_found){
 
                     $IDArticle=$_GET['IDArticle'];
-
-                        $IDClient = $_SESSION['IDClient'];
-                        $sql= "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient') ";
-                        $result = mysqli_query($db_handle,$sql);
-                        $data = mysqli_fetch_assoc($result);
-                        $sql = "UPDATE Article SET IDPanier='$IDClient' WHERE IDArticle='$IDArticle'";
+                        $sql= "UPDATE Article SET Prix='$Nego' WHERE IDArticle='$IDArticle' ";
                         $result = mysqli_query($db_handle,$sql);
                         $data = mysqli_fetch_assoc($result);
                         
-                        $sql = "SELECT * FROM Article WHERE IDPanier='$IDClient' AND Valider='1' AND Vente='Nego'";
-                        $result = mysqli_query($db_handle,$sql);
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
                             $PrixGlob+=$data['Prix'];
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                             echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
                             echo "<br>";
+                            echo"<a href=\"traitement_nego_client.php?IDArticle=".$data['IDArticle']."\">Négocier</a>";
+                            echo"</div>";
                         }
                     echo"<br><br>";
                     
                 }
                 else{echo "Database not found";}
-                echo"<form action=\"soumission_nego.php?IDArticle=".$data['IDArticle']."\" method=\"post\">";
-                echo"<tr>";
-                    echo"<td>Proposez votre Prix : </td><br>";
-                    echo"<td><input type=\"text\" name=\"Prenom\" required  id=\"\"></td>";
-                echo"</tr>";
-                echo"<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"Nego\" value=\"Envoyer\"></td>";
-            echo"</form>";
             ?>
+            </form>
+
             </div>
         </div>
 

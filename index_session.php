@@ -49,12 +49,19 @@ session_start();
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
-                <a href="Panier.php" class="lienn">Panier</a>
+                <?php
+                    if($_SESSION['IDClient']==0){
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                    }
+                    else{
+                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
+                    }
+                    
+                ?>
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
-<<<<<<< HEAD
                 $database = "Swimming_Pool";
 
                         $db_handle = mysqli_connect('localhost', 'root', 'root');
@@ -67,8 +74,6 @@ session_start();
                             $pdp = $data['PdP'];
                             echo"<img src='$pdp' width='40px' style = 'border-radius: 50%'>";
                         }else {echo "Database not found";}
-=======
->>>>>>> bfed1a6d19c156d221b7fa91fda53c1c18b944a8
                 ?>
             </ul>
         </div>

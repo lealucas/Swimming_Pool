@@ -88,7 +88,7 @@ session_start();
     if (isset($_POST["gogo"])){
         if ($db_found) {
                     $IDVendeur=$_SESSION['IDVendeur'];
-                    $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Vente,Prix,IDVendeur,Valider,IDPanier) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Vente','$Prix','$IDVendeur','0','0')";
+                    $sql = "INSERT INTO Article (Nom,Photo,Discrib,Video,Categorie,Vente,Prix,IDVendeur,Valider,IDPanier,Nego) VALUES ('$Nom','$Photo','$Discrib','$Video','$Categorie','$Vente','$Prix','$IDVendeur','0','0','0')";
                     $result = mysqli_query($db_handle, $sql);
                     echo "<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >Votre Article vient d'être soumit à la validation par l'administrateur.<br><br>";
                     echo "Vous le verrez apparaitre dans votre onglet Vos Produits En Vente lorsqu'il aura été validé.</div>";

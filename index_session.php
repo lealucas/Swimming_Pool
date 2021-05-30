@@ -50,7 +50,7 @@ session_start();
                             $result = mysqli_query($db_handle, $sql);
                             $data = mysqli_fetch_assoc($result);
                             $pdp = $data['PdP'];
-                            echo"<img src='$pdp' width='30px' style = 'border-radius: 40%'>";
+                            echo"<img src='$pdp' width='40px' style = 'border-radius: 50%'>";
                         }else {echo "Database not found";}
                 ?>
             </ul>

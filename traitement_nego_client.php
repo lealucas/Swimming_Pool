@@ -62,7 +62,7 @@ session_start();
                 if ($db_found){
 
                     $IDArticle=$_GET['IDArticle'];
-                    
+
                         $IDClient = $_SESSION['IDClient'];
                         $sql= "INSERT INTO Panier(IDPanier,IDClient) VALUES ('$IDClient','$IDClient') ";
                         $result = mysqli_query($db_handle,$sql);
@@ -79,14 +79,18 @@ session_start();
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                             echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
                             echo "<br>";
-                            echo"<a href=\"traitement_nego_client.php?IDArticle=".$data['IDArticle']."\">Négocier</a>";
-                            echo"</div>";
                         }
                     echo"<br><br>";
                     
                 }
                 else{echo "Database not found";}
             ?>
+            <form action="soumission_nego.php" method="post">
+                <tr>
+                    <td>Proposez votre Prix : </td><br>
+                    <td><input type="text" name="Prenom" required  id=""></td>
+                </tr>
+                <td colspan="2" align="center"><input type="submit" name="Acheter" value="Envoyer"></td>
             </form>
 
             </div>

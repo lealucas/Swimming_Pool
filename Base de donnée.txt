@@ -1,0 +1,270 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: May 30, 2021 at 09:53 PM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `Swimming_Pool`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Admine`
+--
+
+CREATE TABLE `Admine` (
+  `IDAdmin` int(11) NOT NULL,
+  `Nom` varchar(50) DEFAULT NULL,
+  `Prenom` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `Mdp` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Admine`
+--
+
+INSERT INTO `Admine` (`IDAdmin`, `Nom`, `Prenom`, `email`, `Mdp`) VALUES
+(1, 'Admin', 'Admin', 'admin.admin@gmail.com', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Article`
+--
+
+CREATE TABLE `Article` (
+  `IDArticle` int(11) NOT NULL,
+  `Nom` varchar(50) DEFAULT NULL,
+  `Photo` varchar(500) DEFAULT NULL,
+  `Discrib` varchar(250) DEFAULT NULL,
+  `Video` varchar(26) DEFAULT NULL,
+  `Categorie` varchar(20) DEFAULT NULL,
+  `Vente` varchar(250) DEFAULT NULL,
+  `Prix` float DEFAULT NULL,
+  `IDVendeur` int(11) DEFAULT NULL,
+  `Valider` int(11) DEFAULT NULL,
+  `IDPanier` int(11) DEFAULT NULL,
+  `Nego` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Article`
+--
+
+INSERT INTO `Article` (`IDArticle`, `Nom`, `Photo`, `Discrib`, `Video`, `Categorie`, `Vente`, `Prix`, `IDVendeur`, `Valider`, `IDPanier`, `Nego`) VALUES
+(1, 'Macbook', 'https://www.apple.com/v/macbook-pro-16/c/images/meta/og__csakh451i0eq_large.png', 'Voici le dernier macbook doté d\'une performance hors norme.', 'macbook.mp4', 'VIP', 'Direct', 10000, 1, 0, 0, 0),
+(2, 'Chargeur', 'https://informatique-haguenau.fr/wp-content/uploads/2020/08/51oMok1ykQL._AC_SL1500_.jpg', 'Ce chargeur est très performant', '0', 'VIP', 'Direct', 100, 1, 0, 0, 0),
+(3, 'Maison', 'https://tabairarealestate.com//media/images/properties/thumbnails/o_1dkvc4o1o46p183bfias4gfk01j_w_102400x80000.jpg', 'Superbe villa située à 25min de Montpellier dans une résidence gardée.', '1', 'VIP', 'Nego', 1800, 1, 0, 0, 0),
+(5, 'Calculatrice', 'https://bv-prd-fbi-fr-media.s3.amazonaws.com/pub/media/catalog/product/cache/ef4a54899b4f9d060853d6e60ec5e0f4/f/a/fa2ec88c43e3c87d7aa4ee3a2f922e4d4067c29a_79439226.jpg', 'Cette calculatrice est très polivalente et possède le mode examen', '0', 'Scolaire', 'Direct', 100, 1, 0, 0, 0),
+(6, 'Tableau \"Storm\"', 'https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/a/0/a/a0a06a6488_50148307_orage-plus-puissant.jpg', 'Ce tableau représente un très bel orage', '1', 'Art', 'Enchere', 600, 1, 0, 0, 0),
+(7, 'Tableau Terre', 'https://cdn.shopify.com/s/files/1/0078/1837/9322/products/Globe_1.jpg?v=1562691689', 'Ce tableau représente la Terre', '1', 'Art', 'Direct', 700, 1, 0, 0, 0),
+(8, 'Feutre', 'https://static.fnac-static.com/multimedia/Images/FR/MC/c7/f2/85/42332871/1540-1/tsp20200304174600/24-feutres-de-coloriage-pour-Journal-0-4-mm-Double-pointes-feutre-fine-et-pinceau-Couleur-a-l-eau-Stylos-de-dein-pour-etudiant.jpg', 'Jolie boite de 78 feutres', '8', 'Scolaire', 'Direct', 80, 1, 0, 0, 0),
+(9, 'Cahier', 'https://images-na.ssl-images-amazon.com/images/I/81AAI1eoy-L._AC_SL1500_.jpg', 'Ces cahiers Clairefontaine sont très résistants', '0', 'Scolaire', 'Direct\r\n', 40, 1, 0, 0, 0),
+(34, 'Guitare', 'https://www.paul-beuscher.com/Files/104340/Img/15/ibanez-GRGM-21-M-JB-zoom.jpg', 'Guitare Ibanez', 'non', 'VIP', 'Nego', 2000, 4, 0, 0, 0),
+(35, 'Ampli', 'https://www.instrumentdemusique.org/wp-content/uploads/2019/08/ampli-guitare-electrique-marshall-mg30gfx-1200x1200.png', 'Ampli Marshall', 'non', 'VIP', 'Direct', 180, 4, 0, 0, 0),
+(39, '', 'https://cdn.shopify.com/s/files/1/0271/8977/2359/products/product-image-1356634821_1200x1200.jpg?v=1606166948', 'Katana Zoro ', 'non', 'VIP', 'Enchere', 3500, 4, 1, 0, 0),
+(40, 'Jet privé', 'https://www.jet-prive.fr/wp-content/uploads/2015/09/prix-location-avion-prive.jpg', 'Fait des flammes', 'non', 'VIP', 'Direct', 500000, 4, 1, 0, 0),
+(41, 'Pendule Newton', 'https://www.rapid-cadeau.com/10377-thickbox_default/balancier-de-newton-deluxe.jpg', 'Clic-clac-clic-clac', 'non', 'Art', 'Direct', 153, 4, 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Client`
+--
+
+CREATE TABLE `Client` (
+  `IDClient` int(11) NOT NULL,
+  `Nom` varchar(50) DEFAULT NULL,
+  `Prenom` varchar(50) DEFAULT NULL,
+  `Adresse` varchar(100) DEFAULT NULL,
+  `Ville` varchar(50) DEFAULT NULL,
+  `CodePostal` int(5) DEFAULT NULL,
+  `Pays` varchar(50) DEFAULT NULL,
+  `Tel` int(10) DEFAULT NULL,
+  `Birthday` date DEFAULT NULL,
+  `Carte` varchar(50) DEFAULT NULL,
+  `NumCarte` varchar(50) DEFAULT NULL,
+  `DateExp` date DEFAULT NULL,
+  `Picto` int(4) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `Mdp` varchar(100) DEFAULT NULL,
+  `PdP` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Client`
+--
+
+INSERT INTO `Client` (`IDClient`, `Nom`, `Prenom`, `Adresse`, `Ville`, `CodePostal`, `Pays`, `Tel`, `Birthday`, `Carte`, `NumCarte`, `DateExp`, `Picto`, `email`, `Mdp`, `PdP`) VALUES
+(34, 'lp', 'Léa', '9 chemin de la vigne', 'Maron', 36120, 'France', 674767376, '2021-05-04', 'MasterCard', '456789', '2021-06-06', 89, 'piou00@gmail.com', 'jjk', NULL),
+(100, 'Lucas', 'Lea', '1B Avenue du Pas du Lac', 'Montigny Le Bretonneux ', 78180, 'soleil', 674767376, '2000-12-08', 'Visa', '67587', '2021-05-28', 7865, 'piou0910@gmail.com', 'mdp', NULL),
+(101, 'Sezille', 'Florian Le Dormeur', 'dsbh', 'Paris', 75015, 'France', 657678, '2000-12-08', 'Visa', '67587', '2021-05-28', 78654, 'florian.sezille@gmail.com', 'super', NULL),
+(102, 'Lucas', 'Lea', '32 avenue du faubourd', 'Mennecy', 91540, 'France', 789653465, '1999-07-02', 'MasterCard', '4567321498762456', '2021-06-04', 666, 'lucas.casteras@gmail.com', 'soleil', NULL),
+(103, 'Raffaelli', 'Philippe', '133 rue du boquettier', 'bois guillaume', 76230, 'France', 567895426, '1999-04-06', 'Visa', '067893456796', '2021-06-06', 987, 'philippe.raffaelli@gmail.com', 'bg', NULL),
+(104, 'Guetta', 'David', '144 south beach', 'Miami', 33101, 'Etats-Unis', 754352978, '1967-11-07', 'Visa', '8765987634526786', '2021-06-06', 345, 'david.guetta@gmail.com', 'dj', NULL),
+(105, 'Moire', 'Emmanuel', '55 rue du faubourg saint honoré', 'Paris', 75008, 'France', 278451325, '1977-12-17', 'MasterCard', '7654089067812115', '2021-06-04', 91, 'emmanuel.macron@gmail.com', 'elysee', NULL),
+(106, 'guego', 'dizj', '268 palm beach', 'Miami', 33203, 'Etats-Unis', 649276319, '1986-06-13', 'AmericanExpress', '9456200934332698', '2021-06-26', 99, 'djsnake@gmail.com', 'music', NULL),
+(107, 'bergling', 'Avicii', '160 avenue du paradis', 'Cieux', 1, 'France', 698231098, '1989-09-08', 'Paypal', '9876340988214566', '2021-06-02', 987, 'avicii.bergling@gmail.com', 'paradis', NULL),
+(108, 'Lucas', 'Lea', '', 'Maron', 36120, 'France', 674767376, '2021-04-28', 'Visa', '23456789', '2021-06-04', 98, 'l@k.com', 'k', NULL),
+(110, 'story', 'board', 'serveur 78', 'Internet', 10101, 'Web', 101010101, '1982-07-29', 'Paypal', '9876342609871561', '2021-06-06', 111, 'story.board@gmail.com', 'story', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Panier`
+--
+
+CREATE TABLE `Panier` (
+  `IDPanier` int(11) NOT NULL,
+  `IDClient` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Panier`
+--
+
+INSERT INTO `Panier` (`IDPanier`, `IDClient`) VALUES
+(111, 0),
+(112, 0),
+(113, 0),
+(114, 0),
+(115, 0),
+(116, 0),
+(117, 0),
+(118, 0),
+(119, 0),
+(120, 0),
+(121, 0),
+(100, 100),
+(101, 101),
+(104, 104),
+(105, 105),
+(106, 106),
+(110, 110);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Vendeur`
+--
+
+CREATE TABLE `Vendeur` (
+  `IDVendeur` int(11) NOT NULL,
+  `Nom` varchar(50) DEFAULT NULL,
+  `Prenom` varchar(50) DEFAULT NULL,
+  `Adresse` varchar(100) DEFAULT NULL,
+  `Ville` varchar(50) DEFAULT NULL,
+  `CodePostal` int(5) DEFAULT NULL,
+  `Pays` varchar(50) DEFAULT NULL,
+  `Tel` int(10) DEFAULT NULL,
+  `Birthday` date DEFAULT NULL,
+  `Carte` varchar(50) DEFAULT NULL,
+  `NumCarte` varchar(50) DEFAULT NULL,
+  `DateExp` date DEFAULT NULL,
+  `Picto` int(4) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `Mdp` varchar(100) DEFAULT NULL,
+  `Cagnotte` int(11) DEFAULT NULL,
+  `Valider` int(11) DEFAULT NULL,
+  `PdP` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Vendeur`
+--
+
+INSERT INTO `Vendeur` (`IDVendeur`, `Nom`, `Prenom`, `Adresse`, `Ville`, `CodePostal`, `Pays`, `Tel`, `Birthday`, `Carte`, `NumCarte`, `DateExp`, `Picto`, `email`, `Mdp`, `Cagnotte`, `Valider`, `PdP`) VALUES
+(1, 'Lucas', 'Lea', '1B avenue du pas du lac', 'Montigny Le Bretonneux ', 78180, 'France', 689787654, '2000-12-08', 'Visa', '8899078654543232', '2021-09-10', 211, 'lea.lucas@gmail.com', 'mdp', 0, 1, NULL),
+(3, 'Hina', 'Manolo', '37 quai de Grenelle', 'Paris', 75015, 'France', 144390600, '1970-11-12', 'MasterCard', '2345879088997865', '2021-06-05', 377, 'manolo.hina@gmail.com', 'ece', 0, 1, 'https://blog.europ-assistance.be/wp-content/uploads/thumbs/sad_dog-nrz00skf6yp9atl196bt1g8cng5xii68l9jt2e7xvs.jpg'),
+(4, 'Sezille', 'Florian le vendeur', '4 rue du laos', 'Paris', 75015, 'France', 653987215, '1999-07-01', 'Visa', '3452885533221873', '2021-06-06', 999, 'florian.vendeur@gmail.com', 'super', 0, 1, NULL),
+(7, 'Lucas', 'Herve', '7 rue du bois', 'Chateauroux', 36000, 'France', 897897656, '1968-05-26', 'Visa', '8899078654543232', '2021-09-10', 211, 'hevre.lucas@gmail.com', 'herve', NULL, 1, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Admine`
+--
+ALTER TABLE `Admine`
+  ADD PRIMARY KEY (`IDAdmin`);
+
+--
+-- Indexes for table `Article`
+--
+ALTER TABLE `Article`
+  ADD PRIMARY KEY (`IDArticle`),
+  ADD KEY `IDVendeur` (`IDVendeur`),
+  ADD KEY `IDPanier` (`IDPanier`);
+
+--
+-- Indexes for table `Client`
+--
+ALTER TABLE `Client`
+  ADD PRIMARY KEY (`IDClient`) USING BTREE;
+
+--
+-- Indexes for table `Panier`
+--
+ALTER TABLE `Panier`
+  ADD PRIMARY KEY (`IDPanier`),
+  ADD KEY `IDClient` (`IDClient`);
+
+--
+-- Indexes for table `Vendeur`
+--
+ALTER TABLE `Vendeur`
+  ADD PRIMARY KEY (`IDVendeur`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Admine`
+--
+ALTER TABLE `Admine`
+  MODIFY `IDAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `Article`
+--
+ALTER TABLE `Article`
+  MODIFY `IDArticle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `Client`
+--
+ALTER TABLE `Client`
+  MODIFY `IDClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `Panier`
+--
+ALTER TABLE `Panier`
+  MODIFY `IDPanier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+
+--
+-- AUTO_INCREMENT for table `Vendeur`
+--
+ALTER TABLE `Vendeur`
+  MODIFY `IDVendeur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Article`
+--
+ALTER TABLE `Article`
+  ADD CONSTRAINT `article_ibfk_1` FOREIGN KEY (`IDVendeur`) REFERENCES `Vendeur` (`IDVendeur`);

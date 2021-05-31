@@ -44,7 +44,7 @@ session_start();
             
             <ul id="menuNav">
             <form action="traitement_recherche.php" method="post">
-                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
+                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article...">
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"\" class=\"lienn\">Gestion</a>";
                 } ?>
@@ -65,6 +65,7 @@ session_start();
                 }
                 else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
                 ?>
+            </form>
             </ul>
         </div>
 

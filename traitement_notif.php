@@ -32,7 +32,7 @@
             
             <ul id="menuNav">
             <form action="traitement_recherche.php" method="post">
-                    Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
+                    Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article...">
                 <a href="index.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Notifications</a>
@@ -42,6 +42,7 @@
                 }
                 else{echo "<a href=\"votreCompte.html\" class=\"lienn\">Votre Compte</a>";} 
                 ?>
+            </form>
             </ul>
         </div>
 

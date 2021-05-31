@@ -27,7 +27,7 @@
             
             <ul id="menuNav">
             <form action="traitement_recherche.php" method="post">
-                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
+                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article...">
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>

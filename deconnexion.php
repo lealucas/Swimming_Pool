@@ -29,12 +29,13 @@
             
             <ul id="menuNav">
             <form action="traitement_recherche.php" method="post">
-                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
+                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article...">
                 <a href="index.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
                 <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                </form>
             </ul>
         </div>
 

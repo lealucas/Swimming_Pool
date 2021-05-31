@@ -27,7 +27,7 @@
             
             <ul id="menuNav">
             <form action="traitement_recherche.php" method="post">
-                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
+                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article...">
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"\" class=\"lienn\">Gestion</a>";
                 } ?>
@@ -36,6 +36,7 @@
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
                 <a href="votreCompte.html" class="lienn">Votre Compte</a>
+                </form>
             </ul>
         </div>
 

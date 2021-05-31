@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesAccueil.css" >
+    <link rel="stylesheet" href="stylesPanier.css" >
     <title>Document</title>
 </head>
 <body>
@@ -40,9 +40,10 @@
 
 
         <div id="section">
-        <div id="result">
+            <div id="result">
                 <div class="title">
-                    <p>Résultat de la recherche : </p> </div>
+                    <p>Résultat de la recherche : </p> 
+                </div>
                         <?php
                             $database = "Swimming_Pool";
 
@@ -61,21 +62,19 @@
                                             echo"Nous ne possédons aucun article ayant ce nom";
                                         }
                                         else{
-                                        echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                        echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente']."</div>";
-                                        echo "Cet article est disponible. Retrouvez le dans Tout Parcourir pour l'ajouter à votre Panier";
-                                        echo $result;
+                                            echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
+                                            echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente']."</div>";
+                                            echo "<div STYLE='text-align:center; margin-top: 30px; margin-bottom: 30px;' >Cet article est disponible. Retrouvez le dans Tout Parcourir pour l'ajouter à votre Panier</div>";
                                         }
                                     
+                                    }
                                 }
-                            }
-                            else{echo"Database not found";}
+                                else{echo"Database not found";}
+                                mysqli_close($db_handle);
                         ?>
-                </div>
+                    </div>
             </div>
         
-    
-
 
         <!-- Footer -->
         <footer>

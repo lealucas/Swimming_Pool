@@ -29,15 +29,7 @@
                 <a href="index.php" class="lienn">Accueil</a>
                 <a href="#" class="lienn"STYLE="text-decoration: underline">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
-                <?php
-                    if($_SESSION['IDClient']==0){
-                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
-                    }
-                    else{
-                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
-                    }
-                    
-                ?>
+                <a href="Panier.html" class="lienn">Panier</a>
                 <a href="votreCompte.html" class="lienn">Votre Compte</a>
             </ul>
         </div>
@@ -91,7 +83,7 @@
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                                 echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
                                 echo "<br>";
-                                echo"<a href=\"Panier.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                echo"<a href=\"Panier.html\">Ajouter au panier</a>";
                                 echo"</div>";
                             }
                         }

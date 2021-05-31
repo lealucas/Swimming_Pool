@@ -60,7 +60,11 @@ session_start();
                     }
                     
                 ?>
-                <a href="compte_vendeur.php" class="lienn">Votre Compte</a>
+                <?php if ($_SESSION['Prenom'] == "Admin") {
+                    echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
+                }
+                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                ?>
             </ul>
         </div>
 

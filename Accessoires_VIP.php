@@ -86,7 +86,7 @@
                                 echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                                 echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
                                 echo "<br>";
-                                echo"<a href=\"Panier.php?IDArticle=".$data['IDArticle']."\">Ajouter au panier</a>";
+                                echo"<a href=\"Panier.html\">Ajouter au panier</a>";
                                 echo"</div>";
                             }
                         }

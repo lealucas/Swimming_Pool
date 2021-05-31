@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,19 +36,11 @@
                 <a href="index.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Notifications</a>
-                <?php
-                    if($_SESSION['IDClient']==0){
-                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
-                    }
-                    else{
-                        echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
-                    }
-                    
-                ?>
+                <a href="Panier.php" class="lienn">Panier</a>
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";
                 }
-                else{echo "<a href=\"compte_vendeur.php\" class=\"lienn\">Votre Compte</a>";} 
+                else{echo "<a href=\"votreCompte.html\" class=\"lienn\">Votre Compte</a>";} 
                 ?>
             </ul>
         </div>
@@ -104,7 +102,10 @@
                                 while ($data = mysqli_fetch_assoc($result)) {
                                     $image = $data['Photo'];
                                     echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
-                                    echo"<p class=\"describ\">".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente']."<a href='Panier.html'><img src=\"img/logo_panier.jpg\"width=30px></a></p></div>";
+                                    echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$data['Prix']."€<br>Vente par : ".$data['Vente'];
+                                    echo "<br>";
+                                    echo"<a href=\"Panier.html\">Ajouter au panier</a>";
+                                    echo"</div>";
                                 }
                             }
                         } 

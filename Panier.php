@@ -19,7 +19,21 @@ session_start();
         <div id="header">
                 <div id="barreheader">
                     Bienvenue : <?php echo $_SESSION['Prenom']; ?>
-                    <a href="deconnexion.php" class="lienh" STYLE="padding:0 0 0 1080px">Se déconnecter</a>
+                    <?php
+            $database = "Swimming_Pool";
+
+                        $db_handle = mysqli_connect('localhost', 'root', 'root');
+                        $db_found = mysqli_select_db($db_handle, $database);
+                        if ($db_found) {
+                            $Prenom = $_SESSION['Prenom'];
+                            $sql = "SELECT * FROM Vendeur WHERE Prenom = '$Prenom'";
+                            $result = mysqli_query($db_handle, $sql);
+                            $data = mysqli_fetch_assoc($result);
+                            $pdp = $data['PdP'];
+                            echo"<img src='$pdp' width='20px' style = 'border-radius: 40%'>";
+                        }else {echo "Database not found";}
+                        ?>
+                    <a href="deconnexion.php" class="lienh" STYLE="margin-left:1080px">Se déconnecter</a>
                 </div>
         </div>
 
@@ -35,6 +49,14 @@ session_start();
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>
+                <?php
+                    if($_SESSION['IDClient']==0){
+                        echo"<a href=\"nego_enchere.php\" STYLE=\"text-decoration: underline\" class=\"lienn\">Négociations/Enchères</a>";
+                    }
+                    else{
+                        echo"<a href=\"Panier.php\" class=\"lienn\" STYLE=\"text-decoration: underline\">Panier</a>";
+                    }
+                ?>
                 <?php 
                 if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";

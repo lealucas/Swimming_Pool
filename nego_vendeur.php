@@ -55,7 +55,7 @@ session_start();
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <?php
                     if($_SESSION['IDClient']==0){
-                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\" STYLE=\"text-decoration: underline\">Négociations/Enchères</a>";
                     }
                     else{
                         echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
@@ -69,7 +69,7 @@ session_start();
 
         <div id="section">
                 <div id="position">
-                <a href="nego_vendeur.php" class="lienC">Négociations</a>
+                <a href="nego_vendeur.php" class="lienC" STYLE="text-decoration: underline">Négociations</a>
                 <a href="enchere_vendeur.php" class="lienC">Enchères</a>
             </div>
 

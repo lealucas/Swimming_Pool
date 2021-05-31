@@ -55,14 +55,14 @@ session_start();
                 <a href="Notifications.php" class="lienn">Notifications</a>
                 <?php
                     if($_SESSION['IDClient']==0){
-                        echo"<a href=\"nego_enchere.php\" class=\"lienn\">Négociations/Enchères</a>";
+                        echo"<a href=\"nego_enchere.php\" class=\"lienn\"STYLE=\"text-decoration: underline\">Négociations/Enchères</a>";
                     }
                     else{
                         echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
                     }
                     
                 ?>
-                <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
+                <a href="#" class="lienn">Votre Compte</a>
             </ul>
         </div>
 

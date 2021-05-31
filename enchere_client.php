@@ -58,8 +58,7 @@ session_start();
                     }
                     else{
                         echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
-                    }
-                    
+                    } 
                 ?>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
             </ul>
@@ -109,11 +108,6 @@ session_start();
                             echo"<a href=\"etape_enchere_client.php?IDArticle=".$data['IDArticle']."\">Cliquer pour Enchérir</a>";
                             echo"</div>";
                         }
-                    echo"<br><br>";
-                    echo "<div STYLE='text-align:center; margin-bottom: 10px; font-weight:bold'>Voici le prix global de votre panier : ";
-                    echo $nombre_format_francais = number_format($PrixGlob, 2, ',', ' ');
-                
-                    echo "€</div>";
                 }
                 else{echo "Database not found";}
             ?>

@@ -56,7 +56,6 @@ session_start();
                     else{
                         echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
                     }
-                    
                 ?>
                 <?php if ($_SESSION['Prenom'] == "Admin") {
                     echo"<a href=\"gestion.php\" class=\"lienn\">Gestion</a>";

@@ -59,7 +59,6 @@ session_start();
                     else{
                         echo"<a href=\"Panier.php\" class=\"lienn\">Panier</a>";
                     }
-                    
                 ?>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Votre Compte</a>
             </ul>

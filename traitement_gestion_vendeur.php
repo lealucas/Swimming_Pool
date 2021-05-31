@@ -41,8 +41,8 @@ session_start();
             <h1>ECE MarketPlace</h1>
             
             <ul id="menuNav">
-                Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
-
+            <form action="traitement_recherche.php" method="post">
+                    Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
                 <a href="index_session.php" class="lienn">Accueil</a>
                 <a href="toutParcourir.php" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.php" class="lienn">Notifications</a>

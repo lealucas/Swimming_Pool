@@ -26,12 +26,14 @@
             <h1>ECE MarketPlace</h1>
             
             <ul id="menuNav">
-                Recherche : <input type="text" name="" id="" placeholder="Tapez un nom d'article...">
+            <form action="traitement_recherche.php" method="post">
+                Recherche : <input type="text" name="recherche" id="" placeholder="Tapez un nom d'article..."></form>
                 <a href="#" class="lienn" STYLE="text-decoration: underline">Accueil</a>
                 <a href="toutParcourir.html" class="lienn">Tout Parcourir</a>
                 <a href="Notifications.html" class="lienn">Notifications</a>
                 <a href="Panier.html" class="lienn">Panier</a>
                 <a href="votreCompte.html" class="lienn">Votre Compte</a>
+            </form>    
             </ul>
         </div>
 

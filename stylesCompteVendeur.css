@@ -236,5 +236,5 @@ ul{
 footer{
     background-color: rgba(221, 221, 221, 0.574);
     text-align: center;
-    height: 50px;
+    height: auto;
 }

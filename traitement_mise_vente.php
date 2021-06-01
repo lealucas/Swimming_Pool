@@ -118,8 +118,9 @@ session_start();
         <!-- Footer -->
         <footer>
             <small>
-                Copyright &copy; 2021, Sezille_Lucas_-_Industry<br>
-                <a href="mailto:sezille_lucas@gmail.com">sezille_lucas@gmail.com</a>
+                Copyright &copy; 2021, Sezille_Lucas_-_Industry <br>
+                <a href="mailto:sezille_lucas@gmail.com">sezille_lucas@gmail.com</a><br>
+                37 quai de Grenelle, 75015 Paris <br>
             </small>
         </footer>
     </div>

@@ -100,6 +100,7 @@ session_start();
                         while ($data = mysqli_fetch_assoc($result)) {
                             $image = $data['Photo'];
                             $PrixGlob+=$data['Prix'];
+                            $prix = $data['Prix'];
                             echo "<div class=\"cadre\"><img class=\"objet\" src='$image' width='200px'>";
                             echo"<p class=\"describ\"> ".$data['Nom']."<br>".$data['Discrib']."<br>Prix : ".$nombre_format_francais = number_format($data['Prix'], 2, ',', ' ')."€<br>Vente par : ".$data['Vente'];
                             echo "<br>";

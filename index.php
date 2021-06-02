@@ -73,7 +73,7 @@
             <!-- Les bests Sellers -->
             <div id="bestSellers">
                 <div class="title">
-                    <p>Les Best Sellers de cette Semaine</p>
+                    <h3>Les Best Sellers de cette Semaine</h3>
                 </div>
                 <div class="zoomcolonne">
                 <img src='http://cdn.shopify.com/s/files/1/0271/8977/2359/products/product-image-1356634821_1200x1200.jpg?v=1606166948' width='180px' height='180px'>

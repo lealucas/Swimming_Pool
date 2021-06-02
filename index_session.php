@@ -81,7 +81,7 @@ session_start();
             <form action="daySelection.php" method="post"></form>
             <div id="daySelection">
                 <div class="title">
-                    <p>Notre Sélection De Produits Quotidienne</p>
+                    <h3>Notre Sélection De Produits Quotidienne</h3>
                 </div>
                 <div class="zoomcolonne">
                     <?php

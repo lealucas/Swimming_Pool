@@ -14,7 +14,6 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-
     <div id="wrapper">
         <!-- Header -->
         <div id="header">
